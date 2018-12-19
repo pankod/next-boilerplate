@@ -1,0 +1,46 @@
+{
+  "name": "next-css-blocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/server.js",
+  "dependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "http-proxy-middleware": "^0.19.1",
+    "next": "^7.0.2",
+    "next-compose-plugins": "^2.1.1",
+    "next-redux-wrapper": "^2.1.0",
+    "next-routes": "^1.4.2",
+    "next-runtime-dotenv": "^1.0.1",
+    "node-sass": "^4.11.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-persist-cookie-storage": "^1.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@css-blocks/webpack": "^0.20.0-beta.4",
+    "@types/next": "^7.0.5",
+    "@types/next-redux-wrapper": "^2.0.2",
+    "@types/react": "^16.7.17",
+    "@types/react-redux": "^6.0.11",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "nodemon": "^1.18.9",
+    "redux-devtools-extension": "^2.13.7"
+  },
+  "scripts": {
+    "start:dev": "nodemon --watch app --watch app/server.js",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production node ./app/server.js",
+    "heroku-prebuild": "npm i --dev && NODE_ENV=production next build",
+    "export": "NODE_ENV=production next export",
+    "analyze": "BUNDLE_ANALYZE=both npm run build"
+  },
+  "author": "",
+  "license": "ISC"
+}

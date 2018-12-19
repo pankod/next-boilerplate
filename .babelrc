@@ -1,0 +1,24 @@
+{
+    "presets": [
+      "next/babel",
+      "@zeit/next-typescript/babel"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./"
+          ],
+          "alias": {
+            "@Actions": "./src/Actions",
+            "@Components": "./src/Components",
+            "@Definations": "./src/Definations",
+            "@Interfaces": "./src/Interfaces",
+            "@Reducers": "./src/Redux/Reducers",
+            "@Redux": "./src/Redux"
+          }
+        }
+      ]
+    ]
+}
