@@ -1,5 +1,5 @@
 {
-  "name": "next-css-blocks",
+  "name": "next-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "app/server.js",
@@ -24,7 +24,6 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@css-blocks/webpack": "^0.20.0-beta.4",
     "@types/next": "^7.0.5",
     "@types/next-redux-wrapper": "^2.0.2",
     "@types/react": "^16.7.17",
