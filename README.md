@@ -1,6 +1,5 @@
 
 
-<img src="https://trello-attachments.s3.amazonaws.com/5a9f9d1a4857c01d9fbfdad2/5c1a4f3a3f55d17174cbbd0a/7f66a26ab037103ea8c512e3e73f1804/gorsel.jpg" alt="react redux boilerplate banner" align="center" />
 
 <br/>
 <div align="center" >Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js and Sass.</div>
@@ -69,12 +68,12 @@ This boilerplate includes the latest powerfull tools.
   >One of TypeScript’s core principles is that type-checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.
 
  
-  <dd>İncludes babel-plugin-module-resolver <dd>
+  <dd>Includes babel-plugin-module-resolver <dd>
 
   >A Babel plugin to add a new resolver for your modules when compiling your code using Babel. This plugin allows you to add new "root" directories that contain your modules. It also allows you to setup a custom alias for directories, specific files, or even other npm modules.
 
   
-  <dd>İncludes next-runtime-dotenv <dd>
+  <dd>Includes next-runtime-dotenv <dd>
 
   >Normally, .env isn’t available in the browsers (only Node.js), but our boilerplate uses npm package for make it available.
 
@@ -88,7 +87,7 @@ This boilerplate includes the latest powerfull tools.
 1. Clone clone the repository and install the dependencies:
 
 ```
-git clone https://github.com/necatiozmen/movied.git
+git clone https://github.com/pankod/next-boilerplate.git
 ```
 
 
