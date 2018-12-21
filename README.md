@@ -1,5 +1,5 @@
 
-
+<img src="https://github.com/pankod/next-boilerplate/blob/update-readme/banner.jpg" alt="Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js and Sass." align="center" />
 
 <br/>
 <div align="center" >Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js and Sass.</div>
@@ -84,7 +84,7 @@ This boilerplate includes the latest powerfull tools.
 ## Getting Started
 
 
-1. Clone clone the repository and install the dependencies:
+1. Clone the repository and install the dependencies:
 
 ```
 git clone https://github.com/pankod/next-boilerplate.git
