@@ -1,11 +1,11 @@
 //#region Global Imports
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 //#endregion Global Imports
 
 //#region Interface Imports
-import { IHomePage } from '@Interfaces';
+import { IHomePage, IStore } from '@Interfaces';
 import { Heading } from '@Components';
 import { HomeActions } from '@Actions';
 //#endregion Interface Imports
@@ -16,14 +16,14 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 			<div className="title">
 				Hello!
 				<Heading text="World!" />
-       		</div>
+			</div>
 		);
 	}
 }
 
-const mapStateToProps = state => state.home;
+const mapStateToProps = (state: IStore) => state.home;
 
-const mapDispatchToProps = dispatch => (
+const mapDispatchToProps = (dispatch: Dispatch) => (
 	{
 		Map: bindActionCreators(HomeActions.Map, dispatch)
 	}

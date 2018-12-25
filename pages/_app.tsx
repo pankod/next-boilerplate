@@ -4,8 +4,6 @@ import * as React from 'react';
 
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
-import { PersistGate } from 'redux-persist/integration/react';
-import { persistStore } from 'redux-persist';
 //#endregion Global Imports
 
 //#region Local Imports
@@ -30,14 +28,11 @@ class MyApp extends App<IApp.IProps> {
 
     render(): JSX.Element {
         const { Component, pageProps, store } = this.props;
-        const persistor = persistStore(store);
 
         return (
             <Container>
                 <Provider store={store}>
-                    <PersistGate loading={null} persistor={persistor}>
-                        <Component {...pageProps} />
-                    </PersistGate>
+                    <Component {...pageProps} />
                 </Provider>
             </Container>
         );
