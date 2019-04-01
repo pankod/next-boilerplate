@@ -7,7 +7,7 @@
 
 <div align="center">
   <!-- Dependency Status -->
-  <a href="https://david-dm.org/flexdinesh/react-redux-boilerplate">
+  <a href="https://david-dm.org/pankod/react-redux-boilerplate">
     <img src="https://david-dm.org/pankod/next-boilerplate.svg" alt="Dependency Status" />
   </a>
   <!-- devDependency Status -->
