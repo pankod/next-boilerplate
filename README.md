@@ -56,6 +56,9 @@ This boilerplate includes the latest powerfull tools.
 * **Reverse Proxy** - A reverse proxy server is a type of proxy server that typically sits behind the firewall in a private network and directs client requests to the appropriate backend server
 * **Bundler Analyzer** - Visualize size of webpack output files with an interactive zoomable treemap.
 * **dotenv .config** - Expose environment variables to the runtime config of Next.js
+* **Jest** - Javascript testing framework , created by developers who created react
+* **Enzyme** - JavaScript testing utility for React that makes it easier to test your React Components output.
+
 
 <br/>
 
@@ -76,6 +79,11 @@ This boilerplate includes the latest powerfull tools.
   <dd>Includes next-runtime-dotenv <dd>
 
   >Normally, .env isn’t available in the browsers (only Node.js), but our boilerplate uses npm package for make it available.
+
+  <dd>Includes jest and enzyme <dd>
+
+  > Jest was created by Facebook and is a testing framework to test javascript and React code. Together with Airbnb’s Enzyme, which is a testing utility, makes it the perfect match to easily test your React application.
+  
 
 </dl>
 
@@ -127,36 +135,42 @@ Then open http://localhost:3000/ to see your app.
 │  └── server.js
 ├── next.config.js
 ├── pages
-│  ├── _app.tsx
-│  ├── _document.tsx
-│  ├── home
-│  │  ├── index.scss
-│  │  └── index.tsx
-│  └── index.ts
+│   ├── _app.tsx
+│   ├── _document.tsx
+│   ├── home
+│   │   ├── index.scss
+│   │   ├── index.spec.tsx
+│   │   └── index.tsx
+│   └── index.ts
 ├── src
-│  ├── Actions
-│  │  ├── HomeActions.ts
-│  │  └── index.ts
-│  ├── Components
-│  │  ├── Heading
-│  │  │  ├── index.tsx
-│  │  │  └── style.scss
-│  │  └── index.ts
-│  ├── Definations
-│  │  ├── ActionConsts.ts
-│  │  └── index.ts
-│  ├── Interfaces
-│  │  ├── Components
-│  │  │  └── Heading.d.ts
-│  │  ├── index.ts
-│  │  └── Pages
-│  │     ├── App.d.ts
-│  │     └── Home.d.ts
-│  └── Redux
-│     ├── Reducers
-│     │  ├── home.ts
-│     │  └── index.ts
-│     └── store.ts
+│   ├── Actions
+│   │   ├── HomeActions.ts
+│   │   ├── index.spec.tsx
+│   │   └── index.ts
+│   ├── Components
+│   │   ├── Heading
+│   │   │   ├── index.spec.tsx
+│   │   │   ├── index.tsx
+│   │   │   └── style.scss
+│   │   └── index.ts
+│   ├── Definations
+│   │   ├── ActionConsts.ts
+│   │   └── index.ts
+│   ├── Interfaces
+│   │   ├── Components
+│   │   │   └── Heading.d.ts
+│   │   ├── Pages
+│   │   │   ├── App.d.ts
+│   │   │   └── Home.d.ts
+│   │   ├── Redux
+│   │   │   ├── Action.d.ts
+│   │   │   └── Store.d.ts
+│   │   └── index.ts
+│   └── Redux
+│       ├── Reducers
+│       │   ├── home.ts
+│       │   └── index.ts
+│       └── store.ts
 ├── tsconfig.json
 └── tslint.json
 
