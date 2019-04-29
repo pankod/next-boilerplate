@@ -4,12 +4,14 @@ import { ActionConsts } from "@Definations";
  * ACTIONS
 */
 export const HomeActions = {
-	Map : payload => ({
-		payload,
-		type: ActionConsts.Home.SetReducer
-	}),
+	Map: (payload: any) => (
+		{
+			payload,
+			type: ActionConsts.Home.SetReducer
+		}
+	),
 
-	Reset : () => ({
+	Reset: () => ({
 		type: ActionConsts.Home.ResetReducer
 	})
 }
