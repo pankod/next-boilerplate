@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"outDir": "./dist",
+		"sourceMap": true,
+		"allowJs": true,
+		"rootDir": ".",
+		"baseUrl": ".",
+		"typeRoots": [
+			"./node_modules/@types"
+		]
+	},
+	"exclude": [
+		"node_modules",
+		"dist",
+		"Components",
+		"Redux",
+		"pages",
+		"Definations"
+	]
+}
