@@ -13,7 +13,6 @@
 		"removeComments": false,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true,
-		"target": "esnext",
+		"target": "esnext"
 	}
 }

@@ -5,6 +5,7 @@
             "es2017"
         ],
         "baseUrl": ".",
+		"strict": true,
         "paths": {
             "@Components/*": [
                 "./src/Components/*"
