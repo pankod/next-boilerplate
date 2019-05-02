@@ -53,7 +53,7 @@
     "heroku-prebuild": "npm i --dev && NODE_ENV=production next build",
     "export": "NODE_ENV=production next export",
     "analyze": "BUNDLE_ANALYZE=both npm run build",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "author": "",
   "license": "ISC"
