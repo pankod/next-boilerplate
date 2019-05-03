@@ -39,11 +39,13 @@ exports.Helper = {
     },
     getTemplate: (templatePath, templateProps) => (mustache.render(fs.readFileSync(path.resolve('', templatePath), 'utf8'), templateProps)),
     writeFile: (params) => {
-        fs.writeFileSync(path.resolve('', params.dirPath), params.getFileContent(), err => {
-            if (err)
-                throw err;
+        try {
+            fs.writeFileSync(path.resolve('', params.dirPath), params.getFileContent());
             console.log(logSymbols.success, params.message);
-        });
+        }
+        catch (error) {
+            throw error;
+        }
     },
     createFile: (dirPath) => {
         fs.mkdirSync(path.resolve('', dirPath));

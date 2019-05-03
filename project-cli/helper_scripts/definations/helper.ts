@@ -51,14 +51,17 @@ export const Helper = {
 	),
 
 	writeFile: (params: DefinationsModel.IWriteFile) => {
-		fs.writeFileSync(
-			path.resolve('', params.dirPath),
-			params.getFileContent(),
-			err => {
-				if (err) throw err;
-				console.log(logSymbols.success, params.message);
-			}
-		);
+
+		try {
+			fs.writeFileSync(
+				path.resolve('', params.dirPath),
+				params.getFileContent()
+			);
+			console.log(logSymbols.success, params.message);
+
+		} catch (error) {
+			throw error;
+		}
 	},
 
 	createFile: (dirPath: string): void => {
@@ -278,7 +281,7 @@ export const Helper = {
 	},
 
 	createFuncComponent: (answers: DefinationsModel.IAnswers): void => {
-		const { lowerFileName, fileName , isHaveStyle} = answers;
+		const { lowerFileName, fileName, isHaveStyle } = answers;
 		const funcDir = `${Config.componentsDir}/${answers.fileName}`;
 		const templatePath = './helper_scripts/templates/components/functional.mustache';
 		const templateProps = {
