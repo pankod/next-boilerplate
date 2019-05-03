@@ -13,6 +13,7 @@ export const Config = {
 	definationsDir: '../src/Definations',
 	pagesDir: '../pages',
 	reducerDir: '../src/Redux/Reducers',
+	actionDir: '../src/Actions',
 	routesDir: '../app',
 	storeDir: '../src'
 };
@@ -181,8 +182,32 @@ export const Helper = {
 		Helper.replaceContent(replaceContentParams);
 	},
 
+	addAction: (answers: DefinationsModel.IAnswers): void => {
+		const { fileName } = answers;
+		const actionFileDir = `${Config.actionDir}/${fileName}Actions.ts`;
+		const actionTemplate = './helper_scripts/templates/reducers/action.mustache';
+		const indexTemplate = './helper_scripts/templates/reducers/action-index.mustache';
+		const templateProps = { fileName };
+
+		const writeFileProps: DefinationsModel.IWriteFile = {
+			dirPath: actionFileDir,
+			getFileContent: () => Helper.getTemplate(actionTemplate, templateProps),
+			message: 'Created new action file'
+		};
+
+		const addIndexParams: DefinationsModel.IAddIndex = {
+			dirPath: `${Config.actionDir}/index.ts`,
+			getFileContent: () => Helper.getTemplate(indexTemplate, templateProps),
+			message: 'Action added to index.ts'
+		};
+
+		Helper.addIndex(addIndexParams);
+
+		Helper.writeFile(writeFileProps);
+	},
+
 	addReducer: (answers: DefinationsModel.IAnswers): void => {
-		const { fileName, lowerFileName, isPage, isConnectStore } = answers;
+		const { fileName, lowerFileName, isConnectStore } = answers;
 
 		const reducerFileDir = `${Config.reducerDir}/${lowerFileName}.ts`;
 		const reducerTemplate = './helper_scripts/templates/reducers/reducer.mustache';
@@ -244,6 +269,7 @@ export const Helper = {
 
 		if (isConnectStore) {
 			Helper.addReducer(templateProps);
+			Helper.addAction(templateProps);
 		}
 
 		if (!answers.isPage) {

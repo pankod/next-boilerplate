@@ -13,6 +13,7 @@ exports.Config = {
     definationsDir: '../src/Definations',
     pagesDir: '../pages',
     reducerDir: '../src/Redux/Reducers',
+    actionDir: '../src/Actions',
     routesDir: '../app',
     storeDir: '../src'
 };
@@ -140,8 +141,27 @@ exports.Helper = {
         };
         exports.Helper.replaceContent(replaceContentParams);
     },
+    addAction: (answers) => {
+        const { fileName } = answers;
+        const actionFileDir = `${exports.Config.actionDir}/${fileName}Actions.ts`;
+        const actionTemplate = './helper_scripts/templates/reducers/action.mustache';
+        const indexTemplate = './helper_scripts/templates/reducers/action-index.mustache';
+        const templateProps = { fileName };
+        const writeFileProps = {
+            dirPath: actionFileDir,
+            getFileContent: () => exports.Helper.getTemplate(actionTemplate, templateProps),
+            message: 'Created new action file'
+        };
+        const addIndexParams = {
+            dirPath: `${exports.Config.actionDir}/index.ts`,
+            getFileContent: () => exports.Helper.getTemplate(indexTemplate, templateProps),
+            message: 'Action added to index.ts'
+        };
+        exports.Helper.addIndex(addIndexParams);
+        exports.Helper.writeFile(writeFileProps);
+    },
     addReducer: (answers) => {
-        const { fileName, lowerFileName, isPage, isConnectStore } = answers;
+        const { fileName, lowerFileName, isConnectStore } = answers;
         const reducerFileDir = `${exports.Config.reducerDir}/${lowerFileName}.ts`;
         const reducerTemplate = './helper_scripts/templates/reducers/reducer.mustache';
         const templateProps = { fileName, lowerFileName };
@@ -192,6 +212,7 @@ exports.Helper = {
         exports.Helper.createInterface(answers, true);
         if (isConnectStore) {
             exports.Helper.addReducer(templateProps);
+            exports.Helper.addAction(templateProps);
         }
         if (!answers.isPage) {
             exports.Helper.addIndex(addIndexParams);
