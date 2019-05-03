@@ -69,7 +69,7 @@ export const classComp = {
 			Helper.createStyle(answers);
 		}
 		if (answers.isHaveReducer) {
-			Helper.addReducer(answers);
+	/* 		Helper.addReducer(answers); */
 		}
 	}
 };

@@ -92,7 +92,7 @@ export const pageComp = {
 			Helper.createStyle(answers);
 		}
 		if (answers.isHaveReducer) {
-			Helper.addReducer(answers);
+/* 			Helper.addReducer(answers); */
 		}
 		if (answers.isHavePath) {
 			Helper.addRoute(answers);

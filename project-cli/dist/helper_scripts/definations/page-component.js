@@ -88,7 +88,7 @@ exports.pageComp = {
             helper_1.Helper.createStyle(answers);
         }
         if (answers.isHaveReducer) {
-            helper_1.Helper.addReducer(answers);
+            /* 			Helper.addReducer(answers); */
         }
         if (answers.isHavePath) {
             helper_1.Helper.addRoute(answers);

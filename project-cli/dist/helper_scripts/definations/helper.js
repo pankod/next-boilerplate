@@ -119,7 +119,7 @@ exports.Helper = {
         };
         exports.Helper.replaceContent(replaceContentParams);
     },
-    addReducerIndex: (templateProps) => {
+    addReducerCombine: (templateProps) => {
         const replaceContentParams = {
             fileDir: `${exports.Config.reducerDir}/index.ts`,
             filetoUpdate: fs.readFileSync(path.resolve('', `${exports.Config.reducerDir}/index.ts`), 'utf8'),
@@ -148,7 +148,7 @@ exports.Helper = {
         };
         exports.Helper.writeFile(writeFileProps);
         exports.Helper.replaceContent(replaceContentParams);
-        exports.Helper.addReducerIndex(templateProps);
+        exports.Helper.addReducerCombine(templateProps);
         exports.Helper.addActionConstIndex(templateProps);
     },
     createClassComponent: (answers) => {

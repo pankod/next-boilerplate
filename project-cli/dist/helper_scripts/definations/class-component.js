@@ -65,7 +65,7 @@ exports.classComp = {
             helper_1.Helper.createStyle(answers);
         }
         if (answers.isHaveReducer) {
-            helper_1.Helper.addReducer(answers);
+            /* 		Helper.addReducer(answers); */
         }
     })
 };

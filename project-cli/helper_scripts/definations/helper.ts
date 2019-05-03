@@ -156,7 +156,7 @@ export const Helper = {
 		Helper.replaceContent(replaceContentParams);
 	},
 
-	addReducerIndex: (templateProps: DefinationsModel.ITemplateProps): void => {
+	addReducerCombine: (templateProps: DefinationsModel.ITemplateProps): void => {
 		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.reducerDir}/index.ts`,
 			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reducerDir}/index.ts`), 'utf8'),
@@ -191,7 +191,7 @@ export const Helper = {
 
 		Helper.writeFile(writeFileProps);
 		Helper.replaceContent(replaceContentParams);
-		Helper.addReducerIndex(templateProps);
+		Helper.addReducerCombine(templateProps);
 		Helper.addActionConstIndex(templateProps);
 	},
 
