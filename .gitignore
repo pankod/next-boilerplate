@@ -5,6 +5,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+
+
+
 # Runtime data
 pids
 *.pid
@@ -36,6 +39,8 @@ build/Release
 node_modules/
 jspm_packages/
 
+
+project-cli
 # TypeScript v1 declaration files
 typings/
 

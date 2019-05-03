@@ -68,8 +68,5 @@ export const classComp = {
 		if (answers.isHaveStyle) {
 			Helper.createStyle(answers);
 		}
-		if (answers.isHaveReducer) {
-	/* 		Helper.addReducer(answers); */
-		}
 	}
 };

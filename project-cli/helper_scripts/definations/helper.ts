@@ -3,7 +3,6 @@ import * as logSymbols from 'log-symbols';
 import * as mustache from 'mustache';
 import * as path from 'path';
 import { DefinationsModel } from './Defination';
-import { helpers } from 'rx';
 
 export const Config = {
 	interfaceDir: '../src/Interfaces',
@@ -79,19 +78,19 @@ export const Helper = {
 	createInterface: (answers: DefinationsModel.IAnswers, isClass: boolean) => {
 		const { fileName, lowerFileName, isPage, isConnectStore } = answers;
 		const templatePath = './helper_scripts/templates/interfaces/component.d.mustache';
-		const templateProps = { fileName, isClass, lowerFileName };
+		const templateProps = { fileName, isClass, lowerFileName, isConnectStore };
 		const pageDirPath = `${Config.pageInterfaceDir}/${fileName}.d.ts`;
 		const compDirPath = `${Config.compInterfaceDir}/${fileName}.d.ts`;
 		const pageInterfaceIndex = './helper_scripts/templates/interfaces/page-index.d.mustache';
 		const compIntefaceIndex = './helper_scripts/templates/interfaces/component-index.d.mustache';
 		const storeInterface = './helper_scripts/templates/interfaces/redux-store.d.mustache';
+		const storeImportInterface = './helper_scripts/templates/interfaces/redux-import.d.mustache';
 
 		const writeFileProps: DefinationsModel.IWriteFile = {
 			dirPath: isPage ? pageDirPath : compDirPath,
 			getFileContent: () => Helper.getTemplate(templatePath, templateProps),
 			message: 'Created new interface file.'
 		};
-
 
 		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.interfaceDir}/index.ts`,
@@ -109,11 +108,25 @@ export const Helper = {
 			regexKey: /export type IStore\s[=]\s[{]/g
 		};
 
+
 		Helper.writeFile(writeFileProps);
 		Helper.replaceContent(replaceContentParams);
 
-		if (isPage || isConnectStore) {
+		if (isConnectStore) {
+
 			Helper.replaceContent(replaceStoreParams);
+
+			setTimeout(() => {
+				const replaceStoreImportParams: DefinationsModel.IReplaceContent = {
+					fileDir: `${Config.reduxInterfaceDir}/Store.d.ts`,
+					filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reduxInterfaceDir}/Store.d.ts`), 'utf8'),
+					getFileContent: () => Helper.getTemplate(storeImportInterface, templateProps),
+					message: 'Interface added to import at store.d.ts ',
+					regexKey: /\s[}] from '@Interfaces';/g
+				};
+				Helper.replaceContent(replaceStoreImportParams);
+			}, 2000);
+
 		}
 	},
 
@@ -173,7 +186,7 @@ export const Helper = {
 
 		const reducerFileDir = `${Config.reducerDir}/${lowerFileName}.ts`;
 		const reducerTemplate = './helper_scripts/templates/reducers/reducer.mustache';
-		const templateProps = {fileName, lowerFileName };
+		const templateProps = { fileName, lowerFileName };
 
 		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.reducerDir}/index.ts`,
@@ -192,12 +205,15 @@ export const Helper = {
 		Helper.writeFile(writeFileProps);
 		Helper.replaceContent(replaceContentParams);
 		Helper.addReducerCombine(templateProps);
-		Helper.addActionConstIndex(templateProps);
+
+		if (isConnectStore) {
+			Helper.addActionConstIndex(templateProps);
+		}
 	},
 
 	createClassComponent: (answers: DefinationsModel.IAnswers): void => {
 
-		const { lowerFileName } = answers;
+		const { lowerFileName, isConnectStore } = answers;
 		const pagesDir = `${Config.pagesDir}/${lowerFileName}`;
 		const classDir = answers.isPage ? pagesDir : `${Config.componentsDir}/${answers.fileName}`;
 		const templatePath = './helper_scripts/templates/components/class.mustache';
@@ -205,7 +221,8 @@ export const Helper = {
 			fileName: answers.fileName,
 			interfaceName: `I${answers.fileName}`,
 			isConnectStore: answers.isConnectStore,
-			isHaveStyle: answers.isHaveStyle
+			isHaveStyle: answers.isHaveStyle,
+			lowerFileName: answers.lowerFileName
 		};
 		const indexTemplate = './helper_scripts/templates/components/index.mustache';
 
@@ -224,7 +241,10 @@ export const Helper = {
 		Helper.createFile(classDir);
 		Helper.writeFile(writeFileProps);
 		Helper.createInterface(answers, true);
-		Helper.addReducer(templateProps);
+
+		if (isConnectStore) {
+			Helper.addReducer(templateProps);
+		}
 
 		if (!answers.isPage) {
 			Helper.addIndex(addIndexParams);
@@ -232,13 +252,14 @@ export const Helper = {
 	},
 
 	createFuncComponent: (answers: DefinationsModel.IAnswers): void => {
-		answers.fileName = answers.fileName.replace(/\b\w/g, foo => foo.toUpperCase());
+		const { lowerFileName, fileName , isHaveStyle} = answers;
 		const funcDir = `${Config.componentsDir}/${answers.fileName}`;
 		const templatePath = './helper_scripts/templates/components/functional.mustache';
 		const templateProps = {
-			fileName: answers.fileName,
-			interfaceName: `I${answers.fileName}`,
-			isHaveStyle: answers.isHaveStyle
+			fileName,
+			lowerFileName,
+			interfaceName: `I${fileName}`,
+			isHaveStyle
 		};
 		const indexTemplate = './helper_scripts/templates/components/index.mustache';
 

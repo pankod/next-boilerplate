@@ -23,12 +23,12 @@ export const funcComp = {
 						return true;
 					}
 
-					return 'Cannot be empty';
+					return 'Can not be empty';
 				}
 			},
 			{
 				default: true,
-				message: 'Do you want style ?',
+				message: 'Do you add style file?',
 				name: 'isHaveStyle',
 				type: 'confirm'
 			}
@@ -37,10 +37,13 @@ export const funcComp = {
 		const answers: DefinationsModel.IAnswers =
 			await inquirer.prompt<{ fileName: string, isHaveStyle: boolean }>(questions);
 
+		answers.fileName = answers.fileName.replace(/\b\w/g, foo => foo.toUpperCase());
+		answers.lowerFileName = answers.fileName.replace(/\b\w/g, foo => foo.toLowerCase());
+
 		Helper.createFuncComponent(answers);
+
 		if (answers.isHaveStyle) {
 			Helper.createStyle(answers);
 		}
-
 	}
 };

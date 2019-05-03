@@ -10,4 +10,11 @@ declare module I{{fileName}} {
     export interface IState { }
     export interface IStateProps { }
     {{/isClass}}
+
+    {{#isConnectStore}}
+    module Actions {
+	    export interface IMapPayload { }
+		export interface IMapResponse { }
+	}
+    {{/isConnectStore}}
 }

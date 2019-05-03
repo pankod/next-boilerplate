@@ -24,17 +24,19 @@ exports.funcComp = {
                         }
                         return true;
                     }
-                    return 'Cannot be empty';
+                    return 'Can not be empty';
                 }
             },
             {
                 default: true,
-                message: 'Do you want style ?',
+                message: 'Do you add style file?',
                 name: 'isHaveStyle',
                 type: 'confirm'
             }
         ];
         const answers = yield inquirer.prompt(questions);
+        answers.fileName = answers.fileName.replace(/\b\w/g, foo => foo.toUpperCase());
+        answers.lowerFileName = answers.fileName.replace(/\b\w/g, foo => foo.toLowerCase());
         helper_1.Helper.createFuncComponent(answers);
         if (answers.isHaveStyle) {
             helper_1.Helper.createStyle(answers);

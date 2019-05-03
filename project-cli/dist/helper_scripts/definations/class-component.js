@@ -64,9 +64,6 @@ exports.classComp = {
         if (answers.isHaveStyle) {
             helper_1.Helper.createStyle(answers);
         }
-        if (answers.isHaveReducer) {
-            /* 		Helper.addReducer(answers); */
-        }
     })
 };
 //# sourceMappingURL=class-component.js.map
