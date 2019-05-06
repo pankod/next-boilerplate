@@ -5,17 +5,17 @@ import * as path from 'path';
 import { DefinationsModel } from './Defination';
 
 export const Config = {
-	interfaceDir: '../src/Interfaces',
-	compInterfaceDir: '../src/Interfaces/Components',
-	pageInterfaceDir: '../src/Interfaces/Pages',
-	reduxInterfaceDir: '../src/Interfaces/Redux',
-	componentsDir: '../src/Components',
-	definationsDir: '../src/Definations',
-	pagesDir: '../pages',
-	reducerDir: '../src/Redux/Reducers',
-	actionDir: '../src/Actions',
-	routesDir: '../app',
-	storeDir: '../src'
+	interfaceDir: './src/Interfaces',
+	compInterfaceDir: './src/Interfaces/Components',
+	pageInterfaceDir: './src/Interfaces/Pages',
+	reduxInterfaceDir: './src/Interfaces/Redux',
+	componentsDir: './src/Components',
+	definationsDir: './src/Definations',
+	pagesDir: './pages',
+	reducerDir: './src/Redux/Reducers',
+	actionDir: './src/Actions',
+	routesDir: './app',
+	storeDir: './src'
 };
 
 export const Helper = {
@@ -46,7 +46,7 @@ export const Helper = {
 
 	getTemplate: (templatePath: string, templateProps: DefinationsModel.ITemplateProps): string => (
 		mustache.render(
-			fs.readFileSync(path.resolve('', templatePath), 'utf8'),
+			fs.readFileSync(path.resolve('project-cli', templatePath), 'utf8'),
 			templateProps
 		)
 	),

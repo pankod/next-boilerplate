@@ -5,17 +5,17 @@ const logSymbols = require("log-symbols");
 const mustache = require("mustache");
 const path = require("path");
 exports.Config = {
-    interfaceDir: '../src/Interfaces',
-    compInterfaceDir: '../src/Interfaces/Components',
-    pageInterfaceDir: '../src/Interfaces/Pages',
-    reduxInterfaceDir: '../src/Interfaces/Redux',
-    componentsDir: '../src/Components',
-    definationsDir: '../src/Definations',
-    pagesDir: '../pages',
-    reducerDir: '../src/Redux/Reducers',
-    actionDir: '../src/Actions',
-    routesDir: '../app',
-    storeDir: '../src'
+    interfaceDir: './src/Interfaces',
+    compInterfaceDir: './src/Interfaces/Components',
+    pageInterfaceDir: './src/Interfaces/Pages',
+    reduxInterfaceDir: './src/Interfaces/Redux',
+    componentsDir: './src/Components',
+    definationsDir: './src/Definations',
+    pagesDir: './pages',
+    reducerDir: './src/Redux/Reducers',
+    actionDir: './src/Actions',
+    routesDir: './app',
+    storeDir: './src'
 };
 exports.Helper = {
     addRoute: (answers) => {
@@ -38,7 +38,7 @@ exports.Helper = {
         val = val.replace(/\b\w/g, foo => foo.toUpperCase());
         return fs.existsSync(path.resolve('', `${startPath}/${val}`));
     },
-    getTemplate: (templatePath, templateProps) => (mustache.render(fs.readFileSync(path.resolve('', templatePath), 'utf8'), templateProps)),
+    getTemplate: (templatePath, templateProps) => (mustache.render(fs.readFileSync(path.resolve('project-cli', templatePath), 'utf8'), templateProps)),
     writeFile: (params) => {
         try {
             fs.writeFileSync(path.resolve('', params.dirPath), params.getFileContent());

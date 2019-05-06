@@ -172,7 +172,7 @@ Then open http://localhost:3000/ to see your app.
 You can create page, class component or functional component with actions, reducers and required imports by running command on project-cli.
 
 ```
-npm run run
+npm run cli
 ```
 
 After run this command, you will see 3 component options and some questions for each of one.
