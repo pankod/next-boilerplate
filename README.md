@@ -50,6 +50,7 @@ This boilerplate includes the latest powerfull tools.
 * **Typescript** - Superset of JavaScript which primarily provides optional static typing, classes and interfaces. path support(allias)
 * **Redux** - State management
 * **Express.js**- Handles server-side rendering and integrated with Express.js
+* **Built-in Project CLI**- Create pages, components, actions, reducers with one command by using built-in cli.
 * **Sass/Scss** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
 * **Babel** -  The compiler for next generation JavaScript. Module(alias) support 
 * **TSLint** - Contains TypeScript-specific options for our project.
@@ -123,6 +124,57 @@ Then open http://localhost:3000/ to see your app.
 
 <br/>
 
+
+## Built-in CLI
+
+
+<div>
+ <img width="600" src="./boilerplate-cli.gif" >
+</div>
+
+You can create page, class component or functional component with actions, reducers and required imports by running command on project-cli.
+
+```
+npm run cli
+```
+
+After run this command, you will see 3 component options and some questions for each of one.
+
+Here, we will demonstrate step by step example for page component creation with using project-cli.
+
+>Enter page name
+
+ - Enter the page file name that you want to create without any space between words.
+ - It will not allow you to continue  if entered page name is already exist in project.
+ - Adds page interface files automatically to Interfaces/Pages directory.
+
+>Do you want to add custom route or use default route name?,
+
+- You can define custom route for page which is specified in app/routes.js
+- It will set filename as a route to if you don't want to add custom route.
+
+>Do you want to have a connection to store? 
+
+İf you choose yes, it generates store connection methods and imports:
+
+- Adds mapStateToProps & mapDispatchToProps methods and some imports to to page component file.
+- Creates an action file in to Actions folder.
+- Adds action constants to Definations/ActionConsts.ts
+- Adds action file to Actions/index.ts
+- Adds store interface file.
+
+>Do you want to create a new reducer or use your own?
+
+- Creates new reducer file for page in to src/Redux/Reducers directory and adds to combineReducers index.ts 
+
+>Do you want to add a style file?
+
+- Creates style.scss file in to same directory with page component.
+
+
+After answering questions it generates files in miliseconds.
+
+
  ***At this point, your project layout should look like this:***
  
  <br/>
@@ -176,55 +228,6 @@ Then open http://localhost:3000/ to see your app.
 
 ```
  
-## Built-in CLI
-
-
-<div>
- <img width="600" src="./boilerplate-cli.gif" >
-</div>
-
-You can create page, class component or functional component with actions, reducers and required imports by running command on project-cli.
-
-```
-npm run cli
-```
-
-After run this command, you will see 3 component options and some questions for each of one.
-
-Here, we will demonstrate step by step example for page component creation with using project-cli.
-
->Enter page name
-
- - Enter the page file name that you want to create without any space between words.
- - It will not allow you to continue  if entered page name is already exist in project.
- - Adds page interface files automatically to Interfaces/Pages directory.
-
->Do you want to add custom route or use default route name?,
-
-- You can define custom route for page which is specified in app/routes.js
-- It will set filename as a route to if you don't want to add custom route.
-
->Do you want to have a connection to store? 
-
-İf you choose yes, it generates store connection methods and imports:
-
-- Adds mapStateToProps & mapDispatchToProps methods and some imports to to page component file.
-- Creates an action file in to Actions folder.
-- Adds action constants to Definations/ActionConsts.ts
-- Adds action file to Actions/index.ts
-- Adds store interface file.
-
->Do you want to create a new reducer or use your own?
-
-Creates new reducer file for page in to src/Redux/Reducers directory and adds to combineReducers index.ts 
-
->Do you want to add a style file?
-
-Creates style.scss file in to same directory with page component.
-
-
-After answering questions it generates files in miliseconds.
-
 
 ## License
 
