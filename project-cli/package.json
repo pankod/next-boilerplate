@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "clear": "^0.1.0",
     "commander": "^2.19.0",
     "figlet": "^1.2.1",
     "inquirer": "^6.2.2",

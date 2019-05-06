@@ -9,14 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const clear = require("clear");
 const program = require("commander");
 const figlet = require("figlet");
 const inquirer = require("inquirer");
 const class_component_1 = require("./helper_scripts/definations/class-component");
 const functional_component_1 = require("./helper_scripts/definations/functional-component");
 const page_component_1 = require("./helper_scripts/definations/page-component");
-clear();
+console.clear();
 console.log(figlet.textSync('Pankod'));
 const questions = [
     {

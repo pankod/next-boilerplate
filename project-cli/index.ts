@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import * as clear from 'clear';
 import * as program from 'commander';
 import * as figlet from 'figlet';
 import * as inquirer from 'inquirer';
@@ -9,10 +8,11 @@ import { classComp } from './helper_scripts/definations/class-component';
 import { funcComp } from './helper_scripts/definations/functional-component';
 import { pageComp } from './helper_scripts/definations/page-component';
 
-clear();
+ console.clear();
 console.log(
 		figlet.textSync('Pankod')
 );
+
 
 const questions = [
 	{
