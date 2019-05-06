@@ -131,6 +131,8 @@ Then open http://localhost:3000/ to see your app.
 <div>
  <img width="600" src="./boilerplate-cli.gif" >
 </div>
+<br/>
+<br/>
 
 You can create page, class component or functional component with actions, reducers and required imports by running command on project-cli.
 
@@ -173,6 +175,8 @@ Here, we will demonstrate step by step example for page component creation with 
 
 
 After answering questions it generates files in miliseconds.
+
+<br/>
 
 
  ***At this point, your project layout should look like this:***
