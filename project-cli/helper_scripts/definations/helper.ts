@@ -126,7 +126,7 @@ export const Helper = {
 					fileDir: `${Config.reduxInterfaceDir}/Store.d.ts`,
 					filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reduxInterfaceDir}/Store.d.ts`), 'utf8'),
 					getFileContent: () => Helper.getTemplate(storeImportInterface, templateProps),
-					message: 'Interface file added to import section in Interfaces/Redux/Store.d.ts ',
+					message: 'Interface file added to import section in Interfaces/Redux/Store.d.ts\n',
 					regexKey: /\s[}] from '@Interfaces';/g
 				};
 				Helper.replaceContent(replaceStoreImportParams);

@@ -51,7 +51,7 @@ exports.pageComp = {
             },
             {
                 default: false,
-                message: 'Do you want to have a connection to a store?',
+                message: 'Do you want to have a connection to store?',
                 name: 'isConnectStore',
                 type: 'confirm'
             },
