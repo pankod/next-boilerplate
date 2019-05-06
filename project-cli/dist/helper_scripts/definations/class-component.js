@@ -14,22 +14,22 @@ exports.classComp = {
     showQuestions: () => __awaiter(this, void 0, void 0, function* () {
         const questions = [
             {
-                message: 'Enter class based component name',
+                message: 'Enter class component name',
                 name: 'fileName',
                 type: 'input',
                 validate(val) {
                     if (val.length) {
                         if (helper_1.Helper.isAlreadyExist(helper_1.Config.componentsDir, val)) {
-                            return 'Already added use new compoment name';
+                            return 'This component name already used before, enter new name.';
                         }
                         return true;
                     }
-                    return 'Cannot be empty';
+                    return 'Can not be empty';
                 }
             },
             {
                 default: false,
-                message: 'Do you want to connect store',
+                message: 'Do you want to connect store ?',
                 name: 'isConnectStore',
                 type: 'confirm'
             },
@@ -45,14 +45,14 @@ exports.classComp = {
                         value: false
                     }
                 ],
-                message: 'Do you want to create a new reducer or use your own ?',
+                message: 'Do you want to add a new reducer?',
                 name: 'isHaveReducer',
                 type: 'list',
                 when: ({ isConnectStore }) => isConnectStore
             },
             {
                 default: true,
-                message: 'Do you want styles file',
+                message: 'Do you want to add a style file?',
                 name: 'isHaveStyle',
                 type: 'confirm'
             }

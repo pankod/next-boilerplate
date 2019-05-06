@@ -6,7 +6,7 @@ export const pageComp = {
 	showQuestions: async (): Promise<void> => {
 		const questions = [
 			{
-				message: 'Enter class based component name',
+				message: 'Enter page name',
 				name: 'fileName',
 				type: 'input',
 				validate(val: string): string | boolean {
@@ -17,20 +17,20 @@ export const pageComp = {
 								val
 							)
 						) {
-							return 'Already added use new compoment name';
+							return 'This component name already used before, enter new name.';
 						}
 
 						return true;
 					}
 
-					return 'Cannot be empty';
+					return 'Can not be empty';
 				}
 			},
 			{
 				choices: [
 					new inquirer.Separator(),
 					{
-						name: 'Yes, new I want to use special path?',
+						name: 'Yes, I want to add custom path?',
 						value: true
 					},
 					{
@@ -38,12 +38,12 @@ export const pageComp = {
 						value: false
 					}
 				],
-				message: 'Do you want to add special route path or use default?',
+				message: 'Do you want to add custom route or use default route name?',
 				name: 'isHavePath',
 				type: 'list'
 			},
 			{
-				message: 'Enter route path',
+				message: 'Enter route name',
 				name: 'routePath',
 				type: 'input',
 				when: ({ isHavePath }) => isHavePath
@@ -51,7 +51,7 @@ export const pageComp = {
 
 			{
 				default: false,
-				message: 'Do you want to connect store',
+				message: 'Do you want to have a connection to a store?',
 				name: 'isConnectStore',
 				type: 'confirm'
 			},
@@ -67,14 +67,14 @@ export const pageComp = {
 						value: false
 					}
 				],
-				message: 'Do you want to create a new reducer or use your own ?',
+				message: 'Do you want to create a new reducer or use your own?',
 				name: 'isHaveReducer',
 				type: 'list',
 				when: ({ isConnectStore }) => isConnectStore
 			},
 			{
 				default: true,
-				message: 'Do you want styles file',
+				message: 'Do you want to add a style file?',
 				name: 'isHaveStyle',
 				type: 'confirm'
 			}
@@ -87,15 +87,11 @@ export const pageComp = {
 		answers.lowerFileName = answers.fileName.replace(/\b\w/g, foo => foo.toLowerCase());
 		answers.isPage = true;
 		Helper.createClassComponent(answers);
+		Helper.addRoute(answers);
 
 		if (answers.isHaveStyle) {
 			Helper.createStyle(answers);
 		}
-		if (answers.isHaveReducer) {
-/* 			Helper.addReducer(answers); */
-		}
-		if (answers.isHavePath) {
-			Helper.addRoute(answers);
-		}
+
 	}
 };

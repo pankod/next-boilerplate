@@ -20,7 +20,7 @@ exports.funcComp = {
                 validate(val) {
                     if (val.length) {
                         if (helper_1.Helper.isAlreadyExist(helper_1.Config.componentsDir, val)) {
-                            return 'Already added use new compoment name';
+                            return 'This component name already used before, enter new name.';
                         }
                         return true;
                     }
@@ -29,7 +29,7 @@ exports.funcComp = {
             },
             {
                 default: true,
-                message: 'Do you add style file?',
+                message: 'Do you want to add style file?',
                 name: 'isHaveStyle',
                 type: 'confirm'
             }

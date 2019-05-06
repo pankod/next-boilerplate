@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const chalk = require("chalk");
 const clear = require("clear");
 const program = require("commander");
 const figlet = require("figlet");
@@ -18,11 +17,11 @@ const class_component_1 = require("./helper_scripts/definations/class-component"
 const functional_component_1 = require("./helper_scripts/definations/functional-component");
 const page_component_1 = require("./helper_scripts/definations/page-component");
 clear();
-console.log(chalk.default(figlet.textSync('PANKOD')));
+console.log(figlet.textSync('Pankod'));
 const questions = [
     {
-        choices: ['page', 'functional-component', 'class-component'],
-        message: 'What do you want to create ?',
+        choices: ['page', 'functional component', 'class component'],
+        message: 'What do you want to add?',
         name: 'fileType',
         type: 'list'
     }
@@ -34,10 +33,10 @@ program
     .action(() => __awaiter(this, void 0, void 0, function* () {
     const answers = yield inquirer.prompt(questions);
     switch (answers.fileType) {
-        case 'functional-component':
+        case 'functional component':
             yield functional_component_1.funcComp.showQuestions();
             break;
-        case 'class-component':
+        case 'class component':
             yield class_component_1.classComp.showQuestions();
             break;
         case 'page':

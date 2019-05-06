@@ -12,15 +12,13 @@ import { pageComp } from './helper_scripts/definations/page-component';
 
 clear();
 console.log(
-	chalk.default(
-		figlet.textSync('PANKOD')
-	)
+		figlet.textSync('Pankod')
 );
 
 const questions = [
 	{
-		choices: ['page', 'functional-component', 'class-component'],
-		message: 'What do you want to create ?',
+		choices: ['page', 'functional component', 'class component'],
+		message: 'What do you want to add?',
 		name: 'fileType',
 		type: 'list'
 	}
@@ -33,10 +31,10 @@ program
 	.action(async () => {
 		const answers: { fileType: string } = await inquirer.prompt(questions);
 		switch (answers.fileType) {
-			case 'functional-component':
+			case 'functional component':
 				await funcComp.showQuestions();
 				break;
-			case 'class-component':
+			case 'class component':
 				await classComp.showQuestions();
 				break;
 			case 'page':

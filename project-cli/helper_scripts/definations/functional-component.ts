@@ -17,7 +17,7 @@ export const funcComp = {
 								val
 							)
 						) {
-							return 'Already added use new compoment name';
+							return 'This component name already used before, enter new name.';
 						}
 
 						return true;
@@ -28,7 +28,7 @@ export const funcComp = {
 			},
 			{
 				default: true,
-				message: 'Do you add style file?',
+				message: 'Do you want to add style file?',
 				name: 'isHaveStyle',
 				type: 'confirm'
 			}
