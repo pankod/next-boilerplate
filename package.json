@@ -23,13 +23,13 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@types/react-dom": "^16.8.4",
     "@types/enzyme": "^3.9.1",
     "@types/jest": "^24.0.12",
     "@types/next": "^7.0.5",
     "@types/next-redux-wrapper": "^2.0.2",
     "@types/node": "^11.13.8",
     "@types/react": "^16.8.14",
+    "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^6.0.11",
     "@types/redux-mock-store": "^1.0.0",
     "autoprefixer": "^9.4.3",
@@ -38,6 +38,7 @@
     "enzyme-adapter-react-16": "^1.12.1",
     "jest": "^24.7.1",
     "nodemon": "^1.18.11",
+    "nyc": "^14.1.0",
     "react-test-renderer": "^16.8.6",
     "redux-devtools-extension": "^2.13.7",
     "redux-mock-store": "^1.5.3",
@@ -55,7 +56,8 @@
     "analyze": "BUNDLE_ANALYZE=both npm run build",
     "cli": "node ./project-cli/dist/index.js a",
     "postinstall": "cd project-cli && npm i && npm run build",
-    "test": "jest --coverage"
+    "test": "nyc jest",
+    "posttest": "nyc report --reporter=json"
   },
   "author": "",
   "license": "ISC"

@@ -1,3 +1,7 @@
 language: node_js
 node_js:  
   - "node"
+scripts:
+  - npm install codecov -g
+after_success:
+  - codecov -f coverage/*.json
