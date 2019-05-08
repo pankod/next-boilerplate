@@ -134,50 +134,54 @@ Then open http://localhost:3000/ to see your app.
 <br/>
 <br/>
 
-You can create page, class component or functional component with actions, reducers and required imports by running command on project-cli.
+Pankod boilerplate is shipped with a CLI tool to streamline the creation of new components. By using the CLI tool, you may easily add pages, class components or functional components to your project and have all the required actions, reducers and imports are automatically created for you.
+<br />
+
+To start the CLI, you may run the following npm command:
 
 ```
 npm run cli
 ```
 
-After run this command, you will see 3 component options and some questions for each of one.
+After starting, an interactive menu will let you configure the component the be created. Firstly, you'll be asked for the type of the component whether it's a page, functional component or class component. Then you'll be prompted with the other options relevant to your selection of the component type.
 
-Here, we will demonstrate step by step example for page component creation with using project-cli.
+For example, let's go through the steps of the creation of a new page component.
 
 >Enter page name
 
- - Enter the page file name that you want to create without any space between words.
- - It will not allow you to continue  if entered page name is already exist in project.
- - Adds page interface files automatically to Interfaces/Pages directory.
+ - Enter the desired filename for the page. Spaces are not allowed!
+ - The tool will check for the existing filenames in the project and reject if found any.
+ - The interface files are going to be created under Interfaces/Pages directory.
 
 >Do you want to add custom route or use default route name?,
 
 - You can define custom route for page which is specified in app/routes.js
 - It will set filename as a route to if you don't want to add custom route.
 
->Do you want to have a connection to store? 
+>Do you want to have a connection to store?
 
-İf you choose yes, it generates store connection methods and imports:
+If you choose yes, the following store connection methods and imports are generated:
 
-- Adds mapStateToProps & mapDispatchToProps methods and some imports to to page component file.
-- Creates an action file in to Actions folder.
-- Adds action constants to Definations/ActionConsts.ts
-- Adds action file to Actions/index.ts
-- Adds store interface file.
+- mapStateToProps & mapDispatchToProps methods and some imports in page component file,
+- An action file in the Actions folder,
+- An action constants in Definitions/ActionConsts.ts,
+- An action file to Actions/index.ts,
+- A Store interface file.
 
 >Do you want to create a new reducer or use your own?
 
-- Creates new reducer file for page in to src/Redux/Reducers directory and adds to combineReducers index.ts 
+- If you choose yes, a new reducer file for page is created in src/Redux/Reducers directory and combineReducers are added to index.ts
 
 >Do you want to add a style file?
 
-- Creates style.scss file in to same directory with page component.
+- If you choose yes, a style.scss file is created in to same directory with page the component.
 
 
 After answering questions it generates files in miliseconds.
 
 <br/>
 
+## Tree
 
  ***At this point, your project layout should look like this:***
  
