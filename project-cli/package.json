@@ -1,0 +1,31 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node ./dist/index.js a",
+    "watch": "tsc -w"
+  },
+  "preferGlobal": true,
+  "bin": "./dist/index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.2",
+    "log-symbols": "^2.2.0",
+    "mustache": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.2.0",
+    "@types/node": "^11.9.4",
+    "@types/inquirer": "0.0.43",
+    "@types/mustache": "^0.8.32",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}

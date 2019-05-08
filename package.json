@@ -53,6 +53,8 @@
     "heroku-prebuild": "npm i --dev && NODE_ENV=production next build",
     "export": "NODE_ENV=production next export",
     "analyze": "BUNDLE_ANALYZE=both npm run build",
+    "cli": "node ./project-cli/dist/index.js a",
+    "postinstall": "cd project-cli && npm i && npm run build",
     "test": "jest --coverage"
   },
   "author": "",
