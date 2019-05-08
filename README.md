@@ -6,6 +6,14 @@
 <br/>
 
 <div align="center">
+  <!-- CodeCov -->
+  <a href="https://codecov.io/gh/pankod/next-boilerplate">
+    <img src="https://codecov.io/gh/pankod/next-boilerplate/branch/master/graph/badge.svg" />
+  </a>
+  <!-- Build Status -->
+  <a href="https://travis-ci.org/pankod/next-boilerplate">
+    <img src="https://travis-ci.org/pankod/next-boilerplate.svg?branch=master" alt="Build Status" />
+  </a>
   <!-- Dependency Status -->
   <a href="https://david-dm.org/pankod/react-redux-boilerplate">
     <img src="https://david-dm.org/pankod/next-boilerplate.svg" alt="Dependency Status" />
@@ -13,10 +21,6 @@
   <!-- devDependency Status -->
   <a href="https://david-dm.org/pankod/next-boilerplate#info=devDependencies"> 
     <img src="https://david-dm.org/pankod/next-boilerplate/dev-status.svg" alt="devDependency Status" />
-  </a>
-  <!-- Build Status -->
-  <a href="https://travis-ci.org/pankod/next-boilerplate">
-    <img src="https://travis-ci.org/pankod/next-boilerplate.svg?branch=master" alt="Build Status" />
   </a>
 </div>
 

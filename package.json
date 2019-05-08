@@ -57,7 +57,7 @@
     "cli": "node ./project-cli/dist/index.js a",
     "postinstall": "cd project-cli && npm i && npm run build",
     "test": "nyc jest",
-    "posttest": "nyc report --reporter=json"
+    "posttest": "nyc report --reporter=json > coverage/coverage.json"
   },
   "author": "",
   "license": "ISC"
