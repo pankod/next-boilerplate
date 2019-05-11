@@ -40,7 +40,7 @@ node_modules/
 jspm_packages/
 
 
-project-cli
+
 # TypeScript v1 declaration files
 typings/
 
