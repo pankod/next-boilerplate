@@ -15,7 +15,7 @@
     <img src="https://travis-ci.org/pankod/next-boilerplate.svg?branch=master" alt="Build Status" />
   </a>
   <!-- Dependency Status -->
-  <a href="https://david-dm.org/pankod/react-redux-boilerplate">
+  <a href="https://david-dm.org/pankod/next-boilerplate">
     <img src="https://david-dm.org/pankod/next-boilerplate.svg" alt="Dependency Status" />
   </a>
   <!-- devDependency Status -->
