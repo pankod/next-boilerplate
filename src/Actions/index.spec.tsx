@@ -9,11 +9,14 @@ const mockStore = configureMockStore(middlewares);
 
 describe('Home action tests', () => {
     test('Map test', async () => {
-        const store = mockStore({
+        const expectedState = {
             home: {
                 version: 2
             }
-        });
+        };
+
+        const store = mockStore(expectedState);
+
         const expectedActions = [
             {
                 payload: {
@@ -27,6 +30,7 @@ describe('Home action tests', () => {
         await store.dispatch(HomeActions.Map(store.getState()));
 
         expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getState()).toEqual(expectedState);
     });
 
     test('Reset test', async () => {
@@ -39,5 +43,6 @@ describe('Home action tests', () => {
         await store.dispatch(HomeActions.Reset());
 
         expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getState()).toEqual({});
     });
 });
