@@ -11,7 +11,23 @@ import { HomeActions } from '@Actions';
 //#endregion Interface Imports
 
 export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState> {
+
+	constructor(props: IHomePage.IProps) {
+		super(props);
+	}
+
+	public componentDidMount(): void {
+
+		this.props.GetApod({
+			params: { 
+				hd: true
+			}
+		})
+	}
+
 	public render(): JSX.Element {
+		console.log("image", this.props.image);
+
 		return (
 			<div className="title">
 				Hello!
@@ -25,7 +41,8 @@ const mapStateToProps = (state: IStore) => state.home;
 
 const mapDispatchToProps = (dispatch: Dispatch) => (
 	{
-		Map: bindActionCreators(HomeActions.Map, dispatch)
+		Map: bindActionCreators(HomeActions.Map, dispatch),
+		GetApod: bindActionCreators(HomeActions.GetApod, dispatch)
 	}
 );
 

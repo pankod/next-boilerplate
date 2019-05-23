@@ -1,7 +1,9 @@
-export default devProxy = {
+const devProxy = {
 	'/api': {
-		target: 'https://exampleapi.co/api/',
-		pathRewrite: { '^/api': '/' },
+		target: 'https://api.nasa.gov',
+		pathRewrite: { '^/api': '' },
 		changeOrigin: true
 	}
 }
+
+module.exports = devProxy;
