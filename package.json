@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@types/enzyme": "^3.9.1",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.12",
     "@types/next": "^7.0.5",
     "@types/next-redux-wrapper": "^2.0.2",
@@ -48,6 +49,7 @@
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
     "typescript": "^3.4.5"
   },
   "scripts": {

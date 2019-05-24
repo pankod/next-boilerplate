@@ -12,8 +12,7 @@ import { HttpModel } from '@Interfaces';
  * @module Http
  */
 
-const config = getConfig();
-const { publicRuntimeConfig: { API_KEY, API_URL } } = typeof (config) === 'undefined' ? { publicRuntimeConfig: { API_KEY: 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo', API_URL: 'http://localhost:3000' } } : config;
+const { publicRuntimeConfig: { API_KEY, API_URL } } = getConfig();
 
 const BaseUrl = `${API_URL}/api`;
 

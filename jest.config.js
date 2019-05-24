@@ -19,7 +19,7 @@ module.exports = {
         '/node_modules/',
         'enzyme.js',
     ],
-    setupFiles: ['<rootDir>/jest.setup.js'],
+    setupFiles: ['<rootDir>/jest.setup.ts'],
     coverageReporters: [
         'json',
         'lcov',

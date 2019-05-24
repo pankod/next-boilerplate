@@ -17,7 +17,7 @@ declare module IHomePage {
 
 	export interface IDispatchProps {
 		Map(payload: Actions.IMapPayload): Actions.IMapResponse
-		GetApod(payload: Actions.IGetImagePayload): Actions.IGetImageResponse;
+		GetApod(payload: Actions.IGetApodPayload): Actions.IGetApodResponse;
 	}
 
 	module Actions {

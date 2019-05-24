@@ -30,8 +30,7 @@ const mapStateToProps = (state: IStore) => state.home;
 
 const mapDispatchToProps = (dispatch: Dispatch) => (
 	{
-		Map: bindActionCreators(HomeActions.Map, dispatch),
-		GetApod: bindActionCreators(HomeActions.GetApod, dispatch)
+		Map: bindActionCreators(HomeActions.Map, dispatch)
 	}
 );
 
