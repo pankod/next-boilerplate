@@ -16,7 +16,8 @@
             "@Definations": "./src/Definations",
             "@Interfaces": "./src/Interfaces",
             "@Reducers": "./src/Redux/Reducers",
-            "@Redux": "./src/Redux"
+            "@Redux": "./src/Redux",
+            "@Services": "./src/Services",
           }
         }
       ]

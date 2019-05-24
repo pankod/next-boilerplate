@@ -19,7 +19,7 @@ module.exports = {
         '/node_modules/',
         'enzyme.js',
     ],
-    setupTestFrameworkScriptFile: '<rootDir>/enzyme.js',
+    setupFiles: ['<rootDir>/jest.setup.ts'],
     coverageReporters: [
         'json',
         'lcov',
@@ -31,13 +31,5 @@ module.exports = {
         "\\.(css|less|scss|html)$": "<rootDir>/__mocks__/mocks.js",
         '^@([A-Z].*)$': '<rootDir>/src/$1'
     },
-    preset: 'ts-jest',
+    preset: 'ts-jest'
 }
-
-console.error = message => {
-    // throw new Error(message);
-};
-
-console.warn = message => {
-    // throw new Error(message);
-};

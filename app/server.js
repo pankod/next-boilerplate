@@ -1,7 +1,7 @@
 const express = require('express');
 const next = require('next');
 const path = require("path");
-const devProxy = './proxy.js';
+const devProxy = require('./proxy.js');
 
 const PORT = process.env.PORT || 3000;
 
@@ -22,7 +22,7 @@ app.prepare()
 
         if (process.env.PROXY_MODE === 'local') {
 			const proxyMiddleware = require('http-proxy-middleware');
-			Object.keys(devProxy).forEach(function (context) {
+			Object.keys(devProxy).forEach(function (context, a) {
 				server.use(proxyMiddleware(context, devProxy[context]))
 			})
         }

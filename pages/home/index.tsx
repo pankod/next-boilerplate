@@ -11,6 +11,11 @@ import { HomeActions } from '@Actions';
 //#endregion Interface Imports
 
 export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState> {
+
+	constructor(props: IHomePage.IProps) {
+		super(props);
+	}
+
 	public render(): JSX.Element {
 		return (
 			<div className="title">

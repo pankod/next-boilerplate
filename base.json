@@ -36,6 +36,12 @@
             ],
             "@Actions": [
                 "./src/Actions"
+            ],
+            "@Services/*": [
+                "./src/Services/*"
+            ],
+            "@Services": [
+                "./src/Services"
             ]
         }
     }

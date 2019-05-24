@@ -10,12 +10,15 @@
     "@zeit/next-typescript": "^1.1.1",
     "awesome-typescript-loader": "^5.2.1",
     "http-proxy-middleware": "^0.19.1",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.2",
     "next-compose-plugins": "^2.1.1",
     "next-redux-wrapper": "^2.1.0",
     "next-routes": "^1.4.2",
     "next-runtime-dotenv": "^1.0.1",
+    "nock": "^10.0.6",
     "node-sass": "^4.11.0",
+    "query-string": "^6.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^6.0.0",
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "@types/enzyme": "^3.9.1",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.12",
     "@types/next": "^7.0.5",
     "@types/next-redux-wrapper": "^2.0.2",
@@ -45,6 +49,7 @@
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
     "typescript": "^3.4.5"
   },
   "scripts": {

@@ -8,17 +8,17 @@ const nextRuntimeDotenv = require('next-runtime-dotenv')
 
 const withConfig = nextRuntimeDotenv({
 	public: [
-		'API_URL'
+		'API_URL',
+		'API_KEY'
 	]
 })
 
-module.exports = withPlugins(
+module.exports = withConfig(withPlugins(
 	[
 		[withTypescript],
 		[withCSS],
 		[withSass],
-		[withBundleAnalyzer],
-		[withConfig]
+		[withBundleAnalyzer]
 	],
 	{
 		analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
@@ -34,4 +34,4 @@ module.exports = withPlugins(
 			}
 		}
 	}
-);
+));
