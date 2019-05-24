@@ -16,17 +16,7 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 		super(props);
 	}
 
-	public componentDidMount(): void {
-
-		this.props.GetApod({
-			params: { 
-				hd: true
-			}
-		})
-	}
-
 	public render(): JSX.Element {
-
 		return (
 			<div className="title">
 				Hello!
