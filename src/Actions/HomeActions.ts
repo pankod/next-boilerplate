@@ -1,5 +1,5 @@
 //#region Global Imports
-import { Dispatch } from "redux";
+import { Dispatch, AnyAction } from "redux";
 //#endregion Global Imports
 
 //#region Local Imports

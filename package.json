@@ -16,6 +16,7 @@
     "next-redux-wrapper": "^2.1.0",
     "next-routes": "^1.4.2",
     "next-runtime-dotenv": "^1.0.1",
+    "nock": "^10.0.6",
     "node-sass": "^4.11.0",
     "query-string": "^6.5.0",
     "react": "^16.8.6",

@@ -26,7 +26,6 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 	}
 
 	public render(): JSX.Element {
-		console.log("image", this.props.image);
 
 		return (
 			<div className="title">
