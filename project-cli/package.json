@@ -1,31 +1,58 @@
 {
-  "name": "cli",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node ./dist/index.js a",
-    "watch": "tsc -w"
+ "name": "cli-boilerplate",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+  "build": "tsc",
+  "test": "jest --coverage",
+  "start": "node ./dist/index.js a",
+  "watch": "tsc -w"
+ },
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "chalk": "^2.4.2",
+  "commander": "^2.20.0",
+  "figlet": "^1.2.1",
+  "inquirer": "^6.3.1",
+  "log-symbols": "^3.0.0",
+  "memfs": "^2.15.2",
+  "mustache": "^3.0.1"
+ },
+ "devDependencies": {
+  "@types/jest": "^23.1.1",
+  "@types/node": "^11.13.10",
+  "jest": "^23.6.0",
+  "jest-cli": "^23.6.0",
+  "jest-teamcity": "^1.4.0",
+  "memory-fs": "^0.4.1",
+  "ts-jest": "^23.10.5",
+  "tslint": "^5.16.0",
+  "typescript": "^3.4.3"
+ },
+ "jest": {
+  "testResultsProcessor": "jest-teamcity",
+  "coverageDirectory": "<rootDir>/coverage",
+  "testEnvironment": "node",
+  "moduleFileExtensions": [
+   "ts",
+   "tsx",
+   "js"
+  ],
+  "transform": {
+   "^.+\\.(ts|tsx)$": "ts-jest"
   },
-  "preferGlobal": true,
-  "bin": "./dist/index.js",
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "commander": "^2.19.0",
-    "figlet": "^1.2.1",
-    "inquirer": "^6.2.2",
-    "log-symbols": "^2.2.0",
-    "mustache": "^3.0.1"
-  },
-  "devDependencies": {
-    "@types/figlet": "^1.2.0",
-    "@types/node": "^11.9.4",
-    "@types/inquirer": "0.0.43",
-    "@types/mustache": "^0.8.32",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
+  "testMatch": [
+   "**/*.spec.(ts|js)"
+  ],
+  "setupFiles": [
+   "./test/unit/mock.setup.js"
+  ],
+  "globals": {
+   "ts-jest": {
+    "tsConfig": "tsconfig.json"
+   }
   }
+ }
 }
