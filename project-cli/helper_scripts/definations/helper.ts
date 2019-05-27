@@ -2,10 +2,21 @@ import * as fs from 'fs';
 import * as logSymbols from 'log-symbols';
 import * as mustache from 'mustache';
 import * as path from 'path';
-
 import { DefinationsModel } from './Defination';
 
-import { Config } from '../../config';
+export const Config = {
+	interfaceDir: './src/Interfaces',
+	compInterfaceDir: './src/Interfaces/Components',
+	pageInterfaceDir: './src/Interfaces/Pages',
+	reduxInterfaceDir: './src/Interfaces/Redux',
+	componentsDir: './src/Components',
+	definationsDir: './src/Definations',
+	pagesDir: './pages',
+	reducerDir: './src/Redux/Reducers',
+	actionDir: './src/Actions',
+	routesDir: './app',
+	storeDir: './src'
+};
 
 export const Helper = {
 	addRoute: (answers: DefinationsModel.IAnswers) => {
@@ -19,7 +30,7 @@ export const Helper = {
 		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.routesDir}/routes.js`,
 			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.routesDir}/routes.js`), 'utf8'),
-			getFileContent: () => Helper.getTemplate('./src/templates/routes.mustache', templateProps),
+			getFileContent: () => Helper.getTemplate('./helper_scripts/templates/routes.mustache', templateProps),
 			message: `Route added to routes.js as ${isHavePath ? `'/${routePath}'` : `'/${fileName}/index'`}`,
 			regexKey: /^(?:[\t ]*(?:\r?\n|\r))+module.exports = routes;/gm
 		};
@@ -27,43 +38,35 @@ export const Helper = {
 		Helper.replaceContent(replaceContentParams);
 	},
 
-	isAlreadyExist: (startPath: string, val: string, isFile?: boolean): boolean => {
+	isAlreadyExist: (startPath: string, val: string): boolean => {
 		val = val.replace(/\b\w/g, foo => foo.toUpperCase());
 
-		const _path = isFile ? `${startPath}/${val}.txt` : `${startPath}/${val}`;
-
-		return fs.existsSync(path.resolve('', _path));
+		return fs.existsSync(path.resolve('', `${startPath}/${val}`));
 	},
 
 	getTemplate: (templatePath: string, templateProps: DefinationsModel.ITemplateProps): string => (
-
 		mustache.render(
-			fs.readFileSync(path.resolve('', templatePath), 'utf8'),
+			fs.readFileSync(path.resolve('project-cli', templatePath), 'utf8'),
 			templateProps
 		)
 	),
 
 	writeFile: (params: DefinationsModel.IWriteFile) => {
-		fs.writeFileSync(
-			path.resolve('', params.dirPath),
-			params.getFileContent()
-		);
+
+		try {
+			fs.writeFileSync(
+				path.resolve('', params.dirPath),
+				params.getFileContent()
+			);
+			console.log(logSymbols.success, params.message);
+
+		} catch (error) {
+			throw error;
+		}
 	},
 
 	createFile: (dirPath: string): void => {
 		fs.mkdirSync(path.resolve('', dirPath));
-	},
-
-	replaceContent: (params: DefinationsModel.IReplaceContent): void => {
-		const replaceFile = params.filetoUpdate.replace(params.regexKey, params.getFileContent());
-
-		const writeFileProps: DefinationsModel.IWriteFile = {
-			dirPath: params.fileDir,
-			getFileContent: () => replaceFile,
-			message: params.message
-		};
-
-		Helper.writeFile(writeFileProps);
 	},
 
 	addIndex: (params: DefinationsModel.IAddIndex): void => {
@@ -79,14 +82,14 @@ export const Helper = {
 
 	createInterface: (answers: DefinationsModel.IAnswers, isClass: boolean) => {
 		const { fileName, lowerFileName, isPage, isConnectStore } = answers;
-		const templatePath = './src/templates/interfaces/component.d.mustache';
+		const templatePath = './helper_scripts/templates/interfaces/component.d.mustache';
 		const templateProps = { fileName, isClass, lowerFileName, isConnectStore };
 		const pageDirPath = `${Config.pageInterfaceDir}/${fileName}.d.ts`;
 		const compDirPath = `${Config.compInterfaceDir}/${fileName}.d.ts`;
-		const pageInterfaceIndex = './src/templates/interfaces/page-index.d.mustache';
-		const compIntefaceIndex = './src/templates/interfaces/component-index.d.mustache';
-		const storeInterface = './src/templates/interfaces/redux-store.d.mustache';
-		const storeImportInterface = './src/templates/interfaces/redux-import.d.mustache';
+		const pageInterfaceIndex = './helper_scripts/templates/interfaces/page-index.d.mustache';
+		const compIntefaceIndex = './helper_scripts/templates/interfaces/component-index.d.mustache';
+		const storeInterface = './helper_scripts/templates/interfaces/redux-store.d.mustache';
+		const storeImportInterface = './helper_scripts/templates/interfaces/redux-import.d.mustache';
 
 		const writeFileProps: DefinationsModel.IWriteFile = {
 			dirPath: isPage ? pageDirPath : compDirPath,
@@ -133,7 +136,7 @@ export const Helper = {
 	},
 
 	createStyle: (answers: DefinationsModel.IAnswers): void => {
-		const templatePath = './src/templates/styles.mustache';
+		const templatePath = './helper_scripts/templates/styles.mustache';
 		const templateProps = { fileName: answers.fileName };
 		const pageDirPath = `${Config.pagesDir}/${answers.fileName.replace(/\b\w/g, foo => foo.toLowerCase())}/style.scss`;
 		const compDirPath = `${Config.componentsDir}/${answers.fileName}/style.scss`;
@@ -147,11 +150,23 @@ export const Helper = {
 		Helper.writeFile(writeFileProps);
 	},
 
+	replaceContent: (params: DefinationsModel.IReplaceContent): void => {
+		const replaceFile = params.filetoUpdate.replace(params.regexKey, params.getFileContent());
+
+		const writeFileProps: DefinationsModel.IWriteFile = {
+			dirPath: params.fileDir,
+			getFileContent: () => replaceFile,
+			message: params.message
+		};
+
+		Helper.writeFile(writeFileProps);
+	},
+
 	addActionConstIndex: (templateProps: DefinationsModel.ITemplateProps): void => {
 		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.definationsDir}/ActionConsts.ts`,
 			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.definationsDir}/ActionConsts.ts`), 'utf8'),
-			getFileContent: () => Helper.getTemplate('./src/templates/reducers/action-const.mustache', templateProps),
+			getFileContent: () => Helper.getTemplate('./helper_scripts/templates/reducers/action-const.mustache', templateProps),
 			message: 'Action constants added to Definations/ActionConsts.ts',
 			regexKey: /export const ActionConsts\s[=]\s[{]/g
 		};
@@ -163,7 +178,7 @@ export const Helper = {
 		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.reducerDir}/index.ts`,
 			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reducerDir}/index.ts`), 'utf8'),
-			getFileContent: () => Helper.getTemplate('./src/templates/reducers/store.mustache', templateProps),
+			getFileContent: () => Helper.getTemplate('./helper_scripts/templates/reducers/store.mustache', templateProps),
 			message: 'Reducer file added combineReducers in Redux/Reducers/index.ts',
 			regexKey: /export default combineReducers[(][{]/g
 		};
@@ -174,8 +189,8 @@ export const Helper = {
 	addAction: (answers: DefinationsModel.IAnswers): void => {
 		const { fileName } = answers;
 		const actionFileDir = `${Config.actionDir}/${fileName}Actions.ts`;
-		const actionTemplate = './src/templates/reducers/action.mustache';
-		const indexTemplate = './src/templates/reducers/action-index.mustache';
+		const actionTemplate = './helper_scripts/templates/reducers/action.mustache';
+		const indexTemplate = './helper_scripts/templates/reducers/action-index.mustache';
 		const templateProps = { fileName };
 
 		const writeFileProps: DefinationsModel.IWriteFile = {
@@ -199,13 +214,13 @@ export const Helper = {
 		const { fileName, lowerFileName, isConnectStore } = answers;
 
 		const reducerFileDir = `${Config.reducerDir}/${lowerFileName}.ts`;
-		const reducerTemplate = './src/templates/reducers/reducer.mustache';
+		const reducerTemplate = './helper_scripts/templates/reducers/reducer.mustache';
 		const templateProps = { fileName, lowerFileName };
 
 		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.reducerDir}/index.ts`,
 			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reducerDir}/index.ts`), 'utf8'),
-			getFileContent: () => Helper.getTemplate('./src/templates/reducers/index.mustache', templateProps),
+			getFileContent: () => Helper.getTemplate('./helper_scripts/templates/reducers/index.mustache', templateProps),
 			message: 'Reducer added to Redux/Reducers/index.ts',
 			regexKey: /import { combineReducers } from 'redux';/g
 		};
@@ -230,7 +245,7 @@ export const Helper = {
 		const { lowerFileName, isConnectStore } = answers;
 		const pagesDir = `${Config.pagesDir}/${lowerFileName}`;
 		const classDir = answers.isPage ? pagesDir : `${Config.componentsDir}/${answers.fileName}`;
-		const templatePath = './src/templates/components/class.mustache';
+		const templatePath = './helper_scripts/templates/components/class.mustache';
 		const templateProps = {
 			fileName: answers.fileName,
 			interfaceName: `I${answers.fileName}`,
@@ -238,7 +253,7 @@ export const Helper = {
 			isHaveStyle: answers.isHaveStyle,
 			lowerFileName: answers.lowerFileName
 		};
-		const indexTemplate = './src/templates/components/index.mustache';
+		const indexTemplate = './helper_scripts/templates/components/index.mustache';
 
 		const addIndexParams: DefinationsModel.IAddIndex = {
 			dirPath: `${Config.componentsDir}/index.ts`,
@@ -269,14 +284,14 @@ export const Helper = {
 	createFuncComponent: (answers: DefinationsModel.IAnswers): void => {
 		const { lowerFileName, fileName, isHaveStyle } = answers;
 		const funcDir = `${Config.componentsDir}/${answers.fileName}`;
-		const templatePath = './src/templates/components/functional.mustache';
+		const templatePath = './helper_scripts/templates/components/functional.mustache';
 		const templateProps = {
 			fileName,
 			lowerFileName,
 			interfaceName: `I${fileName}`,
 			isHaveStyle
 		};
-		const indexTemplate = './src/templates/components/index.mustache';
+		const indexTemplate = './helper_scripts/templates/components/index.mustache';
 
 		const addIndexParams: DefinationsModel.IAddIndex = {
 			dirPath: `${Config.componentsDir}/index.ts`,
@@ -295,5 +310,4 @@ export const Helper = {
 		Helper.addIndex(addIndexParams);
 		Helper.createInterface(answers, false);
 	}
-
 };

@@ -67,10 +67,3 @@ typings/
 
 # nyc build output
 .nyc_output
-
-# project cli builds
-/project-cli/dist
-/project-cli2/dist
-
-# local history plugin
-.history
