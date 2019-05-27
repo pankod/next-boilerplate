@@ -8,6 +8,24 @@ import { DefinationsModel } from './Defination';
 import { Config } from '../../config';
 
 export const Helper = {
+	addRoute: (answers: DefinationsModel.IAnswers) => {
+		const { isHavePath, routePath, fileName } = answers;
+		const templateProps = {
+			fileName: fileName.replace(/\b\w/g, foo => foo.toLowerCase()),
+			isHavePath,
+			routePath
+		};
+
+		const replaceContentParams: DefinationsModel.IReplaceContent = {
+			fileDir: `${Config.routesDir}/routes.js`,
+			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.routesDir}/routes.js`), 'utf8'),
+			getFileContent: () => Helper.getTemplate('./src/templates/routes.mustache', templateProps),
+			message: `Route added to routes.js as ${isHavePath ? `'/${routePath}'` : `'/${fileName}/index'`}`,
+			regexKey: /^(?:[\t ]*(?:\r?\n|\r))+module.exports = routes;/gm
+		};
+
+		Helper.replaceContent(replaceContentParams);
+	},
 
 	isAlreadyExist: (startPath: string, val: string, isFile?: boolean): boolean => {
 		val = val.replace(/\b\w/g, foo => foo.toUpperCase());

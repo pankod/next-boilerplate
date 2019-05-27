@@ -9,7 +9,7 @@ export module Common {
 		name: 'fileName',
 		type: 'input',
 		validate(val: string) {
-			return Common.validate(val, 'This file name already used before, enter new name.');
+			return Common.validate(val, Config.componentsDir);
 		}
 	};
 
@@ -19,7 +19,7 @@ export module Common {
 			name: 'fileName',
 			type: 'input',
 			validate(val: string) {
-				return Common.validate(val, 'This component name already used before, enter new name.');
+				return Common.validate(val, Config.componentsDir);
 			}
 		},
 		{
@@ -36,7 +36,7 @@ export module Common {
 			name: 'fileName',
 			type: 'input',
 			validate(val: string) {
-				return Common.validate(val, 'This component name already used before, enter new name.');
+				return Common.validate(val, Config.componentsDir);
 			}
 		},
 		{
@@ -70,16 +70,78 @@ export module Common {
 		}
 	];
 
-	export const validate = (val: string, errMsg?: string): string | boolean => {
+	export const pageCompQuestions = [
+		{
+			message: 'Enter page name',
+			name: 'fileName',
+			type: 'input',
+			validate(val: string) {
+				return Common.validate(val, Config.pagesDir);
+			}
+		},
+		{
+			choices: [
+				new inquirer.Separator(),
+				{
+					name: 'Yes, I want to add custom path?',
+					value: true
+				},
+				{
+					name: 'No, use default.',
+					value: false
+				}
+			],
+			message: 'Do you want to add custom route or use default route name?',
+			name: 'isHavePath',
+			type: 'list'
+		},
+		{
+			message: 'Enter route name',
+			name: 'routePath',
+			type: 'input',
+			when: ({ isHavePath }) => isHavePath
+		},
+
+		{
+			default: false,
+			message: 'Do you want to have a connection to store?',
+			name: 'isConnectStore',
+			type: 'confirm'
+		},
+		{
+			choices: [
+				new inquirer.Separator(),
+				{
+					name: 'Yes, I want to have new reducer.',
+					value: true
+				},
+				{
+					name: 'No, do not create a new reducer.',
+					value: false
+				}
+			],
+			message: 'Do you want to create a new reducer or use your own?',
+			name: 'isHaveReducer',
+			type: 'list',
+			when: ({ isConnectStore }) => isConnectStore
+		},
+		{
+			default: true,
+			message: 'Do you want to add a style file?',
+			name: 'isHaveStyle',
+			type: 'confirm'
+		}
+	];
+
+	export const validate = (val: string, path: string): string | boolean => {
 		if (val.length) {
 			if (
 				Helper.isAlreadyExist(
-					Config.filesDir,
-					val,
-					true
+					path,
+					val
 				)
 			) {
-				return 'This file name already used before, enter new name.';
+				return 'This component name already used before, enter new name.';
 			}
 
 			return true;
