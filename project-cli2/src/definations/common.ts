@@ -9,7 +9,7 @@ export module Common {
 		name: 'fileName',
 		type: 'input',
 		validate(val: string) {
-			return Common.validate(val);
+			return Common.validate(val, 'This file name already used before, enter new name.');
 		}
 	};
 
@@ -18,21 +18,8 @@ export module Common {
 			message: 'Enter functional component name',
 			name: 'fileName',
 			type: 'input',
-			validate(val: string): string | boolean {
-				if (val.length) {
-					if (
-						Helper.isAlreadyExist(
-							Config.componentsDir,
-							val
-						)
-					) {
-						return 'This component name already used before, enter new name.';
-					}
-
-					return true;
-				}
-
-				return 'Can not be empty';
+			validate(val: string) {
+				return Common.validate(val, 'This component name already used before, enter new name.');
 			}
 		},
 		{
@@ -43,7 +30,7 @@ export module Common {
 		}
 	];
 
-	export const validate = (val: string): string | boolean => {
+	export const validate = (val: string, errMsg?: string): string | boolean => {
 		if (val.length) {
 			if (
 				Helper.isAlreadyExist(
