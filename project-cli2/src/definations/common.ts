@@ -4,48 +4,28 @@ import { Config } from '../../config';
 
 export module Common {
 
-	export const fileNameQuestion = {
-		message: 'Enter file name',
-		name: 'fileName',
-		type: 'input',
-		validate(val: string) {
-			return Common.validate(val, Config.componentsDir);
-		}
-	};
-
-	export const funcCompQuestions = [
-		{
-			message: 'Enter functional component name',
-			name: 'fileName',
-			type: 'input',
-			validate(val: string) {
-				return Common.validate(val, Config.componentsDir);
-			}
-		},
-		{
+	export const commonQuestions = {
+		addStyle: {
 			default: true,
 			message: 'Do you want to add style file?',
 			name: 'isHaveStyle',
 			type: 'confirm'
-		}
-	];
-
-	export const classCompQuestions = [
-		{
-			message: 'Enter class component name',
-			name: 'fileName',
-			type: 'input',
-			validate(val: string) {
-				return Common.validate(val, Config.componentsDir);
-			}
 		},
-		{
+		connectStore: {
 			default: false,
 			message: 'Do you want to connect store ?',
 			name: 'isConnectStore',
 			type: 'confirm'
 		},
-		{
+		enterComponentName: {
+			message: 'Enter component name',
+			name: 'fileName',
+			type: 'input',
+			validate(val: string) {
+				return Common.validate(val, Config.componentsDir);
+			}
+		},
+		isHaveReducer: {
 			choices: [
 				new inquirer.Separator(),
 				{
@@ -57,17 +37,23 @@ export module Common {
 					value: false
 				}
 			],
-			message: 'Do you want to add a new reducer?',
+			message: 'Do you want to create a new reducer or use your own?',
 			name: 'isHaveReducer',
 			type: 'list',
 			when: ({ isConnectStore }) => isConnectStore
-		},
-		{
-			default: true,
-			message: 'Do you want to add a style file?',
-			name: 'isHaveStyle',
-			type: 'confirm'
 		}
+	};
+
+	export const funcCompQuestions = [
+		commonQuestions.enterComponentName,
+		commonQuestions.addStyle
+	];
+
+	export const classCompQuestions = [
+		commonQuestions.enterComponentName,
+		commonQuestions.connectStore,
+		commonQuestions.isHaveReducer,
+		commonQuestions.addStyle
 	];
 
 	export const pageCompQuestions = [
@@ -102,35 +88,9 @@ export module Common {
 			when: ({ isHavePath }) => isHavePath
 		},
 
-		{
-			default: false,
-			message: 'Do you want to have a connection to store?',
-			name: 'isConnectStore',
-			type: 'confirm'
-		},
-		{
-			choices: [
-				new inquirer.Separator(),
-				{
-					name: 'Yes, I want to have new reducer.',
-					value: true
-				},
-				{
-					name: 'No, do not create a new reducer.',
-					value: false
-				}
-			],
-			message: 'Do you want to create a new reducer or use your own?',
-			name: 'isHaveReducer',
-			type: 'list',
-			when: ({ isConnectStore }) => isConnectStore
-		},
-		{
-			default: true,
-			message: 'Do you want to add a style file?',
-			name: 'isHaveStyle',
-			type: 'confirm'
-		}
+		commonQuestions.connectStore,
+		commonQuestions.isHaveReducer,
+		commonQuestions.addStyle
 	];
 
 	export const validate = (val: string, path: string): string | boolean => {
