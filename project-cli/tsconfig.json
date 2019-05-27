@@ -7,14 +7,16 @@
 		"allowJs": true,
 		"rootDir": ".",
 		"baseUrl": ".",
-		"pretty": true,
-		"types": [
-			"jest",
-			"node"
+		"typeRoots": [
+			"./node_modules/@types"
 		]
 	},
 	"exclude": [
 		"node_modules",
-		"dist"
+		"dist",
+		"Components",
+		"Redux",
+		"pages",
+		"Definations"
 	]
 }

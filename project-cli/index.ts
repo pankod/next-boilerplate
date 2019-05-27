@@ -1,22 +1,18 @@
 #!/usr/bin/env node
 
-import * as chalk from 'chalk';
-/* import * as clear from 'clear'; */
 import * as program from 'commander';
 import * as figlet from 'figlet';
 import * as inquirer from 'inquirer';
 
-import { classComp } from './src/definations/class-component';
-import { funcComp } from './src/definations/functional-component';
-import { pageComp } from './src/definations/page-component';
+import { classComp } from './helper_scripts/definations/class-component';
+import { funcComp } from './helper_scripts/definations/functional-component';
+import { pageComp } from './helper_scripts/definations/page-component';
 
-console.clear();
-
+ console.clear();
 console.log(
-	chalk.default(
-		figlet.textSync('Pankod CLI Boilerplate')
-	)
+		figlet.textSync('Pankod')
 );
+
 
 const questions = [
 	{
