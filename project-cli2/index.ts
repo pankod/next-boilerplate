@@ -6,8 +6,7 @@ import * as program from 'commander';
 import * as figlet from 'figlet';
 import * as inquirer from 'inquirer';
 
-import { addCollectionQuestion } from './src/definations/addCollection';
-import { simpleTextQuestion } from './src/definations/simpleText';
+import { funcComp } from './src/definations/functional-component';
 
 console.clear();
 
@@ -19,8 +18,8 @@ console.log(
 
 const questions = [
 	{
-		choices: ['Create simple file', 'Create file and add to collection'],
-		message: 'What would you like to do?',
+		choices: ['page', 'functional component', 'class component'],
+		message: 'What do you want to add?',
 		name: 'fileType',
 		type: 'list'
 	}
@@ -32,13 +31,9 @@ program
 	.description('Add a file')
 	.action(async () => {
 		const answers: { fileType: string } = await inquirer.prompt(questions);
-
 		switch (answers.fileType) {
-			case 'Create simple file':
-			await simpleTextQuestion.showQuestions();
-				break;
-			case 'Create file and add to collection':
-			await addCollectionQuestion.showQuestions();
+			case 'functional component':
+				await funcComp.showQuestions();
 				break;
 			default:
 				break;

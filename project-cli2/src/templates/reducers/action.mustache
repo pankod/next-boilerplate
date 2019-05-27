@@ -1,0 +1,17 @@
+import { ActionConsts } from "@Definations";
+
+/**
+ * ACTIONS
+*/
+export const {{fileName}}Actions = {
+	Map: (payload: any) => (
+		{
+			payload,
+			type: ActionConsts.{{fileName}}.SetReducer
+		}
+	),
+
+	Reset: () => ({
+		type: ActionConsts.{{fileName}}.ResetReducer
+	})
+}

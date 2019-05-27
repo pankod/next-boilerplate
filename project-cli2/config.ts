@@ -2,5 +2,16 @@ export const Config = {
 	filesDir: './files',
 	mockDir: '/dir',
 	mockSrcDir: '/src',
-	mockFilesDir: '/files',
+	mockPagesDir: '/pages',
+	interfaceDir: '../src/Interfaces',
+	compInterfaceDir: '../src/Interfaces/Components',
+	pageInterfaceDir: '../src/Interfaces/Pages',
+	reduxInterfaceDir: '../src/Interfaces/Redux',
+	componentsDir: '../src/Components',
+	definationsDir: '../src/Definations',
+	pagesDir: '../pages',
+	reducerDir: '../src/Redux/Reducers',
+	actionDir: '../src/Actions',
+	routesDir: '../app',
+	storeDir: '../src'
 };

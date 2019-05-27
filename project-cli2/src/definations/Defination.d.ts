@@ -1,43 +1,30 @@
 
 export declare module DefinationsModel {
+	export interface IInquirerFunc {
+		showQuestions(): Promise<void>;
+	}
 
 	export interface ITemplateProps {
 		fileName: string;
-		isCustomFileName?: boolean;
-		customFileName?: string;
-		isFileNameAdd?: boolean;
+		lowerFileName?: string;
+		interfaceName?: string;
+		isHaveStyle?: boolean;
+		isConnectStore?: boolean;
+		isClass?: boolean;
+		isHavePath?: boolean;
+		routePath?: string;
 	}
 
 	export interface IAnswers {
-		isFileNameAdd: boolean;
 		fileName: string;
-		isCustomFileName: boolean;
-		customFileName?: string;
-	}
-
-	export interface IAddCollection {
-		templateProps: ITemplateProps;
-	}
-
-	export interface IWriteFile {
-		dirPath: string;
-		getFileContent: Function;
-		isCustomFileName?: boolean;
-		message: string;
-	}
-
-	export interface ICreateTest {
-		templatePath: string;
-		templateProps: ITemplateProps;
-		answers: IAnswers;
-		dirPath: string;
-		successMessage: string;
-	}
-
-	export interface ICreateFileOptions{
-		isFileNameAdd: boolean;
-		isCustomFileName?: boolean;
-		customFileName?: string;
+		lowerFileName?: string;
+		interfaceName?: string;
+		isHaveStyle?: boolean;
+		isConnectStore?: boolean;
+		isPage?: boolean;
+		isHaveReducer?: boolean;
+		isHavePath?: boolean;
+		routePath?: string;
 	}
 
 	export interface IReplaceContent {
@@ -45,7 +32,19 @@ export declare module DefinationsModel {
 		fileDir: string;
 		regexKey: RegExp;
 		message: string;
+		lowerFileName?: string;
 		getFileContent(): string;
 	}
-	
+
+	export interface IAddIndex {
+		dirPath: string;
+		getFileContent: Function;
+		message: string;
+	}
+
+	export interface IWriteFile {
+		dirPath: string;
+		getFileContent: Function;
+		message: string;
+	}
 }

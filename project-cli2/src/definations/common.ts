@@ -2,8 +2,6 @@ import * as inquirer from 'inquirer';
 import { Helper } from '../definations/helper';
 import { Config } from '../../config';
 
-
-
 export module Common {
 
 	export const fileNameQuestion = {
@@ -15,40 +13,33 @@ export module Common {
 		}
 	};
 
-	export const simpleTextQuestions = [
-		Common.fileNameQuestion,
+	export const funcCompQuestions = [
 		{
-			default: false,
-			message: 'Do you want to add file name into file content ?',
-			name: 'isFileNameAdd',
-			type: 'confirm'
-		}
-	];
+			message: 'Enter functional component name',
+			name: 'fileName',
+			type: 'input',
+			validate(val: string): string | boolean {
+				if (val.length) {
+					if (
+						Helper.isAlreadyExist(
+							Config.componentsDir,
+							val
+						)
+					) {
+						return 'This component name already used before, enter new name.';
+					}
 
-	export const addCollectionQuestions = [
-		Common.fileNameQuestion,
-		{
-			choices: [
-				new inquirer.Separator(),
-				{
-					name: 'Yes, I want to enter custom name file.',
-					value: true
-				},
-				{
-					name: 'No, use default file name.',
-					value: false
+					return true;
 				}
-			],
-			default: false,
-			message: 'Would you like save file to collection.ts with a custom name?',
-			name: 'isCustomFileName',
-			type: 'list'
+
+				return 'Can not be empty';
+			}
 		},
 		{
-			message: 'Enter custom name',
-			name: 'customFileName',
-			type: 'input',
-			when: ({ isCustomFileName }) => isCustomFileName
+			default: true,
+			message: 'Do you want to add style file?',
+			name: 'isHaveStyle',
+			type: 'confirm'
 		}
 	];
 
@@ -68,7 +59,7 @@ export module Common {
 		}
 
 		return 'Can not be empty';
-	}
+	};
 }
 
 export default Common;

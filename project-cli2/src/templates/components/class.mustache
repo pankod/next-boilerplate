@@ -1,0 +1,48 @@
+//#region Global Imports
+import * as React from 'react';
+{{#isConnectStore}}
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+{{/isConnectStore}}
+//#endregion Global Imports
+
+//#region Local Imports
+{{#isHaveStyle}}
+import './style.scss';
+{{/isHaveStyle}}
+//#endregion Local Imports
+
+//#region Interface Imports
+import { {{interfaceName}} } from '@Interfaces';
+//#endregion Interface Imports
+
+class {{fileName}} extends React.Component<{{interfaceName}}.IProps, {{interfaceName}}.IState> {
+
+	constructor(props: {{interfaceName}}.IProps) {
+		super(props);
+
+		this.state = {
+		};
+	}
+
+	public render(): JSX.Element {
+		return (
+			<div className="{{fileName}}">
+				{{fileName}}
+			</div>
+		);
+	}
+}
+
+{{#isConnectStore}}
+const mapStateToProps = state => state;
+
+const mapDispatchToProps = (dispatch: Dispatch) => (
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)({{fileName}});
+{{/isConnectStore}}
+
+{{^isConnectStore}}
+export default {{fileName}};
+{{/isConnectStore}}
