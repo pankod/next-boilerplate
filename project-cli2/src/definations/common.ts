@@ -30,6 +30,46 @@ export module Common {
 		}
 	];
 
+	export const classCompQuestions = [
+		{
+			message: 'Enter class component name',
+			name: 'fileName',
+			type: 'input',
+			validate(val: string) {
+				return Common.validate(val, 'This component name already used before, enter new name.');
+			}
+		},
+		{
+			default: false,
+			message: 'Do you want to connect store ?',
+			name: 'isConnectStore',
+			type: 'confirm'
+		},
+		{
+			choices: [
+				new inquirer.Separator(),
+				{
+					name: 'Yes, I want to have new reducer.',
+					value: true
+				},
+				{
+					name: 'No, do not create a new reducer.',
+					value: false
+				}
+			],
+			message: 'Do you want to add a new reducer?',
+			name: 'isHaveReducer',
+			type: 'list',
+			when: ({ isConnectStore }) => isConnectStore
+		},
+		{
+			default: true,
+			message: 'Do you want to add a style file?',
+			name: 'isHaveStyle',
+			type: 'confirm'
+		}
+	];
+
 	export const validate = (val: string, errMsg?: string): string | boolean => {
 		if (val.length) {
 			if (

@@ -6,6 +6,7 @@ import * as program from 'commander';
 import * as figlet from 'figlet';
 import * as inquirer from 'inquirer';
 
+import { classComp } from './src/definations/class-component';
 import { funcComp } from './src/definations/functional-component';
 
 console.clear();
@@ -34,6 +35,9 @@ program
 		switch (answers.fileType) {
 			case 'functional component':
 				await funcComp.showQuestions();
+				break;
+			case 'class component':
+				await classComp.showQuestions();
 				break;
 			default:
 				break;

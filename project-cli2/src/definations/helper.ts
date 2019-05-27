@@ -129,6 +129,125 @@ export const Helper = {
 		Helper.writeFile(writeFileProps);
 	},
 
+	addActionConstIndex: (templateProps: DefinationsModel.ITemplateProps): void => {
+		const replaceContentParams: DefinationsModel.IReplaceContent = {
+			fileDir: `${Config.definationsDir}/ActionConsts.ts`,
+			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.definationsDir}/ActionConsts.ts`), 'utf8'),
+			getFileContent: () => Helper.getTemplate('./src/templates/reducers/action-const.mustache', templateProps),
+			message: 'Action constants added to Definations/ActionConsts.ts',
+			regexKey: /export const ActionConsts\s[=]\s[{]/g
+		};
+
+		Helper.replaceContent(replaceContentParams);
+	},
+
+	addReducerCombine: (templateProps: DefinationsModel.ITemplateProps): void => {
+		const replaceContentParams: DefinationsModel.IReplaceContent = {
+			fileDir: `${Config.reducerDir}/index.ts`,
+			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reducerDir}/index.ts`), 'utf8'),
+			getFileContent: () => Helper.getTemplate('./src/templates/reducers/store.mustache', templateProps),
+			message: 'Reducer file added combineReducers in Redux/Reducers/index.ts',
+			regexKey: /export default combineReducers[(][{]/g
+		};
+
+		Helper.replaceContent(replaceContentParams);
+	},
+
+	addAction: (answers: DefinationsModel.IAnswers): void => {
+		const { fileName } = answers;
+		const actionFileDir = `${Config.actionDir}/${fileName}Actions.ts`;
+		const actionTemplate = './src/templates/reducers/action.mustache';
+		const indexTemplate = './src/templates/reducers/action-index.mustache';
+		const templateProps = { fileName };
+
+		const writeFileProps: DefinationsModel.IWriteFile = {
+			dirPath: actionFileDir,
+			getFileContent: () => Helper.getTemplate(actionTemplate, templateProps),
+			message: 'Added new action file'
+		};
+
+		const addIndexParams: DefinationsModel.IAddIndex = {
+			dirPath: `${Config.actionDir}/index.ts`,
+			getFileContent: () => Helper.getTemplate(indexTemplate, templateProps),
+			message: 'Added action file to index.ts Actions/index.ts'
+		};
+
+		Helper.addIndex(addIndexParams);
+
+		Helper.writeFile(writeFileProps);
+	},
+
+	addReducer: (answers: DefinationsModel.IAnswers): void => {
+		const { fileName, lowerFileName, isConnectStore } = answers;
+
+		const reducerFileDir = `${Config.reducerDir}/${lowerFileName}.ts`;
+		const reducerTemplate = './src/templates/reducers/reducer.mustache';
+		const templateProps = { fileName, lowerFileName };
+
+		const replaceContentParams: DefinationsModel.IReplaceContent = {
+			fileDir: `${Config.reducerDir}/index.ts`,
+			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reducerDir}/index.ts`), 'utf8'),
+			getFileContent: () => Helper.getTemplate('./src/templates/reducers/index.mustache', templateProps),
+			message: 'Reducer added to Redux/Reducers/index.ts',
+			regexKey: /import { combineReducers } from 'redux';/g
+		};
+
+		const writeFileProps: DefinationsModel.IWriteFile = {
+			dirPath: reducerFileDir,
+			getFileContent: () => Helper.getTemplate(reducerTemplate, templateProps),
+			message: 'Added new reducer file'
+		};
+
+		Helper.writeFile(writeFileProps);
+		Helper.replaceContent(replaceContentParams);
+		Helper.addReducerCombine(templateProps);
+
+		if (isConnectStore) {
+			Helper.addActionConstIndex(templateProps);
+		}
+	},
+
+	createClassComponent: (answers: DefinationsModel.IAnswers): void => {
+
+		const { lowerFileName, isConnectStore } = answers;
+		const pagesDir = `${Config.pagesDir}/${lowerFileName}`;
+		const classDir = answers.isPage ? pagesDir : `${Config.componentsDir}/${answers.fileName}`;
+		const templatePath = './src/templates/components/class.mustache';
+		const templateProps = {
+			fileName: answers.fileName,
+			interfaceName: `I${answers.fileName}`,
+			isConnectStore: answers.isConnectStore,
+			isHaveStyle: answers.isHaveStyle,
+			lowerFileName: answers.lowerFileName
+		};
+		const indexTemplate = './src/templates/components/index.mustache';
+
+		const addIndexParams: DefinationsModel.IAddIndex = {
+			dirPath: `${Config.componentsDir}/index.ts`,
+			getFileContent: () => Helper.getTemplate(indexTemplate, templateProps),
+			message: 'Component added to index.ts'
+		};
+
+		const writeFileProps: DefinationsModel.IWriteFile = {
+			dirPath: `${classDir}/index.tsx`,
+			getFileContent: () => Helper.getTemplate(templatePath, templateProps),
+			message: 'Added new class component'
+		};
+
+		Helper.createFile(classDir);
+		Helper.writeFile(writeFileProps);
+		Helper.createInterface(answers, true);
+
+		if (isConnectStore) {
+			Helper.addReducer(templateProps);
+			Helper.addAction(templateProps);
+		}
+
+		if (!answers.isPage) {
+			Helper.addIndex(addIndexParams);
+		}
+	},
+
 	createFuncComponent: (answers: DefinationsModel.IAnswers): void => {
 		const { lowerFileName, fileName, isHaveStyle } = answers;
 		const funcDir = `${Config.componentsDir}/${answers.fileName}`;
