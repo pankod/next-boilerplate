@@ -134,7 +134,7 @@ export const Helper = {
 		}));
 	},
 
-	addActionConstIndex: (templateProps: DefinationsModel.ITemplateProps): void => {
+/* 	addActionConstIndex: (templateProps: DefinationsModel.ITemplateProps): void => {
 		Helper.replaceContent(Common.replaceContentParams({
 			fileDir: `${Config.definationsDir}/ActionConsts.ts`,
 			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.definationsDir}/ActionConsts.ts`), 'utf8'),
@@ -152,7 +152,7 @@ export const Helper = {
 			message: 'Reducer file added combineReducers in Redux/Reducers/index.ts',
 			regexKey: /export default combineReducers[(][{]/g
 		}));
-	},
+	}, */
 
 	addAction: (answers: DefinationsModel.IAnswers): void => {
 		const { fileName } = answers;
@@ -193,10 +193,26 @@ export const Helper = {
 			message: 'Reducer added to Redux/Reducers/index.ts',
 			regexKey: /import { combineReducers } from 'redux';/g
 		}));
-		Helper.addReducerCombine(templateProps);
+		//Helper.addReducerCombine(templateProps);
 
+		Helper.replaceContent(Common.replaceContentParams({
+			fileDir: `${Config.reducerDir}/index.ts`,
+			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reducerDir}/index.ts`), 'utf8'),
+			getFileContent: () => Helper.getTemplate('./project-cli/src/templates/reducers/store.mustache', templateProps),
+			message: 'Reducer file added combineReducers in Redux/Reducers/index.ts',
+			regexKey: /export default combineReducers[(][{]/g
+		}));
+		
 		if (isConnectStore) {
-			Helper.addActionConstIndex(templateProps);
+			//Helper.addActionConstIndex(templateProps);
+
+			Helper.replaceContent(Common.replaceContentParams({
+				fileDir: `${Config.definationsDir}/ActionConsts.ts`,
+				filetoUpdate: fs.readFileSync(path.resolve('', `${Config.definationsDir}/ActionConsts.ts`), 'utf8'),
+				getFileContent: () => Helper.getTemplate('./project-cli/src/templates/reducers/action-const.mustache', templateProps),
+				message: 'Action constants added to Definations/ActionConsts.ts',
+				regexKey: /export const ActionConsts\s[=]\s[{]/g
+			}));
 		}
 	},
 
