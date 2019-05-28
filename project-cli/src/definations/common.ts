@@ -109,6 +109,22 @@ export module Common {
 
 		return 'Can not be empty';
 	};
+
+	export const replaceContentParams = params =>
+	({
+		fileDir: params.fileDir,
+		filetoUpdate: params.filetoUpdate,
+		getFileContent: params.getFileContent,
+		message: params.message,
+		regexKey: params.regexKey
+	});
+
+	export const fileProps = params =>
+	({
+		dirPath: params.dirPath,
+		getFileContent: params.getFileContent,
+		message: params.message
+	});
 }
 
 export default Common;
