@@ -148,17 +148,7 @@ export const Helper = {
 	},
 
 	addActionConstIndex: (templateProps: DefinationsModel.ITemplateProps): void => {
-
-		Helper.replaceContent2({
-			dir: Config.definationsDir,
-			updateFile: `ActionConsts.ts`,
-			templateProps,
-			template: './project-cli/src/templates/reducers/action-const.mustache',
-			message: 'Action constants added to Definations/ActionConsts.ts',
-			regexKey: /export const ActionConsts\s[=]\s[{]/g
-		});
-
-	/* 	const replaceContentParams: DefinationsModel.IReplaceContent = {
+		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.definationsDir}/ActionConsts.ts`,
 			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.definationsDir}/ActionConsts.ts`), 'utf8'),
 			getFileContent: () => Helper.getTemplate('./project-cli/src/templates/reducers/action-const.mustache', templateProps),
@@ -166,39 +156,16 @@ export const Helper = {
 			regexKey: /export const ActionConsts\s[=]\s[{]/g
 		};
 
-		Helper.replaceContent(replaceContentParams); */
+		Helper.replaceContent(replaceContentParams);
 	},
 
 	addReducerCombine: (templateProps: DefinationsModel.ITemplateProps): void => {
-/* 		const replaceContentParams: DefinationsModel.IReplaceContent = {
+		const replaceContentParams: DefinationsModel.IReplaceContent = {
 			fileDir: `${Config.reducerDir}/index.ts`,
 			filetoUpdate: fs.readFileSync(path.resolve('', `${Config.reducerDir}/index.ts`), 'utf8'),
 			getFileContent: () => Helper.getTemplate('./project-cli/src/templates/reducers/store.mustache', templateProps),
 			message: 'Reducer file added combineReducers in Redux/Reducers/index.ts',
 			regexKey: /export default combineReducers[(][{]/g
-		};
-
-		Helper.replaceContent(replaceContentParams);
- */
-
-		Helper.replaceContent2({
-			dir: Config.reducerDir,
-			updateFile: `index.ts`,
-			templateProps,
-			template: './project-cli/src/templates/reducers/store.mustache',
-			message: 'Reducer file added combineReducers in Redux/Reducers/index.ts',
-			regexKey: /export default combineReducers[(][{]/g
-		});
-	},
-
-
-	replaceContent2: (params: { dir: string, updateFile: string, templateProps: any, template:string, message: string, regexKey: any }): void => {
-		const replaceContentParams: DefinationsModel.IReplaceContent = {
-			fileDir: `${params.dir}/${params.updateFile}`,
-			filetoUpdate: fs.readFileSync(path.resolve('', `${params.dir}/${params.updateFile}`), 'utf8'),
-			getFileContent: () => Helper.getTemplate(params.template, params.templateProps),
-			message: params.message,
-			regexKey: params.regexKey
 		};
 
 		Helper.replaceContent(replaceContentParams);
