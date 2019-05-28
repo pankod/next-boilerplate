@@ -1,6 +1,6 @@
 import * as inquirer from 'inquirer';
+import * as HelperFunctions from '../helper';
 import { DefinationsModel } from './Defination';
-import { Helper  } from './helper';
 import { Common } from './common';
 
 export const classComp = {
@@ -12,10 +12,10 @@ export const classComp = {
 		answers.fileName = answers.fileName.replace(/\b\w/g, foo => foo.toUpperCase());
 		answers.lowerFileName = answers.fileName.replace(/\b\w/g, foo => foo.toLowerCase());
 
-		Helper.createClassComponent(answers);
+		HelperFunctions.CreateClassComponent(answers);
 
 		if (answers.isHaveStyle) {
-			Helper.createStyle(answers);
+			HelperFunctions.CreateStyle(answers);
 		}
 	}
 };

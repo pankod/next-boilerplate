@@ -1,6 +1,6 @@
 import * as inquirer from 'inquirer';
-import { Helper } from '../definations/helper';
 import { Config } from '../../config';
+import * as HelperFunctions from '../helper';
 
 export module Common {
 
@@ -96,7 +96,7 @@ export module Common {
 	export const validate = (val: string, path: string): string | boolean => {
 		if (val.length) {
 			if (
-				Helper.isAlreadyExist(
+				HelperFunctions.IsAlreadyExist(
 					path,
 					val
 				)

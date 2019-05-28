@@ -1,0 +1,15 @@
+export { AddReducer } from './AddReducer';
+export { GetTemplate } from './GetTemplate';
+export { WriteFile } from './WriteFile';
+export { ReplaceContent } from './ReplaceContent';
+export { AddReducerCombine } from './AddReducerCombine';
+export { AddActionConstIndex } from './AddActionConstIndex';
+export { AddAction } from './AddAction';
+export { AddIndex } from './AddIndex';
+export { AddRoute } from './AddRoute';
+export { IsAlreadyExist } from './IsAlreadyExist';
+export { CreateInterface } from './CreateInterface';
+export { CreateFile } from './CreateFile';
+export { CreateStyle } from './CreateStyle';
+export { CreateClassComponent } from './CreateClassComponent';
+export { CreateFuncComponent } from './CreateFuncComponent';
