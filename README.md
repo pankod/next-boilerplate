@@ -6,6 +6,10 @@
 <br/>
 
 <div align="center">
+  <!-- CodeClimate -->
+  <a href="https://codeclimate.com/github/pankod/next-boilerplate/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/maintainability" />
+  </a>
   <!-- CodeCov -->
   <a href="https://codecov.io/gh/pankod/next-boilerplate">
     <img src="https://codecov.io/gh/pankod/next-boilerplate/branch/master/graph/badge.svg" />
