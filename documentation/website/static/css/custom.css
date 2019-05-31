@@ -1,0 +1,26 @@
+/* your custom css */
+.nav-footer {
+  background-color: #2C3E50;
+}
+
+.top-badges {
+  margin-top:20px
+}
+.top-badges > a {
+  margin:0 2px;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}

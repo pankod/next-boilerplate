@@ -1,0 +1,17 @@
+[
+	{
+		"id": "doc1",
+		"title": "Latin-ish",
+		"sidebarLevel": "Example Page"
+	},
+	{
+		"id": "doc2",
+		"title": "document number 2",
+		"sidebarLevel": null
+	},
+	{
+		"id": "doc3",
+		"title": "document number 3",
+		"sidebarLevel": null
+	}
+]
