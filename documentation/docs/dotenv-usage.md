@@ -14,7 +14,8 @@ server: sadece server side erişilebilir. example: ANY_SECRET_TOKEN
 
 
 Tanımlamalar .env dosyası içerisine yapılır.
-Example:
+Add environment-specific variables on new lines in the form of NAME=VALUE. For example:
+
 ```
 API_KEY=test1234
 

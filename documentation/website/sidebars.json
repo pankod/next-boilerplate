@@ -21,6 +21,12 @@
 		],
 		"Unit Testing": [
 			"unit-test"
+		],
+		"Reverse Proxy": [
+			"reverse-proxy"
+		],
+		"State Management": [
+			"state-management"
 		]
 	}
 }
