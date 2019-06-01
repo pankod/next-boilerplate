@@ -61,7 +61,7 @@ This boilerplate includes the latest powerfull tools.
 * **Built-in Project CLI**- Create pages, components, actions, reducers with one command by using built-in cli.
 * **Sass/Scss** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
 * **Babel** -  The compiler for next generation JavaScript. Module(alias) support 
-* **TSLint** - Contains TypeScript-specific options for our project.
+* **Eslint** - The pluggable linting utility.
 * **Reverse Proxy** - A reverse proxy server is a type of proxy server that typically sits behind the firewall in a private network and directs client requests to the appropriate backend server
 * **Bundler Analyzer** - Visualize size of webpack output files with an interactive zoomable treemap.
 * **dotenv .config** - Expose environment variables to the runtime config of Next.js
@@ -255,8 +255,8 @@ After answering questions it generates files in miliseconds.
 │       │   ├── Planetary.spec.ts
 │       │   └── Planetary.ts
 │       └── index.ts
+├── eslintrc.js
 ├── tsconfig.json
-├── tslint.json
 ├── jest.config.js
 ├── jest.setup.ts
 ├── jest.tsconfig.json
