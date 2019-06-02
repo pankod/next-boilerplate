@@ -2,10 +2,10 @@
 import { Props } from 'react';
 //#endregion Global Imports
 
-declare module IHeading {
+declare namespace IHeading {
     export interface IProps extends Props<{}> {
         text: string;
     }
 
-    export interface IState { }
+    export interface IState {}
 }

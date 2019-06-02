@@ -6,6 +6,6 @@ import { Props } from 'react';
 import { IHomePage } from '@Interfaces';
 //#endregion Interface Imports
 
-export type IStore = {
-    home: IHomePage.IStateProps
+export interface IStore {
+    home: IHomePage.IStateProps;
 }

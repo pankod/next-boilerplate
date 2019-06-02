@@ -1,12 +1,12 @@
-import { ApodPayload, ApodResponse } from "@Interfaces";
+import { ApodPayload, ApodResponse } from '@Interfaces';
 
 /**
-* @module @interface PlanetaryModel
-*/
-declare module PlanetaryModel {
+ * @module @interface PlanetaryModel
+ */
+declare namespace PlanetaryModel {
     export interface GetApodPayload {
         params: ApodPayload;
     }
 
-	export interface GetApodResponse extends ApodResponse { }
+    export interface GetApodResponse extends ApodResponse {}
 }

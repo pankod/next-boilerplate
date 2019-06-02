@@ -25,7 +25,6 @@ class MyApp extends App<IApp.IProps> {
         return { pageProps };
     }
 
-
     render(): JSX.Element {
         const { Component, pageProps, store } = this.props;
 

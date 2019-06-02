@@ -2,10 +2,10 @@
 import { Props } from 'react';
 //#endregion Global Imports
 
-declare module IApp {
+declare namespace IApp {
     export interface IProps extends Props<{}> {
         store: any;
     }
 
-	export interface IState { }
+    export interface IState {}
 }

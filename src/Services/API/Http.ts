@@ -12,13 +12,19 @@ import { HttpModel } from '@Interfaces';
  * @module Http
  */
 
-const { publicRuntimeConfig: { API_KEY, API_URL } } = getConfig();
+const {
+    publicRuntimeConfig: { API_KEY, API_URL },
+} = getConfig();
 
 const BaseUrl = `${API_URL}/api`;
 
 export const Http = {
-
-    Request: <A>(methodType: string, url: string, params?: HttpModel.IRequestQueryPayload, payload?: HttpModel.IRequestPayload): Promise<A> => {
+    Request: <A>(
+        methodType: string,
+        url: string,
+        params?: HttpModel.IRequestQueryPayload,
+        payload?: HttpModel.IRequestPayload,
+    ): Promise<A> => {
         return new Promise((resolve, reject) => {
             const query = params ? `?${stringify({ ...params, api_key: API_KEY })}` : '';
 
@@ -26,9 +32,9 @@ export const Http = {
                 body: JSON.stringify(payload),
                 cache: 'no-cache',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
                 },
-                method: `${methodType}`
+                method: `${methodType}`,
             })
                 .then(response => {
                     switch (response.status) {
@@ -39,8 +45,8 @@ export const Http = {
                     }
                 })
                 .catch(e => {
-                    reject(e)
+                    reject(e);
                 });
         });
-    }
-}
+    },
+};
