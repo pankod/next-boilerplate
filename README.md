@@ -256,6 +256,7 @@ After answering questions it generates files in miliseconds.
 │       │   └── Planetary.ts
 │       └── index.ts
 ├── eslintrc.js
+├── .prettierrc
 ├── tsconfig.json
 ├── jest.config.js
 ├── jest.setup.ts
