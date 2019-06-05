@@ -14,7 +14,8 @@
     "postinstall": "cd project-cli && npm i && npm run build",
     "test": "nyc jest --coverage",
     "posttest": "nyc report --reporter=json > coverage/coverage.json",
-    "format": "eslint -c .eslintrc.js --ext .ts,.tsx --fix {app,pages,src}/**"
+    "lint": "eslint -c .eslintrc.js --ext .ts,.tsx {app,pages,src}/**",
+    "format": "npm run lint --fix"
   },
   "dependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
