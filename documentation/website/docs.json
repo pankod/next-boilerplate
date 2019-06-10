@@ -1,17 +1,17 @@
 [
 	{
-		"id": "doc1",
-		"title": "Latin-ish",
+		"id": "getting-start",
+		"title": "Getting Started",
 		"sidebarLevel": "Example Page"
 	},
 	{
-		"id": "doc2",
-		"title": "document number 2",
+		"id": "cli-overview",
+		"title": "Project-CLI",
 		"sidebarLevel": null
 	},
 	{
-		"id": "doc3",
-		"title": "document number 3",
+		"id": "unit-test",
+		"title": "Unit Testing",
 		"sidebarLevel": null
 	}
 ]

@@ -1,29 +1,33 @@
 ---
 id: dotenv-usage
-title: How can we use ?
-sidebar_label: Usage
+title: Enviroment Variables(.env)
+sidebar_label: Enviroment Variables
 ---
 
-Kullanımı için client ve server olmak üzere iki mod var.
 
 
-client: hem serverside hem client side erişebilirsin. 
-Example: API_URL 
+This boilerplate uses dotenv plugin to expose environment variables to the Next.js runtime configuration.
 
-server: sadece server side erişilebilir. example: ANY_SECRET_TOKEN
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
 
 
-Tanımlamalar .env dosyası içerisine yapılır.
-Add environment-specific variables on new lines in the form of NAME=VALUE. For example:
+There are two modes for use:
+
+- client: You can access both client and server.
+Example:  ```API_URL``` 
+
+- server: Only serverside can access
+Example: ```ANY_SECRET_TOKEN```
+
+Add environment-specific variables on new lines in the form of NAME=VALUE in .env file.
 
 ```
 API_KEY=test1234
-
 ```
+ İf you use unit testing, you should add same variable into .env.test file.
 
-Eğer unit test kullanıyorsanız aynı değişkeni .env.test dosyasına da eklemeniz gerekiyor.
-
-.env dosyasına tanımlamalar yapıldıktan sonra next.config.js dosyasında withConfig e eklemeniz gerekli.
+ After defining keys in the .env file, you need to define the same keys into ```withConfig``` in the ```next.config.js``` file.
+<br>
 
 ```
 const withConfig = nextRuntimeDotenv({
@@ -32,11 +36,12 @@ const withConfig = nextRuntimeDotenv({
 		'API_KEY'
 	],
 	server: [
+		'ANY_SECRET_TOKEN'
 	]
 })
 ```
-
-Eğer unit test yapıyorsanız jest.setup.js içerisinde setConfig methoduna eklemeniz gerekli.
+<br>
+İf you use unit testing you should add keys to ```setConfig``` in ```jest.setup.js``` file.
 
 ```
 setConfig({
@@ -44,21 +49,24 @@ setConfig({
 	{
 		'API_URL': process.env.API_URL,
 		'API_KEY': process.env.API_KEY
+	},
+	serverRuntimeConfig: {
+		'ANY_SECRET_TOKEN': process.env.ANY_SECRET_TOKEN
 	}
 })
 ```
-
-
-Kod içerisinde kullanmak için:
+<br>
+To use within in the code:
 
 ```
 import getConfig from 'next/config';
 
-const { publicRuntimeConfig: { API_KEY, API_URL } } = getConfig();
+const { publicRuntimeConfig: { API_KEY, API_URL },  serverRuntimeConfig: { ANY_SECRET_TOKEN } } = getConfig();
 ````
 
+To use server only config you need to push the same keys to server array of  ```withConfig``` in the ```next.config.js``` file. Server 
 
-server onyl config yapmak için, withConfig içinde, server arrayine pushlanır. 
+To use server only config server onyl config yapmak için, withConfig içinde, server arrayine pushlanır. 
 okurken server runtime config içerisinden okunur
 
 

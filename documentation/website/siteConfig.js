@@ -21,26 +21,20 @@ const users = [
 ];
 
 const organizationName = "Pankod Inc.";
-const projectName = "React Native Project";
-const packageName = "react-native-picker-modal-view";
+const projectName = "Next.js Boilerplate";
+const packageName = "next-boilerplate";
 const url = [
-	{
-		title: "Facebook",
-		url: ""
-	},
-	{
-		title: "Instagram",
-		url: ""
-	},
+
 	{
 		title: "Twitter",
-		url: ""
+		url: "https://twitter.com/PankodDev"
 	}
 ]
 
 const siteConfig = {
 	title: 'Pankod', // Title for your website.
-	tagline: 'Open Source Documentation',
+	headerTitle:'next-boilerplate',
+	tagline: 'Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js, Sass and CLI.',
 	url: 'https://www.pankod.com', // Your website URL
 	baseUrl: '/', // Base URL for your project */
 	// For github.io type URLs, you would set the url and baseUrl like:
@@ -99,7 +93,7 @@ const siteConfig = {
 
 	highlight: {
 		// Highlight.js theme to use for syntax highlighting in code blocks.
-		theme: 'default',
+		theme: 'tomorrow-night'
 	},
 
 	// Add custom scripts here that would be placed in <script> tags.
@@ -112,7 +106,7 @@ const siteConfig = {
 
 	// Open Graph and Twitter card images.
 	// Google Analytics id
-	gaTrackingId: "",
+	gaTrackingId: "UA-141791772-1",
 
 	// Facebook settings
 	facebookAppId: "",

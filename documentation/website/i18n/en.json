@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Open Source Documentation",
+    "tagline": "Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js, Sass and CLI.",
     "docs": {
       "cli-overview": {
         "title": "Overview",
@@ -14,15 +14,15 @@
         "sidebar_label": "Usage"
       },
       "dotenv-usage": {
-        "title": "How can we use ?",
-        "sidebar_label": "Usage"
+        "title": "Enviroment Variables(.env)",
+        "sidebar_label": "Enviroment Variables"
       },
       "dotenv": {
         "title": "Environment Variables",
         "sidebar_label": "Overview"
       },
       "features": {
-        "title": "Features"
+        "title": "Overview"
       },
       "getting-start": {
         "title": "Getting Started",
@@ -30,26 +30,26 @@
       },
       "reverse-proxy": {
         "title": "Reverse Proxy",
-        "sidebar_label": "Usage"
+        "sidebar_label": "Reverse Proxy"
       },
       "routing": {
         "title": "Routing",
-        "sidebar_label": "Usage"
+        "sidebar_label": "Routing"
       },
       "setup": {
         "title": "Setup"
       },
       "state-management": {
         "title": "State Management",
-        "sidebar_label": "Overview"
+        "sidebar_label": "State Management"
       },
       "styling": {
         "title": "Styling",
-        "sidebar_label": "Usage"
+        "sidebar_label": "Styling"
       },
       "unit-test": {
         "title": "Unit Testing",
-        "sidebar_label": "Usage"
+        "sidebar_label": "Unit Testing"
       }
     },
     "links": {
@@ -58,13 +58,8 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Project CLI": "Project CLI",
-      "Styling": "Styling",
-      "Routing": "Routing",
-      "Environment Variables": "Environment Variables",
-      "Unit Testing": "Unit Testing",
-      "Reverse Proxy": "Reverse Proxy",
-      "State Management": "State Management"
+      "Features": "Features",
+      "Project CLI": "Project CLI"
     }
   },
   "pages-strings": {

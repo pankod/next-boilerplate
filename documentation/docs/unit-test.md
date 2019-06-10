@@ -1,7 +1,7 @@
 ---
 id: unit-test
 title: Unit Testing
-sidebar_label: Usage
+sidebar_label: Unit Testing
 ---
 
 This boilerplate uses [Jest](https://jestjs.io/docs/en/getting-started) and [Enzyme](https://github.com/airbnb/enzyme) for unit testing.
@@ -9,7 +9,7 @@ This boilerplate uses [Jest](https://jestjs.io/docs/en/getting-started) and [Enz
 Example testing functions from next-boilerplate.
 
 #### Testing Component:
-```javascript
+```js
 describe('Components', () => {
     describe('Heading', () => {
         it("should render without throwing an error", () => {
@@ -22,7 +22,7 @@ describe('Components', () => {
 ```
 
 #### Testing Actions:
-```javascript
+```js
 describe('Home action tests', () => {
     test('Map test', async () => {
         const store = mockStore();
@@ -108,6 +108,3 @@ describe('home reducer', () => {
     });
 });
 ```
-<pre><code>&lt;div&gt;
-   &lt;p&gt;I'm some code.&lt;/p&gt;
-&lt;div&gt;</code></pre>

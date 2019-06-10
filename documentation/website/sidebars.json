@@ -5,28 +5,17 @@
 			"features",
 			"setup"
 		],
+		"Features": [
+			"styling",
+			"routing",
+			"unit-test",
+			"reverse-proxy",
+			"state-management",
+			"dotenv-usage"
+		],
 		"Project CLI": [
 			"cli-overview",
 			"cli-usage"
-		],
-		"Styling": [
-			"styling"
-		],
-		"Routing": [
-			"routing"
-		],
-		"Environment Variables": [
-			"dotenv",
-			"dotenv-usage"
-		],
-		"Unit Testing": [
-			"unit-test"
-		],
-		"Reverse Proxy": [
-			"reverse-proxy"
-		],
-		"State Management": [
-			"state-management"
 		]
 	}
 }

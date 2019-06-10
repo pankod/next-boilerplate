@@ -5,7 +5,7 @@ title: Setup
 
 1. Clone the repository and install the dependencies:
 
-```
+```sh
 git clone https://github.com/pankod/next-boilerplate.git
 ```
 
@@ -25,14 +25,14 @@ yarn install
 
 3. Once the installation is done, you can run the following command:
 
- ```
+ ```sh
  npm run start:dev
  ```
  <br/>
 
 Then open http://localhost:3000/ to see your app.
 
-```
+```sh
 .
 ├── app
 │  ├── proxy.js

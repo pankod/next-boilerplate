@@ -15,7 +15,7 @@ Pankod boilerplate is shipped with a CLI tool to streamline the creation of new 
 
 To start the CLI, you may run the following npm command:
 
-```
+```sh
 npm run cli
 ```
 

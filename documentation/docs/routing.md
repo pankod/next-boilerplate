@@ -1,21 +1,26 @@
 ---
 id: routing
 title: Routing
-sidebar_label: Usage
+sidebar_label: Routing
 ---
 
 
-
-Next.js sahip oldugu özellikten dolayı pages folder ına koyulan dosya isimlerine göre otomatil routing yapabilir.
+Next.js makes automatic routing according to the name of the files placed in the page folder due to its features.
 <br>
 
-<div>
-  <img src="assets/routing.png" >
-</div>
-<br>
-Yukarıdaki dosya structureana göre dosya isimleri route olmus olur
-
+```sh
+├── pages
+│   ├── about
+│   ├── contact
+│   ├── home
+│   ├── _app.tsx
+│   ├── _document.tsx
+│   └── index.ts
 ```
+
+According to the above file structure, file names are defined as routes.
+
+```sh
 pages/index -> /
 
 pages/about -> /about
@@ -23,4 +28,5 @@ pages/about -> /about
 pages/home  -> /home
 ```
 
-Özel url isim tanımlamak için app/routes içine istediğiniz isimle tanımlayabilirsiniz.
+
+To define a custom url path, you can define the url with the desired route name in the ```app/routes``` folder.

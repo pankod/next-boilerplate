@@ -56,16 +56,6 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
-            <a
-              href="http://stackoverflow.com/questions/tagged/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Stack Overflow
-            </a>
-            <a href="https://discordapp.com/">Project Chat</a>
             {
               this.props.config.socialMediaUrl.map((url, index) => (
                 <a
@@ -80,7 +70,6 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
             <a href="https://github.com/">GitHub</a>
             <a
               className="github-button"
@@ -96,7 +85,7 @@ class Footer extends React.Component {
         </section>
 
         <a
-          href="https://github.com/pankod"
+          href="https://github.com/pankod/next-boilerplate"
           target="_blank"
           rel="noreferrer noopener"
           className="fbOpenSource">
