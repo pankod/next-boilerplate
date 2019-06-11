@@ -74,3 +74,6 @@ typings/
 
 # local history plugin
 .history
+
+#Docusaurus website build folder
+documentation/website/build
