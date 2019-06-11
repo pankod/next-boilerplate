@@ -55,7 +55,7 @@ class HomeSplash extends React.Component {
 		return (
 			<SplashContainer>
 				<div className="inner">
-					<img className="home-banner" src="img/banner.png" />
+					<img className="home-banner" src="img/banner4.png" />
 					<ProjectTitle siteConfig={siteConfig} />
 
 				</div>
