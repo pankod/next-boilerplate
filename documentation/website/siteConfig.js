@@ -36,7 +36,7 @@ const siteConfig = {
 	headerTitle:'next-boilerplate',
 	tagline: 'Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js, Sass and CLI.',
 	url: 'https://pankod.github.io', // Your website URL
-	baseUrl: '/next-boilerplate', // Base URL for your project */
+	baseUrl: '/next-boilerplate/', // Base URL for your project */
 	// For github.io type URLs, you would set the url and baseUrl like:
 	//   url: 'https://facebook.github.io',
 	//   baseUrl: '/test-site/',
