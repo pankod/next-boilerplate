@@ -85,10 +85,10 @@
 <p>Then open <a href="http://localhost:3000/">http://localhost:3000/</a> to see your app.</p>
 <pre><code class="hljs css language-sh">.
 ├── app
-│  ├── proxy.js
-│  ├── routes.js
-│  └── server.js
-├── next.config.js
+│   ├── proxy.js
+│   ├── routes.js
+│   └── server.js
+├── documentation
 ├── pages
 │   ├── _app.tsx
 │   ├── _document.tsx
@@ -97,10 +97,11 @@
 │   │   ├── index.spec.tsx
 │   │   └── index.tsx
 │   └── index.ts
+├── project-cli
 ├── src
 │   ├── Actions
+│   │   ├── HomeActions.spec.tsx
 │   │   ├── HomeActions.ts
-│   │   ├── index.spec.tsx
 │   │   └── index.ts
 │   ├── Components
 │   │   ├── Heading
@@ -120,14 +121,34 @@
 │   │   ├── Redux
 │   │   │   ├── Action.d.ts
 │   │   │   └── Store.d.ts
+│   │   ├── Services
+│   │   │   └── API
+│   │   │       ├── Http.d.ts
+│   │   │       └── Planetary
+│   │   │           ├── ApodPayload.d.ts
+│   │   │           ├── ApodResponse.d.ts
+│   │   │           └── Planetary.d.ts
 │   │   └── index.ts
-│   └── Redux
-│       ├── Reducers
-│       │   ├── home.ts
-│       │   └── index.ts
-│       └── store.ts
+│   ├── Redux
+│   │   ├── Reducers
+│   │   │   ├── home.spec.ts
+│   │   │   ├── home.ts
+│   │   │   └── index.ts
+│   │   └── store.ts
+│   └── Services
+│       ├── API
+│       │   ├── Http.spec.ts
+│       │   ├── Http.ts
+│       │   ├── Planetary.spec.ts
+│       │   └── Planetary.ts
+│       └── index.ts
 ├── tsconfig.json
-└── tslint.json
-
+├── tslint.json
+├── jest.config.js
+├── jest.setup.ts
+├── jest.tsconfig.json
+├── next.config.js
+├── package-lock.json
+└── package.json
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/next-boilerplate/docs/features"><span class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button" href="/next-boilerplate/docs/styling"><span>Styling</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/next-boilerplate/" class="nav-home"><img src="/next-boilerplate/img/footer_icon.png" alt="Pankod" width="66"/></a><div><h5>Docs</h5><a href="/next-boilerplate/docs/en/getting-start.html">Getting Started</a><a href="/next-boilerplate/docs/en/cli-overview.html">Project-CLI</a><a href="/next-boilerplate/docs/en/unit-test.html">Unit Testing</a></div><div><h5>Community</h5><a href="https://twitter.com/PankodDev" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/pankod/next-boilerplate" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://github.com/pankod/next-boilerplate" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/next-boilerplate/img/pankod_footer_logo.png" alt="Pankod Open Source" width="170"/></a><section class="copyright">Copyright © 2019 pankod</section></footer></div></body></html>
