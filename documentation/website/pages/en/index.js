@@ -55,7 +55,7 @@ class HomeSplash extends React.Component {
 		return (
 			<SplashContainer>
 				<div className="inner">
-					<img width="500px" src="img/banner.jpg" />
+					<img className="home-banner" src="img/banner4.png" />
 					<ProjectTitle siteConfig={siteConfig} />
 
 				</div>
@@ -77,9 +77,9 @@ class HomeSplash extends React.Component {
 						<img src="https://david-dm.org/pankod/next-boilerplate/dev-status.svg" alt="devDependency Status" />
 					</a>
 				</div>
-				<PromoSection>
+			{/* 	<PromoSection>
 					<Button href={docUrl('getting-start.html')}>GET STARTED</Button>
-				</PromoSection>
+				</PromoSection> */}
 			</SplashContainer>
 		);
 	}
@@ -225,7 +225,7 @@ class Index extends React.Component {
 		return (
 			<div>
 				<HomeSplash siteConfig={siteConfig} language={language} />
-				<div className="mainContainer">
+				<div className="mainContainer homeMain">
 					<Features />
 					<FeatureCallout />
 					<LearnHow />

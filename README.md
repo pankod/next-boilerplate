@@ -198,10 +198,10 @@ After answering questions it generates files in miliseconds.
 ```
 .
 ├── app
-│  ├── proxy.js
-│  ├── routes.js
-│  └── server.js
-├── next.config.js
+│   ├── proxy.js
+│   ├── routes.js
+│   └── server.js
+├── documentation
 ├── pages
 │   ├── _app.tsx
 │   ├── _document.tsx
@@ -210,10 +210,11 @@ After answering questions it generates files in miliseconds.
 │   │   ├── index.spec.tsx
 │   │   └── index.tsx
 │   └── index.ts
+├── project-cli
 ├── src
 │   ├── Actions
+│   │   ├── HomeActions.spec.tsx
 │   │   ├── HomeActions.ts
-│   │   ├── index.spec.tsx
 │   │   └── index.ts
 │   ├── Components
 │   │   ├── Heading
@@ -233,14 +234,35 @@ After answering questions it generates files in miliseconds.
 │   │   ├── Redux
 │   │   │   ├── Action.d.ts
 │   │   │   └── Store.d.ts
+│   │   ├── Services
+│   │   │   └── API
+│   │   │       ├── Http.d.ts
+│   │   │       └── Planetary
+│   │   │           ├── ApodPayload.d.ts
+│   │   │           ├── ApodResponse.d.ts
+│   │   │           └── Planetary.d.ts
 │   │   └── index.ts
-│   └── Redux
-│       ├── Reducers
-│       │   ├── home.ts
-│       │   └── index.ts
-│       └── store.ts
+│   ├── Redux
+│   │   ├── Reducers
+│   │   │   ├── home.spec.ts
+│   │   │   ├── home.ts
+│   │   │   └── index.ts
+│   │   └── store.ts
+│   └── Services
+│       ├── API
+│       │   ├── Http.spec.ts
+│       │   ├── Http.ts
+│       │   ├── Planetary.spec.ts
+│       │   └── Planetary.ts
+│       └── index.ts
 ├── tsconfig.json
-└── tslint.json
+├── tslint.json
+├── jest.config.js
+├── jest.setup.ts
+├── jest.tsconfig.json
+├── next.config.js
+├── package-lock.json
+└── package.json
 
 ```
  
