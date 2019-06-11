@@ -64,14 +64,12 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig: { API_KEY, API_URL },  serverRuntimeConfig: { ANY_SECRET_TOKEN } } = getConfig();
 ````
 
-To use server only config you need to push the same keys to server array of  ```withConfig``` in the ```next.config.js``` file. Server 
+To use server only config you need to push the same keys to array of server in scope of ```withConfig``` in  ```next.config.js``` file. 
 
-To use server only config server onyl config yapmak için, withConfig içinde, server arrayine pushlanır. 
-okurken server runtime config içerisinden okunur
+It's accessible from serverRuntimeConfig.
 
+> **WARNING**:
 
-Dikkat,
+- The .env file only needs to be used in the development process.
 
-.env dosyası sadece development sürecinde kullanılması gerekiyor. 
-Production kullanımı için envrionment variable kullanılmalı (https://en.wikipedia.org/wiki/Environment_variable).
-
+- [Environment variable](https://en.wikipedia.org/wiki/Environment_variable) should be used for production use.
