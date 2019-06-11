@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js, Sass and CLI.",
+    "tagline": "Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js, Sass and Project CLI.",
     "docs": {
       "cli-overview": {
         "title": "Overview",
