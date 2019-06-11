@@ -12,8 +12,17 @@
 .top-badges > a {
 	margin: 0 2px;
 }
-.promoSection{
-  margin-top: 50px;
+.promoSection {
+	margin-top: 50px;
+}
+.home-banner {
+	margin-bottom: 50px;
+	margin-top: 30px;
+}
+
+.homeMain{
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
