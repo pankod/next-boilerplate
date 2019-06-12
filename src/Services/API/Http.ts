@@ -19,7 +19,7 @@ const {
 const BaseUrl = `${API_URL}/api`;
 
 export const Http = {
-	Request: <A>(
+	Request: async <A>(
 		methodType: string,
 		url: string,
 		params?: HttpModel.IRequestQueryPayload,
@@ -36,7 +36,7 @@ export const Http = {
 				},
 				method: `${methodType}`,
 			})
-				.then(response => {
+				.then(async response => {
 					switch (response.status) {
 						case 200:
 							return response.json().then(resolve);
