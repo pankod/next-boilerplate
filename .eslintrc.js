@@ -38,7 +38,6 @@ module.exports = {
 		'@typescript-eslint/class-name-casing': 'error',
 		'@typescript-eslint/member-ordering': 'error',
 		'@typescript-eslint/no-explicit-any': 'error',
-		'@typescript-eslint/no-empty-interface': 'error',
 		'@typescript-eslint/no-triple-slash-reference': 'error',
 		'@typescript-eslint/no-unnecessary-type-assertion': 'error',
 		'@typescript-eslint/no-unused-vars': 'error',
