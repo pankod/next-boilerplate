@@ -36,8 +36,6 @@ module.exports = {
 		'@typescript-eslint/array-type': 'error',
 		'@typescript-eslint/await-thenable': 'error',
 		'@typescript-eslint/class-name-casing': 'error',
-		'@typescript-eslint/explicit-member-accessibility': 'error',
-		'@typescript-eslint/interface-name-prefix': 'error',
 		'@typescript-eslint/member-ordering': 'error',
 		'@typescript-eslint/no-explicit-any': 'error',
 		'@typescript-eslint/no-empty-interface': 'error',
