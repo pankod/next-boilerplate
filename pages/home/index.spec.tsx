@@ -8,12 +8,12 @@ import initStore from '@Redux/store';
 
 describe('HomePage', () => {
 	it('should render without throwing an error', () => {
-		let wrap = shallow(<HomePage />);
+		const wrap = shallow(<HomePage />);
 		expect(wrap).toBeTruthy();
 	});
 
 	it('should render without throwing an error', () => {
-		let wrap = mount(
+		const wrap = mount(
 			<Provider store={initStore()}>
 				<HomePage />
 			</Provider>,

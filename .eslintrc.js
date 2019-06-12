@@ -55,6 +55,13 @@ module.exports = {
 		'@typescript-eslint/unified-signatures': 'error',
 		complexity: ['error', { max: 3 }],
 		'max-depth': ['error', { max: 4 }],
+		'prefer-const': [
+			'error',
+			{
+				destructuring: 'all',
+				ignoreReadBeforeAssign: true,
+			},
+		],
 	},
 	settings: {
 		react: {
