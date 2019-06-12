@@ -53,6 +53,7 @@ module.exports = {
 		'@typescript-eslint/semi': 'error',
 		'@typescript-eslint/type-annotation-spacing': 'error',
 		'@typescript-eslint/unified-signatures': 'error',
+		'complexity': ['error', { max: 3 }],
 	},
 	settings: {
 		react: {

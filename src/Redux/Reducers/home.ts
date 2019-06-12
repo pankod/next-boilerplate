@@ -23,6 +23,7 @@ type IMapPayload = IHomePage.Actions.IMapPayload;
 /**
  * REDUCER
  */
+/* eslint-disable complexity */
 export const HomeReducer = (state = INITIAL_STATE, action: IAction<IMapPayload>) => {
 	switch (action.type) {
 		case ActionConsts.Home.SetReducer:
@@ -38,3 +39,4 @@ export const HomeReducer = (state = INITIAL_STATE, action: IAction<IMapPayload>)
 			return state;
 	}
 };
+/* eslint-enable complexity */
