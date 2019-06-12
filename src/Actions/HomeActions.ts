@@ -1,5 +1,5 @@
 //#region Global Imports
-import { Dispatch, AnyAction } from 'redux';
+import { Dispatch } from 'redux';
 //#endregion Global Imports
 
 //#region Local Imports
@@ -12,7 +12,7 @@ import { IHomePage } from '@Interfaces';
 //#endregion Interface Imports
 
 export const HomeActions = {
-	Map: (payload: any) => ({
+	Map: (payload: {}) => ({
 		payload,
 		type: ActionConsts.Home.SetReducer,
 	}),
