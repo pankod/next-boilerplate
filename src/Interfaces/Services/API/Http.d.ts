@@ -1,5 +1,3 @@
-import { Props } from 'react';
-
 /**
  * @export @interface HttpModel
  */
