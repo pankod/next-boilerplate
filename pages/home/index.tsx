@@ -11,27 +11,27 @@ import { HomeActions } from '@Actions';
 //#endregion Interface Imports
 
 export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState> {
-    constructor(props: IHomePage.IProps) {
-        super(props);
-    }
+	constructor(props: IHomePage.IProps) {
+		super(props);
+	}
 
-    public render(): JSX.Element {
-        return (
-            <div className="title">
-                Hello!
-                <Heading text="World!" />
-            </div>
-        );
-    }
+	public render(): JSX.Element {
+		return (
+			<div className="title">
+				Hello!
+				<Heading text="World!" />
+			</div>
+		);
+	}
 }
 
 const mapStateToProps = (state: IStore) => state.home;
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    Map: bindActionCreators(HomeActions.Map, dispatch),
+	Map: bindActionCreators(HomeActions.Map, dispatch),
 });
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
+	mapStateToProps,
+	mapDispatchToProps,
 )(HomePage);

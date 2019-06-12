@@ -1,48 +1,21 @@
 {
-    "compilerOptions": {
-        "lib": [
-            "dom",
-            "es2017"
-        ],
-        "baseUrl": ".",
+	"compilerOptions": {
+		"lib": ["dom", "es2017"],
+		"baseUrl": ".",
 		"strict": true,
-        "paths": {
-            "@Components/*": [
-                "./src/Components/*"
-            ],
-            "@Components": [
-                "./src/Components"
-            ],
-            "@Interfaces": [
-                "./src/Interfaces"
-            ],
-            "@Interfaces/*": [
-                "./src/Interfaces/*"
-            ],
-            "@Definations": [
-                "./src/Definations"
-            ],
-            "@Reducers": [
-                "./src/Redux/Reducers"
-            ],
-            "@Reducers/*": [
-                "./src/Redux/Reducers/*"
-            ],
-            "@Redux": [
-                "./src/Redux"
-            ],
-            "@Redux/*": [
-                "./src/Redux/*"
-            ],
-            "@Actions": [
-                "./src/Actions"
-            ],
-            "@Services/*": [
-                "./src/Services/*"
-            ],
-            "@Services": [
-                "./src/Services"
-            ]
-        }
-    }
+		"paths": {
+			"@Components/*": ["./src/Components/*"],
+			"@Components": ["./src/Components"],
+			"@Interfaces": ["./src/Interfaces"],
+			"@Interfaces/*": ["./src/Interfaces/*"],
+			"@Definations": ["./src/Definations"],
+			"@Reducers": ["./src/Redux/Reducers"],
+			"@Reducers/*": ["./src/Redux/Reducers/*"],
+			"@Redux": ["./src/Redux"],
+			"@Redux/*": ["./src/Redux/*"],
+			"@Actions": ["./src/Actions"],
+			"@Services/*": ["./src/Services/*"],
+			"@Services": ["./src/Services"]
+		}
+	}
 }
