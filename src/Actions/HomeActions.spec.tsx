@@ -19,7 +19,8 @@ describe('Home action tests', () => {
 				type: ActionConsts.Home.SetReducer,
 			},
 		];
-		await store.dispatch(
+
+		store.dispatch(
 			HomeActions.Map({
 				version: 2,
 			}),
@@ -40,7 +41,8 @@ describe('Home action tests', () => {
 				type: ActionConsts.Home.ResetReducer,
 			},
 		];
-		await store.dispatch(HomeActions.Reset());
+
+		store.dispatch(HomeActions.Reset());
 
 		expect(store.getActions()).toEqual(expectedActions);
 	});
