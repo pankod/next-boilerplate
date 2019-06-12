@@ -9,12 +9,12 @@ declare namespace HttpModel {
 		url: string,
 		params?: IRequestQueryPayload & {},
 		payload?: IRequestPayload & {},
-	) => Promise<any>;
+	) => Promise<{}>;
 	export interface IRequestPayload {
-		[key: string]: any;
+		[key: string]: {};
 	}
 
 	export interface IRequestQueryPayload {
-		[key: string]: any;
+		[key: string]: {};
 	}
 }
