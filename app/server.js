@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const express = require('express');
 const next = require('next');
 const path = require('path');
@@ -35,3 +36,5 @@ app.prepare().then(() => {
 		console.log(`> Ready on http://localhost:${PORT}`);
 	});
 });
+
+/* eslint-enable @typescript-eslint/no-var-requires */
