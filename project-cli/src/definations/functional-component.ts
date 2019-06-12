@@ -1,11 +1,11 @@
 import * as inquirer from 'inquirer';
-import { DefinationsModel } from './Defination';
+import { DefinitionsModel } from './Definition';
 import { Helper } from './helper';
 import { Common } from './common';
 
 export const funcComp = {
 	showQuestions: async (): Promise<void> => {
-		const answers: DefinationsModel.IAnswers =
+		const answers: DefinitionsModel.IAnswers =
 			await inquirer.prompt<{ fileName: string, isHaveStyle: boolean }>(Common.funcCompQuestions);
 
 		answers.fileName = answers.fileName.replace(/\b\w/g, foo => foo.toUpperCase());

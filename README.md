@@ -222,7 +222,7 @@ After answering questions it generates files in miliseconds.
 │   │   │   ├── index.tsx
 │   │   │   └── style.scss
 │   │   └── index.ts
-│   ├── Definations
+│   ├── Definitions
 │   │   ├── ActionConsts.ts
 │   │   └── index.ts
 │   ├── Interfaces

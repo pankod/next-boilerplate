@@ -1,5 +1,5 @@
 import { IAction, IHomePage } from '@Interfaces';
-import { ActionConsts } from '@Definations';
+import { ActionConsts } from '@Definitions';
 
 import { HomeReducer } from './home';
 

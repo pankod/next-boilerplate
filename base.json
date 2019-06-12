@@ -8,7 +8,7 @@
 			"@Components": ["./src/Components"],
 			"@Interfaces": ["./src/Interfaces"],
 			"@Interfaces/*": ["./src/Interfaces/*"],
-			"@Definations": ["./src/Definations"],
+			"@Definitions": ["./src/Definitions"],
 			"@Reducers": ["./src/Redux/Reducers"],
 			"@Reducers/*": ["./src/Redux/Reducers/*"],
 			"@Redux": ["./src/Redux"],

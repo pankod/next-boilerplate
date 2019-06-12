@@ -6,9 +6,9 @@ import * as program from 'commander';
 import * as figlet from 'figlet';
 import * as inquirer from 'inquirer';
 
-import { classComp } from './src/definations/class-component';
-import { funcComp } from './src/definations/functional-component';
-import { pageComp } from './src/definations/page-component';
+import { classComp } from './src/definitions/class-component';
+import { funcComp } from './src/definitions/functional-component';
+import { pageComp } from './src/definitions/page-component';
 
 console.clear();
 

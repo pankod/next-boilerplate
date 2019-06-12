@@ -8,7 +8,7 @@
 				"alias": {
 					"@Actions": "./src/Actions",
 					"@Components": "./src/Components",
-					"@Definations": "./src/Definations",
+					"@Definitions": "./src/Definitions",
 					"@Interfaces": "./src/Interfaces",
 					"@Reducers": "./src/Redux/Reducers",
 					"@Redux": "./src/Redux",

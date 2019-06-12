@@ -3,7 +3,7 @@ import { Dispatch } from 'redux';
 //#endregion Global Imports
 
 //#region Local Imports
-import { ActionConsts } from '@Definations';
+import { ActionConsts } from '@Definitions';
 import { PlanetaryService } from '@Services';
 //#endregion Local Imports
 

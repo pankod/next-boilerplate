@@ -2,7 +2,7 @@
 //#endregion Global Imports
 
 //#region Local Imports
-import { ActionConsts } from '@Definations';
+import { ActionConsts } from '@Definitions';
 //#endregion Local Imports
 
 //#region Interface Imports
