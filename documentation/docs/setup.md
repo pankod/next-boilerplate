@@ -59,7 +59,7 @@ Then open http://localhost:3000/ to see your app.
 │   │   │   ├── index.tsx
 │   │   │   └── style.scss
 │   │   └── index.ts
-│   ├── Definations
+│   ├── Definitions
 │   │   ├── ActionConsts.ts
 │   │   └── index.ts
 │   ├── Interfaces
