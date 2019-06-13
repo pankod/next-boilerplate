@@ -8,7 +8,7 @@ export const Config = {
 	pageInterfaceDir: './src/Interfaces/Pages',
 	reduxInterfaceDir: './src/Interfaces/Redux',
 	componentsDir: './src/Components',
-	definationsDir: './src/Definations',
+	definitionsDir: './src/Definitions',
 	pagesDir: './pages',
 	reducerDir: './src/Redux/Reducers',
 	actionDir: './src/Actions',

@@ -1,6 +1,6 @@
 export const ActionConsts = {
-	Home : {
+	Home: {
 		ResetReducer: 'Home_ResetReducer',
-		SetReducer: 'Home_SetReducer'
-	}
+		SetReducer: 'Home_SetReducer',
+	},
 };

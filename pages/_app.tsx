@@ -1,5 +1,5 @@
 //#region Global Imports
-import App, { Container } from 'next/app';
+import App, { Container, NextAppContext } from 'next/app';
 import * as React from 'react';
 
 import { Provider } from 'react-redux';
@@ -15,28 +15,27 @@ import { IApp } from '@Interfaces';
 //#endregion Interface Imports
 
 class MyApp extends App<IApp.IProps> {
-    static async getInitialProps(props: any) {
-        let pageProps = {};
+	static async getInitialProps(props: NextAppContext) {
+		let pageProps = {};
 
-        if (props.Component.getInitialProps) {
-            pageProps = await props.Component.getInitialProps(props.ctx);
-        }
+		if (props.Component.getInitialProps) {
+			pageProps = await props.Component.getInitialProps(props.ctx);
+		}
 
-        return { pageProps };
-    }
+		return { pageProps };
+	}
 
+	render(): JSX.Element {
+		const { Component, pageProps, store } = this.props;
 
-    render(): JSX.Element {
-        const { Component, pageProps, store } = this.props;
-
-        return (
-            <Container>
-                <Provider store={store}>
-                    <Component {...pageProps} />
-                </Provider>
-            </Container>
-        );
-    }
+		return (
+			<Container>
+				<Provider store={store}>
+					<Component {...pageProps} />
+				</Provider>
+			</Container>
+		);
+	}
 }
 
 export default withRedux(store)(MyApp);

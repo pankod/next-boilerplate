@@ -11,7 +11,6 @@ import { HomeActions } from '@Actions';
 //#endregion Interface Imports
 
 export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState> {
-
 	constructor(props: IHomePage.IProps) {
 		super(props);
 	}
@@ -28,10 +27,11 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 
 const mapStateToProps = (state: IStore) => state.home;
 
-const mapDispatchToProps = (dispatch: Dispatch) => (
-	{
-		Map: bindActionCreators(HomeActions.Map, dispatch)
-	}
-);
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+	Map: bindActionCreators(HomeActions.Map, dispatch),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps,
+)(HomePage);

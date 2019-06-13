@@ -1,8 +1,8 @@
 
 
 import { Config } from '../../config';
-import { DefinationsModel } from '../../src/definations/Defination';
-import { Helper } from '../../src/definations/helper';
+import { DefinitionsModel } from '../../src/definitions/Definition';
+import { Helper } from '../../src/definitions/helper';
 import * as path from 'path';
 
 describe('Test Helper constructor', () => {

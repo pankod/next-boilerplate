@@ -2,10 +2,14 @@
 import { Props } from 'react';
 //#endregion Global Imports
 
-declare module IApp {
-    export interface IProps extends Props<{}> {
-        store: any;
-    }
+//#region Interface Imports
+import { IStore } from '@Interfaces/Redux/Store';
+//#region Interface Imports
 
-	export interface IState { }
+declare namespace IApp {
+	export interface IProps extends Props<{}> {
+		store: IStore;
+	}
+
+	export interface IState {}
 }

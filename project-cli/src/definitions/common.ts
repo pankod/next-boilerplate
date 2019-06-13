@@ -1,5 +1,5 @@
 import * as inquirer from 'inquirer';
-import { Helper } from '../definations/helper';
+import { Helper } from '../definitions/helper';
 import { Config } from '../../config';
 
 export module Common {

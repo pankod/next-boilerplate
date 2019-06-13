@@ -1,5 +1,5 @@
 
-export declare module DefinationsModel {
+export declare module DefinitionsModel {
 	export interface IInquirerFunc {
 		showQuestions(): Promise<void>;
 	}
