@@ -1,7 +1,9 @@
 language: node_js
 node_js:  
   - "node"
-scripts:
-  - npm install codecov -g
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 after_success:
-  - codecov
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
