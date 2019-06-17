@@ -12,8 +12,7 @@
 		"analyze": "BUNDLE_ANALYZE=both npm run build",
 		"cli": "node ./project-cli/dist/index.js a",
 		"postinstall": "cd project-cli && npm i && npm run build",
-		"test": "nyc jest --coverage",
-		"posttest": "nyc report --reporter=json > coverage/coverage.json",
+		"test": "jest --coverage",
 		"lint": "eslint -c .eslintrc.js --ext .ts,.tsx {app,pages,src}/**",
 		"format": "eslint -c .eslintrc.js --ext .ts,.tsx --fix {app,pages,src}/**"
 	},
