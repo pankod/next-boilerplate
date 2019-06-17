@@ -5,28 +5,24 @@ sidebar_label: Routing
 ---
 
 
-Next.js makes automatic routing according to the name of the files placed in the page folder due to its features.
+Routings are automatically handled by the Next.js. By default, Next.js will serve each file in /pages under a pathname matching the filename. Subfolders with index files under /pages directory are also supported and it's the prefered method in the boilerplate.
 <br>
 
-```sh
-├── pages
-│   ├── about
-│   ├── contact
-│   ├── home
-│   ├── _app.tsx
-│   ├── _document.tsx
-│   └── index.ts
+
 ```
+pages/index.ts
+pages/home/index.tsx
+pages/about/index.tsx
+```
+
 
 According to the above file structure, file names are defined as routes.
 
 ```sh
 pages/index -> /
-
 pages/about -> /about
-
 pages/home  -> /home
 ```
 
 
-To define a custom url path, you can define the url with the desired route name in the ```app/routes``` folder.
+You may add custom routings to your app by using the ```app/routes.js``` 

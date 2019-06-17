@@ -5,7 +5,7 @@ sidebar_label: Styling
 ---
 
 
-The boilerplate uses Sass/Scss for styling components. You should map style file with component by importing it.
+Sass/Scss is used to style components. It's recommended to keep style files in the same directory with component's files and import it right from there when necessary.
 
 Example:
 

@@ -2,15 +2,15 @@
 id: setup
 title: Setup
 ---
-
-1. Clone the repository and install the dependencies:
+To create a new app, you may choose one of the following methods:
+1. Clone the repository:
 
 ```sh
 git clone https://github.com/pankod/next-boilerplate.git
 ```
 
 
-2. To create a new app, go to the choosen app directory on the CLI then run one of the following methods:
+2. Install the dependencies:
 
 **npm**
 
@@ -23,14 +23,17 @@ npm install
 yarn install
 ```
 
-3. Once the installation is done, you can run the following command:
+3. Start the development server:
 
  ```sh
  npm run start:dev
  ```
- <br/>
 
-Then open http://localhost:3000/ to see your app.
+4. Launch http://localhost:3000
+
+
+### Structure
+After the setup is complete, your app should have the following directory structure:
 
 ```sh
 .
