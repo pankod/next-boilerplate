@@ -58,6 +58,7 @@ This boilerplate includes the latest powerfull tools.
 * **Express.js**- Handles server-side rendering and integrated with Express.js
 * **Built-in Project CLI**- Create pages, components, actions, reducers with one command by using built-in cli.
 * **Sass/Scss** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
+* **Docker** - A tool designed to make it easier to create, deploy, and run applications by using containers.
 * **Babel** -  The compiler for next generation JavaScript. Module(alias) support 
 * **Eslint** - The pluggable linting utility.
 * **Reverse Proxy** - A reverse proxy server is a type of proxy server that typically sits behind the firewall in a private network and directs client requests to the appropriate backend server

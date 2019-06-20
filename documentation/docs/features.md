@@ -14,6 +14,7 @@ next-boilerplate project provides a lot of features out of the box. Below is an 
 * **Express.js**- A minimal and flexible Node.js web application framework. Handles server-side rendering and integrated with Express.js.
 * **Built-in Project CLI**- Create pages, components, actions, reducers with one command by using built-in cli.
 * **Sass/Scss** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
+* **Docker** - A tool designed to make it easier to create, deploy, and run applications by using containers.
 * **Babel** -  The compiler for next generation JavaScript.
 * **TSLint** - Contains TypeScript-specific options for the project.
 * **Reverse Proxy** - Lightweight server for proxying API requests.

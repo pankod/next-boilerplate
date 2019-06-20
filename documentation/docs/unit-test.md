@@ -8,7 +8,7 @@ This boilerplate uses [Jest](https://jestjs.io/docs/en/getting-started) and [Enz
 
 Example testing functions from next-boilerplate.
 
-#### Testing Component:
+## Testing Components
 ```js
 describe('Components', () => {
     describe('Heading', () => {
@@ -21,7 +21,7 @@ describe('Components', () => {
 });
 ```
 
-#### Testing Actions:
+## Testing Actions
 ```js
 describe('Home action tests', () => {
     test('Map test', async () => {
@@ -44,7 +44,7 @@ describe('Home action tests', () => {
 }
 ```
 
-#### Testing Services
+## Testing Services
 
 ```javascript
 describe('Http request tests', () => {
@@ -64,7 +64,7 @@ describe('Http request tests', () => {
 }
 ```
 
-#### Testing Reducers
+## Testing Reducers
 
 ```javascript
 describe('home reducer', () => {

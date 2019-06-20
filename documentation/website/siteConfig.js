@@ -53,7 +53,7 @@ const siteConfig = {
 
 	// For no header links in the top nav bar -> headerLinks: [],
 	headerLinks: [
-		{ doc: 'getting-start', label: 'Docs' },
+		{ doc: 'getting-started', label: 'Docs' },
 /* 		{ page: 'users', label: 'Help' }, */
 		{ href: 'https://github.com/pankod/' + packageName, label: 'Github' },
 		{ search: true },

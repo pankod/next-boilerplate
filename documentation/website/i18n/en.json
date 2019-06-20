@@ -13,6 +13,10 @@
         "title": "Usage",
         "sidebar_label": "Usage"
       },
+      "deployment": {
+        "title": "Deployment",
+        "sidebar_label": "Deployment"
+      },
       "dotenv-usage": {
         "title": "Enviroment Variables(.env)",
         "sidebar_label": "Enviroment Variables"
@@ -24,7 +28,7 @@
       "features": {
         "title": "What's included?"
       },
-      "getting-start": {
+      "getting-started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
@@ -39,9 +43,9 @@
       "setup": {
         "title": "Setup"
       },
-      "state-management": {
-        "title": "State Management",
-        "sidebar_label": "State Management"
+      "structure": {
+        "title": "Structure",
+        "sidebar_label": "Structure"
       },
       "styling": {
         "title": "Styling",
