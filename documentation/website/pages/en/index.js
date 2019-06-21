@@ -131,14 +131,21 @@ class Index extends React.Component {
 					{
 						content:
 							'This boilerplate manages application state using Redux.',
-						image: `${baseUrl}img/redux.png`,
+						image: `${baseUrl}img/redux.svg`,
 						imageAlign: 'bottom',
 						title: 'Redux',
 					},
 					{
 						content:
+							'make it easier to create, deploy, and run applications by using docker containers',
+						image: `${baseUrl}img/docker2.png`,
+						imageAlign: 'bottom',
+						title: 'Docker',
+					},
+					{
+						content:
 							'Handles server-side rendering excellently, and it integrates with Express.',
-						image: `${baseUrl}img/express.png`,
+						image: `${baseUrl}img/express.svg`,
 						imageAlign: 'bottom',
 						title: 'Express',
 					},
@@ -167,7 +174,7 @@ class Index extends React.Component {
 				{[
 					{
 						content: 'Minimalistic framework for server-rendered React applications.',
-						image: `${baseUrl}img/next3.png`,
+						image: `${baseUrl}img/next-logo.svg`,
 						imageAlign: 'top',
 						title: 'Next.js',
 					},

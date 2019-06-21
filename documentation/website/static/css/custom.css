@@ -24,6 +24,9 @@
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
 }
+.blockImage{
+	width: 15%;
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
