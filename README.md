@@ -70,66 +70,14 @@ This boilerplate includes the latest powerfull tools.
 
 <br/>
 
-*Here are a few highlights to look out for in this boilerplate*
 
-<dl>
-  
-  <dd>The boilerplate includes tsconfig.json which contains a list of your input files as well as all your compilation settings.<dd>
+## Setup & Documentation
 
-  >One of TypeScript’s core principles is that type-checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.
-
- 
-  <dd>Includes babel-plugin-module-resolver <dd>
-
-  >A Babel plugin to add a new resolver for your modules when compiling your code using Babel. This plugin allows you to add new "root" directories that contain your modules. It also allows you to setup a custom alias for directories, specific files, or even other npm modules.
-
-  
-  <dd>Includes next-runtime-dotenv <dd>
-
-  >Normally, .env isn’t available in the browsers (only Node.js), but our boilerplate uses npm package for make it available.
-
-  <dd>Includes jest and enzyme <dd>
-
-  > Jest was created by Facebook and is a testing framework to test javascript and React code. Together with Airbnb’s Enzyme, which is a testing utility, makes it the perfect match to easily test your React application.
-  
-
-</dl>
-
-<br/>
-
-## Getting Started
+Please refer to our [setup guide](https://pankod.github.io/next-boilerplate/docs/setup) to create a new app. 
 
 
-1. Clone the repository and install the dependencies:
+For more detailed documentation, check out https://pankod.github.io/next-boilerplate/
 
-```
-git clone https://github.com/pankod/next-boilerplate.git
-```
-
-
-2. To create a new app, go to the choosen app directory on the CLI then run one of the following methods:
-
-**npm**
-
-```sh
-npm install
-```
-**yarn**
-
-```sh
-yarn install
-```
-
-3. Once the installation is done, you can run the following command:
-
- ```
- npm run start:dev
- ```
- <br/>
-
-Then open http://localhost:3000/ to see your app.
-
-<br/>
 
 
 ## Built-in CLI

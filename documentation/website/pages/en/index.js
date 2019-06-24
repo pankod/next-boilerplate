@@ -77,7 +77,7 @@ class HomeSplash extends React.Component {
 						<img src="https://david-dm.org/pankod/next-boilerplate/dev-status.svg" alt="devDependency Status" />
 					</a>
 				</div>
-			{/* 	<PromoSection>
+				{/* 	<PromoSection>
 					<Button href={docUrl('getting-start.html')}>GET STARTED</Button>
 				</PromoSection> */}
 			</SplashContainer>
@@ -129,25 +129,22 @@ class Index extends React.Component {
 			<Block background="light" align="center">
 				{[
 					{
-						content:
-							'This boilerplate manages application state using Redux.',
+						content: 'This boilerplate manages application state using Redux.',
 						image: `${baseUrl}img/redux.svg`,
 						imageAlign: 'bottom',
 						title: 'Redux',
 					},
 					{
-						content:
-							'make it easier to create, deploy, and run applications by using docker containers',
-						image: `${baseUrl}img/docker2.png`,
-						imageAlign: 'bottom',
-						title: 'Docker',
-					},
-					{
-						content:
-							'Handles server-side rendering excellently, and it integrates with Express.',
+						content:'Handles server-side rendering excellently, and it integrates with Express.',
 						image: `${baseUrl}img/express.svg`,
 						imageAlign: 'bottom',
 						title: 'Express',
+					},
+					{
+						content:'Create, deploy, and run applications by using docker containers.',
+						image: `${baseUrl}img/docker2.png`,
+						imageAlign: 'bottom',
+						title: 'Docker',
 					},
 				]}
 			</Block>
@@ -185,14 +182,14 @@ class Index extends React.Component {
 						title: 'TypeScript',
 					},
 					{
-						content: 'Javascript testing framework , created by developers who created react',
+						content: 'Javascript testing framework , created by developers who created react.',
 						image: `${baseUrl}img/jest-logo.png`,
 						imageAlign: 'top',
 						title: 'Jest & Enzyme',
 					},
 					{
 						content: 'Create pages, components, actions, reducers with one command by using built-in cli.',
-						image: `${baseUrl}img/cli-logo.jpg`,
+						image: `${baseUrl}img/cli-logo.png`,
 						imageAlign: 'top',
 						title: 'Project CLI',
 					},
