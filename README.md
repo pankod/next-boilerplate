@@ -78,7 +78,7 @@ Please refer to our [setup guide](https://pankod.github.io/next-boilerplate/docs
 
 For more detailed documentation, check out https://pankod.github.io/next-boilerplate/
 
-
+<br/>
 
 ## Built-in CLI
 
