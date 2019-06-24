@@ -76,18 +76,16 @@
 <p>Dockerfile already included to project.</p>
 <pre><code class="hljs"><span class="hljs-keyword">FROM</span> node:alpine
 
-<span class="hljs-builtin-name">RUN</span> mkdir -p /opt/app
-WORKDIR /app
+<span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p /opt/app</span>
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> /app</span>
 
-ENV NODE_ENV production
-ENV<span class="hljs-built_in"> PORT </span>3000
-EXPOSE 3000
+<span class="hljs-keyword">ENV</span> NODE_ENV production
 
-WORKDIR /opt/app
-COPY . /opt/app
+<span class="hljs-keyword">WORKDIR</span><span class="bash"> /opt/app</span>
+<span class="hljs-keyword">COPY</span><span class="bash"> . /opt/app</span>
 
-<span class="hljs-builtin-name">RUN</span> npm install --dev &amp;&amp; npm <span class="hljs-builtin-name">run</span> build
+<span class="hljs-keyword">RUN</span><span class="bash"> npm install --dev &amp;&amp; npm run build</span>
 
-CMD [ <span class="hljs-string">"npm"</span>, <span class="hljs-string">"start"</span> ]
+<span class="hljs-keyword">CMD</span><span class="bash"> [ <span class="hljs-string">"npm"</span>, <span class="hljs-string">"start"</span> ]</span>
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/next-boilerplate/docs/structure"><span class="arrow-prev">← </span><span>Structure</span></a><a class="docs-next button" href="/next-boilerplate/docs/styling"><span>Styling</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#build">Build</a></li><li><a href="#docker">Docker</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/next-boilerplate/" class="nav-home"><img src="/next-boilerplate/img/footer_icon.png" alt="Pankod" width="66"/></a><div><h5>Docs</h5><a href="/next-boilerplate/docs/en/getting-start.html">Getting Started</a><a href="/next-boilerplate/docs/en/cli-overview.html">Project-CLI</a><a href="/next-boilerplate/docs/en/unit-test.html">Unit Testing</a></div><div><h5>Community</h5><a href="https://twitter.com/PankodDev" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/pankod/next-boilerplate" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://github.com/pankod/next-boilerplate" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/next-boilerplate/img/pankod_footer_logo.png" alt="Pankod Open Source" width="170"/></a><section class="copyright">Copyright © 2019 pankod</section></footer></div></body></html>
