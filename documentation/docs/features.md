@@ -4,8 +4,6 @@ title: What's included?
 ---
 
 
-Below is an overview of the functionality next-boilerplate provides.
-
 next-boilerplate project provides a lot of features out of the box. Below is an overview of the included components and tools.
 
 * **Next.js** - Minimalistic framework for server-rendered React applications.
