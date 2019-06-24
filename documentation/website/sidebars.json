@@ -1,16 +1,17 @@
 {
 	"docs": {
 		"Introduction": [
-			"getting-start",
+			"getting-started",
 			"features",
-			"setup"
+			"setup",
+			"structure",
+			"deployment"
 		],
 		"Features": [
 			"styling",
 			"routing",
 			"unit-test",
 			"reverse-proxy",
-			"state-management",
 			"dotenv-usage"
 		],
 		"Project CLI": [
