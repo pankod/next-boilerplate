@@ -1,5 +1,5 @@
 //#region Global Imports
-import { Props } from 'react';
+import { Props } from 'prop-types';
 //#endregion Global Imports
 
 declare namespace IHeading {
