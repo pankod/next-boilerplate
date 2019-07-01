@@ -37,11 +37,10 @@ export const Http = {
 				method: `${methodType}`,
 			})
 				.then(async response => {
-					switch (response.status) {
-						case 200:
-							return response.json().then(resolve);
-						default:
-							return reject(response);
+					if (response.status === 200) {
+						return response.json().then(resolve);
+					} else {
+						return reject(response);
 					}
 				})
 				.catch(e => {

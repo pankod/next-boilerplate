@@ -21,8 +21,6 @@ module.exports = {
 		'@typescript-eslint/explicit-member-accessibility': 'off',
 		'@typescript-eslint/interface-name-prefix': 'off',
 		'@typescript-eslint/no-empty-interface': 'off',
-		'@typescript-eslint/no-var-requires': 'off',
-		'@typescript-eslint/no-object-literal-type-assertion': 'off',
 		'@typescript-eslint/no-inferrable-types': 'off',
 		'@typescript-eslint/no-magic-numbers': 'off',
 		'@typescript-eslint/no-namespace': 'off',

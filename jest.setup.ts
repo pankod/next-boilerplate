@@ -1,6 +1,6 @@
 import * as Adapter from 'enzyme-adapter-react-16';
 
-require('enzyme').configure({ adapter: new Adapter() })
+require('enzyme').configure({ adapter: new Adapter() });
 
 const nock = require('nock');
 
@@ -33,7 +33,7 @@ nock('http://localhost:3000')
 
 
 //env variables
-require('dotenv').config({ path: '.env.test' })
+require('dotenv').config({ path: '.env.test' });
 
 import { setConfig } from 'next/config'
 setConfig({
@@ -42,4 +42,4 @@ setConfig({
 		'API_URL': process.env.API_URL,
 		'API_KEY': process.env.API_KEY
 	}
-})
+});

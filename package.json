@@ -52,6 +52,7 @@
 		"@typescript-eslint/eslint-plugin": "^1.9.0",
 		"@typescript-eslint/parser": "^1.9.0",
 		"autoprefixer": "^9.4.3",
+		"babel-jest": "^24.8.0",
 		"babel-plugin-module-resolver": "^3.1.1",
 		"enzyme": "^3.9.0",
 		"enzyme-adapter-react-16": "^1.12.1",
