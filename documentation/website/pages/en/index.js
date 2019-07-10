@@ -64,8 +64,8 @@ class HomeSplash extends React.Component {
 						<img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/maintainability" />
 					</a>
 
-					<a href="https://codecov.io/gh/pankod/next-boilerplate">
-						<img src="https://codecov.io/gh/pankod/next-boilerplate/branch/master/graph/badge.svg" />
+  					<a href="https://codeclimate.com/github/pankod/next-boilerplate/test_coverage">
+						<img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/test_coverage" />
 					</a>
 					<a href="https://travis-ci.org/pankod/next-boilerplate">
 						<img src="https://travis-ci.org/pankod/next-boilerplate.svg?branch=master" alt="Build Status" />
@@ -135,13 +135,13 @@ class Index extends React.Component {
 						title: 'Redux',
 					},
 					{
-						content:'Handles server-side rendering excellently, and it integrates with Express.',
+						content: 'Handles server-side rendering excellently, and it integrates with Express.',
 						image: `${baseUrl}img/express.svg`,
 						imageAlign: 'bottom',
 						title: 'Express',
 					},
 					{
-						content:'Create, deploy, and run applications by using docker containers.',
+						content: 'Create, deploy, and run applications by using docker containers.',
 						image: `${baseUrl}img/docker2.png`,
 						imageAlign: 'bottom',
 						title: 'Docker',
