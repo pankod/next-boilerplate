@@ -10,7 +10,7 @@
   <a href="https://codeclimate.com/github/pankod/next-boilerplate/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/maintainability" />
   </a>
-  <!-- CodeCoverave -->
+  <!-- TestCoverage -->
   <a href="https://codeclimate.com/github/pankod/next-boilerplate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/test_coverage" /></a>
   <!-- Build Status -->
   <a href="https://travis-ci.org/pankod/next-boilerplate">
@@ -53,13 +53,13 @@ By the end of setup, you'll have a Next.js project and features which is specifi
 This boilerplate includes the latest powerfull tools.
 
 * **Next.js** - Minimalistic framework for server-rendered React applications.
-* **Typescript** - Superset of JavaScript which primarily provides optional static typing, classes and interfaces. path support(allias)
+* **Typescript** - Superset of JavaScript which primarily provides optional static typing, classes and interfaces.
 * **Redux** - State management
 * **Express.js**- Handles server-side rendering and integrated with Express.js
 * **Built-in Project CLI**- Create pages, components, actions, reducers with one command by using built-in cli.
 * **Sass/Scss** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
 * **Docker** - A tool designed to make it easier to create, deploy, and run applications by using containers.
-* **Babel** -  The compiler for next generation JavaScript. Module(alias) support 
+* **Babel** -  The compiler for next generation JavaScript.
 * **Eslint** - The pluggable linting utility.
 * **Reverse Proxy** - A reverse proxy server is a type of proxy server that typically sits behind the firewall in a private network and directs client requests to the appropriate backend server
 * **Bundler Analyzer** - Visualize size of webpack output files with an interactive zoomable treemap.
@@ -100,120 +100,11 @@ npm run cli
 
 After starting, an interactive menu will let you configure the component the be created. Firstly, you'll be asked for the type of the component whether it's a page, functional component or class component. Then you'll be prompted with the other options relevant to your selection of the component type.
 
-For example, let's go through the steps of the creation of a new page component.
-
->Enter page name
-
- - Enter the desired filename for the page. Spaces are not allowed!
- - The tool will check for the existing filenames in the project and reject if found any.
- - The interface files are going to be created under Interfaces/Pages directory.
-
->Do you want to add custom route or use default route name?,
-
-- You can define custom route for page which is specified in app/routes.js
-- It will set filename as a route to if you don't want to add custom route.
-
->Do you want to have a connection to store?
-
-If you choose yes, the following store connection methods and imports are generated:
-
-- mapStateToProps & mapDispatchToProps methods and some imports in page component file,
-- An action file in the Actions folder,
-- An action constants in Definitions/ActionConsts.ts,
-- An action file to Actions/index.ts,
-- A Store interface file.
-
->Do you want to create a new reducer or use your own?
-
-- If you choose yes, a new reducer file for page is created in src/Redux/Reducers directory and combineReducers are added to index.ts
-
->Do you want to add a style file?
-
-- If you choose yes, a style.scss file is created in to same directory with page the component.
-
 
 After answering questions it generates files in miliseconds.
 
 <br/>
 
-## Tree
-
- ***At this point, your project layout should look like this:***
- 
- <br/>
-
-```
-.
-├── app
-│   ├── proxy.js
-│   ├── routes.js
-│   └── server.js
-├── documentation
-├── pages
-│   ├── _app.tsx
-│   ├── _document.tsx
-│   ├── home
-│   │   ├── index.scss
-│   │   ├── index.spec.tsx
-│   │   └── index.tsx
-│   └── index.ts
-├── project-cli
-├── src
-│   ├── Actions
-│   │   ├── HomeActions.spec.tsx
-│   │   ├── HomeActions.ts
-│   │   └── index.ts
-│   ├── Components
-│   │   ├── Heading
-│   │   │   ├── index.spec.tsx
-│   │   │   ├── index.tsx
-│   │   │   └── style.scss
-│   │   └── index.ts
-│   ├── Definitions
-│   │   ├── ActionConsts.ts
-│   │   └── index.ts
-│   ├── Interfaces
-│   │   ├── Components
-│   │   │   └── Heading.d.ts
-│   │   ├── Pages
-│   │   │   ├── App.d.ts
-│   │   │   └── Home.d.ts
-│   │   ├── Redux
-│   │   │   ├── Action.d.ts
-│   │   │   └── Store.d.ts
-│   │   ├── Services
-│   │   │   └── API
-│   │   │       ├── Http.d.ts
-│   │   │       └── Planetary
-│   │   │           ├── ApodPayload.d.ts
-│   │   │           ├── ApodResponse.d.ts
-│   │   │           └── Planetary.d.ts
-│   │   └── index.ts
-│   ├── Redux
-│   │   ├── Reducers
-│   │   │   ├── home.spec.ts
-│   │   │   ├── home.ts
-│   │   │   └── index.ts
-│   │   └── store.ts
-│   └── Services
-│       ├── API
-│       │   ├── Http.spec.ts
-│       │   ├── Http.ts
-│       │   ├── Planetary.spec.ts
-│       │   └── Planetary.ts
-│       └── index.ts
-├── eslintrc.js
-├── .prettierrc
-├── tsconfig.json
-├── jest.config.js
-├── jest.setup.ts
-├── jest.tsconfig.json
-├── next.config.js
-├── package-lock.json
-└── package.json
-
-```
- 
 
 ## License
 
