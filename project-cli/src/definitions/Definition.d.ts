@@ -1,4 +1,3 @@
-
 export declare module DefinitionsModel {
 	export interface IInquirerFunc {
 		showQuestions(): Promise<void>;
@@ -6,6 +5,7 @@ export declare module DefinitionsModel {
 
 	export interface ITemplateProps {
 		fileName: string;
+		styleName?: string;
 		lowerFileName?: string;
 		interfaceName?: string;
 		isHaveStyle?: boolean;
@@ -18,6 +18,7 @@ export declare module DefinitionsModel {
 	export interface IAnswers {
 		fileName: string;
 		lowerFileName?: string;
+		styleName?: string;
 		interfaceName?: string;
 		isHaveStyle?: boolean;
 		isConnectStore?: boolean;
