@@ -10,12 +10,11 @@ export const funcComp = {
 			isHaveStyle: boolean;
 		}>(Common.funcCompQuestions);
 
-		answers.lowerFileName = answers.fileName.replace(/\b\w/g, foo => foo.toLowerCase());
-		answers.styleName = answers.lowerFileName.split(' ').join('-');
-		answers.fileName = answers.fileName
-			.replace(/\b\w/g, foo => foo.toUpperCase())
+		answers.fileName = answers.fileName.replace(/\b\w/g, foo => foo.toUpperCase());
+		answers.lowerFileName = answers.fileName
+			.replace(/\b\w/g, foo => foo.toLowerCase())
 			.split(' ')
-			.join('');
+			.join('-');
 
 		Helper.createFuncComponent(answers);
 

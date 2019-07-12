@@ -16,7 +16,7 @@ import './style.scss';
 import { {{interfaceName}} } from '@Interfaces';
 //#endregion Interface Imports
 
-class {{fileName}} extends React.Component<{{interfaceName}}.IProps, {{interfaceName}}.IState> {
+class {{camelCaseName}} extends React.Component<{{interfaceName}}.IProps, {{interfaceName}}.IState> {
 
 	constructor(props: {{interfaceName}}.IProps) {
 		super(props);
@@ -27,8 +27,8 @@ class {{fileName}} extends React.Component<{{interfaceName}}.IProps, {{interface
 
 	public render(): JSX.Element {
 		return (
-			<div className="{{styleName}}">
-				{{fileName}}
+			<div className="{{kebabCaseName}}">
+				{{camelCaseName}}
 			</div>
 		);
 	}
@@ -40,9 +40,9 @@ const mapStateToProps = state => state;
 const mapDispatchToProps = (dispatch: Dispatch) => (
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)({{fileName}});
+export default connect(mapStateToProps, mapDispatchToProps)({{camelCaseName}});
 {{/isConnectStore}}
 
 {{^isConnectStore}}
-export default {{fileName}};
+export default {{camelCaseName}};
 {{/isConnectStore}}

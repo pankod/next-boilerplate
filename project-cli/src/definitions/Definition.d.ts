@@ -5,8 +5,9 @@ export declare module DefinitionsModel {
 
 	export interface ITemplateProps {
 		fileName: string;
-		styleName?: string;
 		lowerFileName?: string;
+		camelCaseName?: string;
+		kebabCaseName?: string;
 		interfaceName?: string;
 		isHaveStyle?: boolean;
 		isConnectStore?: boolean;
@@ -18,7 +19,8 @@ export declare module DefinitionsModel {
 	export interface IAnswers {
 		fileName: string;
 		lowerFileName?: string;
-		styleName?: string;
+		camelCaseName?: string;
+		kebabCaseName?: string;
 		interfaceName?: string;
 		isHaveStyle?: boolean;
 		isConnectStore?: boolean;

@@ -7,13 +7,16 @@ import { DefinitionsModel } from './Definition';
 
 import { Config } from '../../config';
 
+import { transformToUpperCamelCase, transformToKebabCase } from './transfromers';
+
 export const Helper = {
 	addRoute: (answers: DefinitionsModel.IAnswers) => {
-		const { isHavePath, routePath, fileName } = answers;
+		const { isHavePath, routePath, fileName, lowerFileName } = answers;
+		const preparedRoutePath = isHavePath ? routePath : transformToKebabCase(fileName);
 		const templateProps = {
-			fileName: fileName.replace(/\b\w/g, foo => foo.toLowerCase()),
+			fileName: lowerFileName,
 			isHavePath,
-			routePath,
+			routePath: preparedRoutePath,
 		};
 
 		const replaceContentParams: DefinitionsModel.IReplaceContent = {
@@ -72,11 +75,25 @@ export const Helper = {
 	},
 
 	createInterface: (answers: DefinitionsModel.IAnswers, isClass: boolean) => {
-		const { fileName, lowerFileName, isPage, isConnectStore } = answers;
+		const {
+			fileName,
+			lowerFileName,
+			isPage,
+			isConnectStore,
+			camelCaseName,
+			kebabCaseName,
+		} = answers;
 		const templatePath = './project-cli/src/templates/interfaces/component.d.mustache';
-		const templateProps = { fileName, isClass, lowerFileName, isConnectStore };
-		const pageDirPath = `${Config.pageInterfaceDir}/${fileName}.d.ts`;
-		const compDirPath = `${Config.compInterfaceDir}/${fileName}.d.ts`;
+		const templateProps = {
+			fileName,
+			isClass,
+			lowerFileName,
+			isConnectStore,
+			kebabCaseName,
+			camelCaseName,
+		};
+		const pageDirPath = `${Config.pageInterfaceDir}/${camelCaseName}.d.ts`;
+		const compDirPath = `${Config.compInterfaceDir}/${camelCaseName}.d.ts`;
 		const pageInterfaceIndex = './project-cli/src/templates/interfaces/page-index.d.mustache';
 		const compIntefaceIndex =
 			'./project-cli/src/templates/interfaces/component-index.d.mustache';
@@ -110,7 +127,7 @@ export const Helper = {
 			),
 			getFileContent: () => Helper.getTemplate(storeInterface, templateProps),
 			message: 'Interface file added to Interfaces/Redux/Store.d.ts',
-			regexKey: /export type IStore\s[=]\s[{]/g,
+			regexKey: /export interface IStore\s[{]/g,
 		};
 
 		Helper.writeFile(writeFileProps);
@@ -137,12 +154,12 @@ export const Helper = {
 	},
 
 	createStyle: (answers: DefinitionsModel.IAnswers): void => {
+		const camelCaseName = transformToUpperCamelCase(answers.fileName);
+		const kebabCaseName = transformToKebabCase(answers.fileName);
 		const templatePath = './project-cli/src/templates/styles.mustache';
-		const templateProps = { fileName: answers.fileName, styleName: answers.styleName };
-		const pageDirPath = `${Config.pagesDir}/${answers.fileName.replace(/\b\w/g, foo =>
-			foo.toLowerCase(),
-		)}/style.scss`;
-		const compDirPath = `${Config.componentsDir}/${answers.fileName}/style.scss`;
+		const templateProps = { fileName: answers.fileName, kebabCaseName };
+		const pageDirPath = `${Config.pagesDir}/${kebabCaseName}/style.scss`;
+		const compDirPath = `${Config.componentsDir}/${camelCaseName}/style.scss`;
 
 		const writeFileProps = {
 			dirPath: answers.isPage ? pageDirPath : compDirPath,
@@ -192,11 +209,11 @@ export const Helper = {
 	},
 
 	addAction: (answers: DefinitionsModel.IAnswers): void => {
-		const { fileName } = answers;
-		const actionFileDir = `${Config.actionDir}/${fileName}Actions.ts`;
+		const { fileName, camelCaseName } = answers;
+		const actionFileDir = `${Config.actionDir}/${camelCaseName}Actions.ts`;
 		const actionTemplate = './project-cli/src/templates/reducers/action.mustache';
 		const indexTemplate = './project-cli/src/templates/reducers/action-index.mustache';
-		const templateProps = { fileName };
+		const templateProps = { fileName, camelCaseName };
 
 		const writeFileProps: DefinitionsModel.IWriteFile = {
 			dirPath: actionFileDir,
@@ -216,11 +233,11 @@ export const Helper = {
 	},
 
 	addReducer: (answers: DefinitionsModel.IAnswers): void => {
-		const { fileName, lowerFileName, isConnectStore } = answers;
+		const { fileName, lowerFileName, isConnectStore, camelCaseName, kebabCaseName } = answers;
 
 		const reducerFileDir = `${Config.reducerDir}/${lowerFileName}.ts`;
 		const reducerTemplate = './project-cli/src/templates/reducers/reducer.mustache';
-		const templateProps = { fileName, lowerFileName };
+		const templateProps = { fileName, lowerFileName, camelCaseName, kebabCaseName };
 
 		const replaceContentParams: DefinitionsModel.IReplaceContent = {
 			fileDir: `${Config.reducerDir}/index.ts`,
@@ -253,17 +270,20 @@ export const Helper = {
 	},
 
 	createClassComponent: (answers: DefinitionsModel.IAnswers): void => {
-		const { lowerFileName, isConnectStore } = answers;
-		const pagesDir = `${Config.pagesDir}/${lowerFileName}`;
-		const classDir = answers.isPage ? pagesDir : `${Config.componentsDir}/${answers.fileName}`;
+		answers.camelCaseName = transformToUpperCamelCase(answers.fileName);
+		answers.kebabCaseName = transformToKebabCase(answers.fileName);
+		const { lowerFileName, isConnectStore, fileName, camelCaseName, kebabCaseName } = answers;
+		const pagesDir = `${Config.pagesDir}/${kebabCaseName}`;
+		const classDir = answers.isPage ? pagesDir : `${Config.componentsDir}/${camelCaseName}`;
 		const templatePath = './project-cli/src/templates/components/class.mustache';
 		const templateProps = {
 			fileName: answers.fileName,
-			interfaceName: `I${answers.fileName}`,
+			interfaceName: `I${camelCaseName}`,
 			isConnectStore: answers.isConnectStore,
 			isHaveStyle: answers.isHaveStyle,
-			lowerFileName: answers.lowerFileName,
-			styleName: answers.styleName,
+			camelCaseName: camelCaseName,
+			lowerFileName: lowerFileName,
+			kebabCaseName: kebabCaseName,
 		};
 		const indexTemplate = './project-cli/src/templates/components/index.mustache';
 
@@ -294,13 +314,17 @@ export const Helper = {
 	},
 
 	createFuncComponent: (answers: DefinitionsModel.IAnswers): void => {
-		const { lowerFileName, fileName, isHaveStyle } = answers;
-		const funcDir = `${Config.componentsDir}/${answers.fileName}`;
+		answers.camelCaseName = transformToUpperCamelCase(answers.fileName);
+		answers.kebabCaseName = transformToKebabCase(answers.fileName);
+		const { lowerFileName, fileName, isHaveStyle, camelCaseName, kebabCaseName } = answers;
+		const funcDir = `${Config.componentsDir}/${answers.camelCaseName}`;
 		const templatePath = './project-cli/src/templates/components/functional.mustache';
 		const templateProps = {
 			fileName,
 			lowerFileName,
-			interfaceName: `I${fileName}`,
+			camelCaseName,
+			kebabCaseName,
+			interfaceName: `I${camelCaseName}`,
 			isHaveStyle,
 		};
 		const indexTemplate = './project-cli/src/templates/components/index.mustache';

@@ -3,15 +3,15 @@ import { ActionConsts } from "@Definitions";
 /**
  * ACTIONS
 */
-export const {{fileName}}Actions = {
+export const {{camelCaseName}}Actions = {
 	Map: (payload: any) => (
 		{
 			payload,
-			type: ActionConsts.{{fileName}}.SetReducer
+			type: ActionConsts.{{camelCaseName}}.SetReducer
 		}
 	),
 
 	Reset: () => ({
-		type: ActionConsts.{{fileName}}.ResetReducer
+		type: ActionConsts.{{camelCaseName}}.ResetReducer
 	})
 }

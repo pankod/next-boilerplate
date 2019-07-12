@@ -3,25 +3,25 @@ import { ActionConsts } from '@Definitions';
 //#endregion Local Imports
 
 //#region Interface Imports
-import { IAction, I{{fileName}} } from '@Interfaces';
+import { IAction, I{{camelCaseName}} } from '@Interfaces';
 //#endregion Interface Imports
 
 /**
  * INITIAL_STATE
 */
-const INITIAL_STATE: I{{fileName}}.IStateProps = { };
+const INITIAL_STATE: I{{camelCaseName}}.IStateProps = { };
 
-type IMapPayload = I{{fileName}}.Actions.IMapPayload;
+type IMapPayload = I{{camelCaseName}}.Actions.IMapPayload;
 
-export const {{fileName}}Reducer = (state = INITIAL_STATE, action: IAction<IMapPayload>) => {
+export const {{camelCaseName}}Reducer = (state = INITIAL_STATE, action: IAction<IMapPayload>) => {
 	switch (action.type) {
-		case ActionConsts.{{fileName}}.SetReducer:
+		case ActionConsts.{{camelCaseName}}.SetReducer:
 			return {
 				...state,
 				...action.payload
 			};
 
-		case ActionConsts.{{fileName}}.ResetReducer:
+		case ActionConsts.{{camelCaseName}}.ResetReducer:
 			return INITIAL_STATE;
 
 		default:

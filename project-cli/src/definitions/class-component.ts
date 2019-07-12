@@ -7,18 +7,16 @@ export const classComp = {
 	showQuestions: async (): Promise<void> => {
 		const answers: DefinitionsModel.IAnswers = await inquirer.prompt<{
 			fileName: string;
-			styleName: string;
 			isHaveStyle: boolean;
 			isHaveReducer: boolean;
 			isConnectStore: boolean;
 		}>(Common.classCompQuestions);
 
-		answers.lowerFileName = answers.fileName.replace(/\b\w/g, foo => foo.toLowerCase());
-		answers.styleName = answers.lowerFileName.split(' ').join('-');
-		answers.fileName = answers.fileName
-			.replace(/\b\w/g, foo => foo.toUpperCase())
+		answers.fileName = answers.fileName.replace(/\b\w/g, foo => foo.toUpperCase());
+		answers.lowerFileName = answers.fileName
+			.replace(/\b\w/g, foo => foo.toLowerCase())
 			.split(' ')
-			.join('');
+			.join('-');
 
 		Helper.createClassComponent(answers);
 
