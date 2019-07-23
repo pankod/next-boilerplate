@@ -1,6 +1,8 @@
 language: node_js
-node_js:  
-  - "node"
+node_js:
+  - "10"
+install:
+  - npm ci
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
