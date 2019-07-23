@@ -1,11 +1,13 @@
-FROM node:12-alpine
+FROM node:10-alpine
 
-RUN mkdir -p /opt/app
-WORKDIR /app
+WORKDIR /opt/app
 
 ENV NODE_ENV production
 
-WORKDIR /opt/app
+COPY package*.json ./
+
+RUN npm ci 
+
 COPY . /opt/app
 
 RUN npm install --dev && npm run build
