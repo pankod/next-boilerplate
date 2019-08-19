@@ -10,16 +10,13 @@
 		"heroku-prebuild": "npm i --dev && cross-env NODE_ENV=production next build",
 		"export": "cross-env NODE_ENV=production next export",
 		"analyze": "cross-env BUNDLE_ANALYZE=both npm run build",
-		"cli": "pankod add",
+		"cli": "pankod-cli add",
 		"test": "jest --coverage",
 		"lint": "eslint -c .eslintrc.js --ext .ts,.tsx {app,pages,src}/**",
 		"format": "eslint -c .eslintrc.js --ext .ts,.tsx --fix {app,pages,src}/**"
 	},
 	"pankod": {
-		"projectType": "nextjs",
-		"plugins": [
-			"styled"
-		]
+		"projectType": "nextjs"
 	},
 	"dependencies": {
 		"@zeit/next-bundle-analyzer": "^0.1.2",
@@ -45,7 +42,7 @@
 		"redux-thunk": "^2.3.0"
 	},
 	"devDependencies": {
-		"@pankod/pankod-cli": "^0.2.2",
+		"@pankod/pankod-cli": "^0.2.3",
 		"@types/enzyme": "^3.9.1",
 		"@types/enzyme-adapter-react-16": "^1.0.5",
 		"@types/jest": "^24.0.12",
