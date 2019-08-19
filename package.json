@@ -10,7 +10,7 @@
 		"heroku-prebuild": "npm i --dev && cross-env NODE_ENV=production next build",
 		"export": "cross-env NODE_ENV=production next export",
 		"analyze": "cross-env BUNDLE_ANALYZE=both npm run build",
-		"cli": "pankod",
+		"cli": "pankod add",
 		"test": "jest --coverage",
 		"lint": "eslint -c .eslintrc.js --ext .ts,.tsx {app,pages,src}/**",
 		"format": "eslint -c .eslintrc.js --ext .ts,.tsx --fix {app,pages,src}/**"
