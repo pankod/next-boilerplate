@@ -16,7 +16,8 @@
 		],
 		"Project CLI": [
 			"cli-overview",
-			"cli-usage"
+			"cli-usage",
+			"cli-migration-guide"
 		]
 	}
 }

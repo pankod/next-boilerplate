@@ -5,6 +5,10 @@
     "previous": "Previous",
     "tagline": "Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js, Sass and Project CLI.",
     "docs": {
+      "cli-migration-guide": {
+        "title": "CLI Migrate Guide",
+        "sidebar_label": "Migration Guide"
+      },
       "cli-overview": {
         "title": "Overview",
         "sidebar_label": "Overview"
