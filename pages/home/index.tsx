@@ -21,17 +21,18 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 		super(props);
 	}
 
-	public render(): JSX.Element {
-		const { t } = this.props;
-
-		const LocaleButton: React.ElementType = ({ lang }) => (
+	renderLocaleButtons = () =>
+		['en', 'es', 'tr'].map(lang => (
 			<div
 				className={i18next.language === lang ? 'active' : ''}
 				onClick={() => this.changeLanguage(lang)}
 			>
 				{lang}
 			</div>
-		);
+		));
+
+	public render(): JSX.Element {
+		const { t } = this.props;
 
 		return (
 			<div className="container">
@@ -41,9 +42,7 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 				<div className="container__middle">
 					<div className="container__middle__left">
 						<div className="container__middle__left__buttons">
-							<LocaleButton lang="en" />
-							<LocaleButton lang="es" />
-							<LocaleButton lang="tr" />
+							{this.renderLocaleButtons()}
 						</div>
 					</div>
 					<div className="container__middle__right">
