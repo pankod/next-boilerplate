@@ -19,6 +19,7 @@
 		"projectType": "nextjs"
 	},
 	"dependencies": {
+		"@types/i18next": "^13.0.0",
 		"@zeit/next-bundle-analyzer": "^0.1.2",
 		"@zeit/next-css": "^1.0.1",
 		"@zeit/next-sass": "^1.0.1",
@@ -42,6 +43,7 @@
 		"query-string": "^6.5.0",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
+		"react-i18next": "^7.13.0",
 		"react-redux": "^6.0.0",
 		"redux": "^4.0.1",
 		"redux-thunk": "^2.3.0"
