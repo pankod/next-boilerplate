@@ -1,7 +1,10 @@
+//#region Global Imports
 const i18next = require('i18next');
 const XHR = require('i18next-xhr-backend');
 const LanguageDetector = require('i18next-browser-languagedetector');
 const configI18next = require('./i18next.config');
+//#endregion Global Imports
+
 const i18nInstance = i18next;
 
 if (process.browser) {

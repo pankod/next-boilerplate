@@ -1,6 +1,11 @@
+//#region Global Imports
 import { translate } from 'react-i18next';
-import { getInitialProps, I18n } from '../app/i18n';
 import { NextComponentType, NextContext, NextComponentClass } from 'next';
+//#endregion Global Imports
+
+//#region Local Imports
+import { getInitialProps, I18n } from '../app/i18n';
+//#endregion Local Imports
 
 const setComposedInitialProps = async (ComposedComponent: NextComponentType, ctx: NextContext) => {
 	return ComposedComponent.getInitialProps ? await ComposedComponent.getInitialProps(ctx) : {}

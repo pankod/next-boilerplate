@@ -19,7 +19,6 @@
 		"projectType": "nextjs"
 	},
 	"dependencies": {
-		"@types/i18next": "^13.0.0",
 		"@types/react-i18next": "^7.8.3",
 		"@zeit/next-bundle-analyzer": "^0.1.2",
 		"@zeit/next-css": "^1.0.1",

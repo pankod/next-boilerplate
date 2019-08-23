@@ -1,4 +1,6 @@
+//#region Global Imports
 const path = require('path');
+//#endregion Global Imports
 
 const configI18next = {
 	server: {
@@ -32,7 +34,8 @@ const configI18next = {
 		interpolation: {
 			escapeValue: false, // not needed for react!!
 			formatSeparator: ',',
-			format: (value, format, lng) => {
+			// eslint-disable-next-line
+			format: (value, format) => {
 				if (format === 'uppercase') return value.toUpperCase();
 				return value;
 			},

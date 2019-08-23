@@ -1,4 +1,6 @@
+//#region Global Imports
 import * as i18n from 'i18next';
+//#endregion Global Imports
 
 i18n
 	.init({
