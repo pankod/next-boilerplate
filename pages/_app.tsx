@@ -10,6 +10,8 @@ import withRedux from 'next-redux-wrapper';
 import store from '@Redux/store';
 //#endregion Local Imports
 
+import '../static/css/reset.scss'
+
 //#region Interface Imports
 import { IApp } from '@Interfaces';
 //#endregion Interface Imports
