@@ -24,6 +24,12 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 	public render(): JSX.Element {
 		const { t } = this.props
 
+		const LocaleButton: React.ElementType = ({ lang }) => (
+			<div className={i18next.language === lang ? 'active' : ''} onClick={() => this.changeLanguage(lang)}>
+				{lang}
+			</div>
+		)
+
 		return (
 			<div className="container">
 				<div className="container__top">
@@ -32,15 +38,9 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 				<div className="container__middle">
 					<div className="container__middle__left">
 						<div className="container__middle__left__buttons">
-							<div className={i18next.language === 'en' ? 'active' : ''} onClick={() => this.changeLanguage('en')}>
-								EN
-							</div>
-							<div className={i18next.language === 'es' ? 'active' : ''} onClick={() => this.changeLanguage('es')}>
-								ES
-							</div>
-							<div className={i18next.language === 'tr' ? 'active' : ''} onClick={() => this.changeLanguage('tr')}>
-								TR
-							</div>
+							<LocaleButton lang="en" />
+							<LocaleButton lang="es" />
+							<LocaleButton lang="tr" />
 						</div>
 					</div>
 					<div className="container__middle__right">
@@ -53,7 +53,7 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 	}
 
 	private changeLanguage(lang: string): void {
-		i18next.changeLanguage(lang, (err: Error, t: Function) => {
+		i18next.changeLanguage(lang, (err: Error) => {
 			if (err) return console.error('something went wrong loading', err);
 		});
 	}
