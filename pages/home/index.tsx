@@ -8,8 +8,8 @@ import i18next from 'i18next';
 //#region Local Imports
 import { Heading } from '@Components';
 import { HomeActions } from '@Actions';
-import { withI18next } from '../../src/withI18next'
-import './index.scss'
+import { withI18next } from '../../src/withI18next';
+import './index.scss';
 //#region Local Imports
 
 //#region Interface Imports
@@ -22,13 +22,16 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 	}
 
 	public render(): JSX.Element {
-		const { t } = this.props
+		const { t } = this.props;
 
 		const LocaleButton: React.ElementType = ({ lang }) => (
-			<div className={i18next.language === lang ? 'active' : ''} onClick={() => this.changeLanguage(lang)}>
+			<div
+				className={i18next.language === lang ? 'active' : ''}
+				onClick={() => this.changeLanguage(lang)}
+			>
 				{lang}
 			</div>
-		)
+		);
 
 		return (
 			<div className="container">
@@ -65,7 +68,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 	Map: bindActionCreators(HomeActions.Map, dispatch),
 });
 
-const Extended = withI18next(['common'])(HomePage)
+const Extended = withI18next(['common'])(HomePage);
 
 export default connect(
 	mapStateToProps,

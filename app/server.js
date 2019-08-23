@@ -29,7 +29,7 @@ i18nInstance
 			server.use(i18nextMiddleware.handle(i18nInstance));
 			server.use('/locales', express.static(path.join(__dirname, '../locales')));
 			server.use(express.static(path.join(__dirname, '../static')));
-			server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18nInstance));;
+			server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18nInstance));
 
 			if (process.env.PROXY_MODE === 'local') {
 				const proxyMiddleware = require('http-proxy-middleware');
