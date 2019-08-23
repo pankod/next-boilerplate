@@ -9,7 +9,9 @@ import { PlanetaryModel } from '@Interfaces';
 declare namespace IHomePage {
 	export type IProps = IOwnProps & IStateProps & IDispatchProps;
 
-	export interface IOwnProps extends Props<{}> {}
+	export interface IOwnProps extends Props<{}> {
+		t: Function;
+	}
 
 	export interface IState {}
 
