@@ -25,7 +25,7 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 		['en', 'es', 'tr'].map(lang => (
 			<div
 				key={lang}
-				className={`button ${activeLanguage === lang ? 'active' : ''}`}
+				className={`button ${lang} ${activeLanguage === lang ? 'active' : ''}`}
 				onClick={() => this.changeLanguage(lang)}
 			>
 				{lang}
@@ -56,7 +56,7 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 	}
 
 	private changeLanguage(lang: string): void {
-		i18next.changeLanguage(lang, (err: Error) => {
+		this.props.i18n.changeLanguage(lang, (err: Error) => {
 			if (err) return console.error('something went wrong loading', err);
 		});
 	}

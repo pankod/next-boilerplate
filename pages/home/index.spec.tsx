@@ -29,4 +29,21 @@ describe('HomePage', () => {
 		expect(wrap.find('.title')).toHaveLength(1);
 		expect(wrap.find('.button')).toHaveLength(3);
 	});
+
+	it('should update language', () => {
+		const wrap = mount(
+			<Provider store={initStore()}>
+				<I18nextProvider i18n={i18nForTests}>
+					<HomePage />
+				</I18nextProvider>
+			</Provider>,
+		);
+
+		const esLocaleButton = wrap.find('.es')
+		esLocaleButton.simulate('click')
+
+		const language = wrap.props().children.props.i18n.language
+
+		expect(language).toBe('es')
+	})
 });
