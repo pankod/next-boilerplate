@@ -25,6 +25,7 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 		['en', 'es', 'tr'].map(lang => (
 			<div
 				key={lang}
+				className="button"
 				onClick={() => this.changeLanguage(lang)}
 			>
 				{lang}
