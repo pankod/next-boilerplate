@@ -1,5 +1,5 @@
 //#region Global Imports
-import * as i18n from 'i18next';
+const i18n = require('i18next');
 //#endregion Global Imports
 
 i18n.init({
@@ -23,4 +23,4 @@ i18n.init({
 	},
 });
 
-export default i18n;
+module.exports = { default: i18n };
