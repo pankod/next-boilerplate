@@ -4,7 +4,7 @@ import { NextComponentType, NextContext, NextComponentClass } from 'next';
 //#endregion Global Imports
 
 //#region Local Imports
-import { getInitialProps, I18n } from '../app/i18n';
+import { getInitialProps, I18n } from '../app/i18n/i18n';
 //#endregion Local Imports
 
 const setComposedInitialProps = async (ComposedComponent: NextComponentType, ctx: NextContext) => {

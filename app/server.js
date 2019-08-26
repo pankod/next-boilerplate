@@ -5,8 +5,8 @@ const path = require('path');
 const devProxy = require('./proxy.js');
 const i18nextMiddleware = require('i18next-express-middleware');
 const Backend = require('i18next-node-fs-backend');
-const { i18nInstance } = require('./i18n');
-const configI18next = require('./i18next.config');
+const { i18nInstance } = require('./i18n/i18n');
+const configI18next = require('./i18n/i18next.config');
 
 const PORT = process.env.PORT || 3000;
 
