@@ -11,7 +11,7 @@ declare namespace IHomePage {
 	export type IProps = IOwnProps & IStateProps & IDispatchProps;
 
 	export interface IOwnProps extends Props<{}> {
-		t: Function;
+		t: i18n.TranslationFunction;
 		i18n: i18n.i18n;
 	}
 
