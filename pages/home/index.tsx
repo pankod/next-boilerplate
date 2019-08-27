@@ -56,9 +56,7 @@ export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState
 	}
 
 	private changeLanguage(lang: string): void {
-		this.props.i18n.changeLanguage(lang, (err: Error) => {
-			if (err) return console.error('something went wrong loading', err);
-		});
+		this.props.i18n.changeLanguage(lang);
 	}
 }
 
