@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import HomePage from '../home/index';
 import { I18nextProvider } from 'react-i18next';
-import i18nForTests from '../../app/i18n/i18nForTests';
+import { i18nInstance } from '../../app/i18n/i18n'
 
 import { Provider } from 'react-redux';
 
@@ -17,7 +17,7 @@ describe('HomePage', () => {
 	it('should render without throwing an error', () => {
 		const wrap = mount(
 			<Provider store={initStore()}>
-				<I18nextProvider i18n={i18nForTests}>
+				<I18nextProvider i18n={i18nInstance}>
 					<HomePage />
 				</I18nextProvider>
 			</Provider>,
@@ -33,7 +33,7 @@ describe('HomePage', () => {
 	it('should update language', () => {
 		const wrap = mount(
 			<Provider store={initStore()}>
-				<I18nextProvider i18n={i18nForTests}>
+				<I18nextProvider i18n={i18nInstance}>
 					<HomePage />
 				</I18nextProvider>
 			</Provider>,
