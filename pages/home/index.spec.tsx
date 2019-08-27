@@ -1,12 +1,15 @@
+// #region Global Imports
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import HomePage from '../home/index';
-import { I18nextProvider } from 'react-i18next';
-import { i18nInstance } from '../../app/i18n/i18n'
-
 import { Provider } from 'react-redux';
+import { I18nextProvider } from 'react-i18next';
+import { shallow, mount } from 'enzyme';
+// #endregion Global Imports
 
+// #region Local Imports
+import HomePage from '../home/index';
 import initStore from '@Redux/store';
+import { i18nInstance } from '../../app/i18n/i18n'
+// #endregion Local Imports
 
 describe('HomePage', () => {
 	it('should render without throwing an error', () => {
