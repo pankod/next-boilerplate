@@ -20,28 +20,28 @@
 
     &__left {
       display: flex;
-	  flex: 1 1 1%;
+      flex: 1 1 1%;
 
       &__buttons {
-		background: #F9DA2E;
-		border-radius: 8px;
-		font-family: Arial;
-		font-weight: 700;
-		font-size: 25px;
-		color: #4B6C8D;
-		letter-spacing: 0;
-		width: 55px;
-		height: 236px;
-		margin-left: 15px;
-		padding: 10px 3px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		color: #4B6C8D;
+        background: #f9da2e;
+        border-radius: 8px;
+        font-family: Arial;
+        font-weight: 700;
+        font-size: 25px;
+        color: #4b6c8d;
+        letter-spacing: 0;
+        width: 55px;
+        height: 236px;
+        margin-left: 15px;
+        padding: 10px 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: #4b6c8d;
 
-		.active {
-			color: #2C3E50;
-		}
+        .active {
+          color: #2c3e50;
+        }
       }
     }
 
@@ -55,7 +55,7 @@
   &__top_text {
     font-size: 110px;
     font-family: Arial, Helvetica, sans-serif;
-	color: #ffffff;
-	margin-bottom: 10px;
+    color: #ffffff;
+    margin-bottom: 10px;
   }
 }
