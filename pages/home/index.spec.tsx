@@ -8,7 +8,7 @@ import { shallow, mount } from 'enzyme';
 // #region Local Imports
 import HomePage from '../home/index';
 import initStore from '@Redux/store';
-import { i18nInstance } from '../../app/i18n/i18n'
+import { i18nInstance } from '../../app/i18n/i18n';
 // #endregion Local Imports
 
 describe('HomePage', () => {
@@ -42,11 +42,11 @@ describe('HomePage', () => {
 			</Provider>,
 		);
 
-		const esLocaleButton = wrap.find('.es')
-		esLocaleButton.simulate('click')
+		const esLocaleButton = wrap.find('.es');
+		esLocaleButton.simulate('click');
 
-		const language = wrap.props().children.props.i18n.language
+		const language = wrap.props().children.props.i18n.language;
 
-		expect(language).toBe('es')
-	})
+		expect(language).toBe('es');
+	});
 });
