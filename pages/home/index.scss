@@ -39,6 +39,10 @@
         justify-content: space-around;
         color: #4b6c8d;
 
+        .button {
+          cursor: pointer;
+        }
+
         .active {
           color: #2c3e50;
         }
