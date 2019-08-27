@@ -48,7 +48,6 @@ module.exports = {
 		'@typescript-eslint/prefer-function-type': 'error',
 		'@typescript-eslint/promise-function-async': 'error',
 		'@typescript-eslint/restrict-plus-operands': 'error',
-		'@typescript-eslint/semi': 'error',
 		'@typescript-eslint/type-annotation-spacing': 'error',
 		'@typescript-eslint/unified-signatures': 'error',
 		complexity: ['error', { max: 3 }],
