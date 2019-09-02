@@ -1,7 +1,7 @@
 ---
 id: i18next
-title: i18next
-sidebar_label: i18next
+title: Internationalization Framework
+sidebar_label: Internationalization Framework
 ---
 
 i18next is a very popular internationalization framework for browser or any other javascript environment. You can translate your app to any predefined language.

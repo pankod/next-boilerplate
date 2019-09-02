@@ -37,8 +37,8 @@
         "sidebar_label": "Getting Started"
       },
       "i18next": {
-        "title": "i18next",
-        "sidebar_label": "i18next"
+        "title": "Internationalization Framework",
+        "sidebar_label": "Internationalization Framework"
       },
       "reverse-proxy": {
         "title": "Reverse Proxy",
