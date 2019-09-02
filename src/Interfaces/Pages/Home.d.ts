@@ -1,6 +1,6 @@
 //#region Global Imports
 import { Props } from 'prop-types';
-import i18n from 'i18next'
+import i18n from 'i18next';
 //#endregion Global Imports
 
 //#region Interfaces Imports

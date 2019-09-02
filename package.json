@@ -13,7 +13,7 @@
     "cli": "pankod-cli add",
     "test": "jest --coverage",
     "lint": "eslint -c .eslintrc.js --ext .ts,.tsx {app,pages,src}/**",
-    "format": "eslint -c .eslintrc.js --ext .ts,.tsx --fix {app,pages,src}/**"
+    "format": "eslint -c .eslintrc.js --ext .ts,.tsx --fix {app,pages,src}/**/*"
   },
   "pankod": {
     "projectType": "nextjs"

@@ -1,12 +1,16 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+// #region Global Imports
 const express = require('express');
 const next = require('next');
 const path = require('path');
-const devProxy = require('./proxy.js');
 const i18nextMiddleware = require('i18next-express-middleware');
 const Backend = require('i18next-node-fs-backend');
+// #endregion Global Imports
+
+// #region Local Imports
+const devProxy = require('./proxy.js');
 const { i18nInstance } = require('./i18n/i18n');
 const configI18next = require('./i18n/i18next.config');
+// #endregion Local Imports
 
 const PORT = process.env.PORT || 3000;
 
@@ -48,5 +52,3 @@ i18nInstance
 			});
 		});
 	});
-
-/* eslint-enable @typescript-eslint/no-var-requires */
