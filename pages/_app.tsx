@@ -1,13 +1,13 @@
 //#region Global Imports
 import App, { Container, NextAppContext } from 'next/app';
 import * as React from 'react';
-
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 //#endregion Global Imports
 
 //#region Local Imports
 import store from '@Redux/store';
+import '../static/css/reset.scss';
 //#endregion Local Imports
 
 //#region Interface Imports

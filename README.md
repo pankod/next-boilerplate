@@ -66,7 +66,7 @@ This boilerplate includes the latest powerfull tools.
 * **dotenv .config** - Expose environment variables to the runtime config of Next.js
 * **Jest** - Javascript testing framework , created by developers who created react
 * **Enzyme** - JavaScript testing utility for React that makes it easier to test your React Components output.
-
+* **i18next** - An internationalization-framework which provides a function that takes a key, some options, and returns the value for the current language. Helps you to add language translation support to your app.
 
 <br/>
 
