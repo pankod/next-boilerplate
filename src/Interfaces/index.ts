@@ -2,8 +2,8 @@
 export * from "@Pages/home/Home";
 
 // Redux Interfaces
-export * from "@Redux/Action";
-export * from "@Redux/Store";
+export * from "@Redux/IAction";
+export * from "@Redux/IStore";
 
 // Services Interfaces
 export * from "@Services/API/Http/Http";
