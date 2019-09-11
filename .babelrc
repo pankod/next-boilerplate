@@ -1,10 +1,14 @@
 {
-    "presets": ["next/babel"],
+    "presets": [
+        "next/babel"
+    ],
     "plugins": [
         [
             "module-resolver",
             {
-                "root": ["./"],
+                "root": [
+                    "./"
+                ],
                 "alias": {
                     "@Actions": "./src/Actions",
                     "@Components": "./src/Components",
@@ -17,6 +21,14 @@
                     "@Server": "./server",
                     "@Static": "./static"
                 }
+            }
+        ],
+        [
+            "babel-plugin-styled-components",
+            {
+                // ssr = server side rendering
+                // prevents React from complaining about HTML attribute mismatches 
+                "ssr": true
             }
         ]
     ]
