@@ -26,8 +26,10 @@
             "@Reducers/*": ["src/Redux/Reducers/*"],
             "@Redux": ["src/Redux"],
             "@Redux/*": ["src/Redux/*"],
+            "@Server/*": ["server/*"],
             "@Services": ["src/Services"],
-            "@Services/*": ["src/Services/*"]
+            "@Services/*": ["src/Services/*"],
+            "@Static/*": ["static/*"]
         }
     },
     "exclude": [

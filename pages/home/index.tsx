@@ -2,7 +2,7 @@ import * as React from "react";
 import { NextPage, NextPageContext } from "next";
 import { useSelector, useDispatch } from "react-redux";
 
-import { withTranslation } from "../../server/i18n";
+import { withTranslation } from "@Server/i18n";
 
 import { IHomePage } from "./Home";
 
@@ -64,7 +64,12 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                         >
                             Get A Photo
                         </span>
-                        <img src={home.image.url} height="300" width="150" />
+                        <img
+                            src={home.image.url}
+                            height="300"
+                            width="150"
+                            alt="APOD"
+                        />
                     </span>
                 </div>
             </div>
