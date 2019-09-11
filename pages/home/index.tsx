@@ -1,73 +1,83 @@
-//#region Global Imports
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-//#endregion Global Imports
+import * as React from "react";
+import { NextPage, NextPageContext } from "next";
+import { useSelector, useDispatch } from "react-redux";
 
-//#region Local Imports
-import { Heading } from '@Components';
-import { HomeActions } from '@Actions';
-import { withI18next } from '../../src/withI18next';
-import './index.scss';
-//#region Local Imports
+import { withTranslation } from "../../server/i18n";
 
-//#region Interface Imports
-import { IHomePage, IStore } from '@Interfaces';
-//#endregion Interface Imports
+import { IHomePage } from "./Home";
 
-export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState> {
-	constructor(props: IHomePage.IProps) {
-		super(props);
-	}
+import "./index.scss";
+import { IStore } from "@Redux/IStore";
+import { HomeActions } from "@Actions";
 
-	renderLocaleButtons = (activeLanguage: string) =>
-		['en', 'es', 'tr'].map(lang => (
-			<div
-				key={lang}
-				className={`button ${lang} ${activeLanguage === lang ? 'active' : ''}`}
-				onClick={() => this.changeLanguage(lang)}
-			>
-				{lang}
-			</div>
-		));
+const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
+    t,
+    i18n,
+}) => {
+    const home = useSelector((state: IStore) => state.home);
+    const dispatch = useDispatch();
 
-	public render(): JSX.Element {
-		const { t, i18n } = this.props;
+    React.useEffect(() => {
+        dispatch(HomeActions.GetApod);
+        console.log(home);
+    });
 
-		return (
-			<div className="container">
-				<div className="container__top">
-					<img src="/static/images/pankod-logo.png" />
-				</div>
-				<div className="container__middle">
-					<div className="container__middle__left">
-						<div className="container__middle__left__buttons">
-							{this.renderLocaleButtons(i18n.language)}
-						</div>
-					</div>
-					<div className="container__middle__right">
-						<span className="container__top_text">{t('common:Hello')}</span>
-						<Heading text={t('common:World')} />
-					</div>
-				</div>
-			</div>
-		);
-	}
+    const renderLocaleButtons = (activeLanguage: string) =>
+        ["en", "es", "tr"].map(lang => (
+            <div
+                key={lang}
+                className={`button ${lang} ${
+                    activeLanguage === lang ? "active" : ""
+                }`}
+                onClick={() => i18n.changeLanguage(lang)}
+            >
+                {lang}
+            </div>
+        ));
 
-	private changeLanguage(lang: string): void {
-		this.props.i18n.changeLanguage(lang);
-	}
-}
+    return (
+        <div className="container">
+            <div className="container__top">
+                <img src="/static/images/pankod-logo.png" alt="Pankod Logo" />
+            </div>
+            <div className="container__middle">
+                <div className="container__middle__left">
+                    <div className="container__middle__left__buttons">
+                        {renderLocaleButtons(i18n.language)}
+                    </div>
+                </div>
+                <div className="container__middle__right">
+                    <span className="container__top_text">
+                        {t("common:Hello")}
+                    </span>
+                    {/* <Heading text={t("common:World")} /> */}
+                    <span className="container__middle__right__apod">
+                        <span
+                            className="container__middle__right__apod__button"
+                            onClick={() => {
+                                dispatch(
+                                    HomeActions.GetApod({
+                                        params: { hd: true },
+                                    })
+                                );
+                            }}
+                        >
+                            Get A Photo
+                        </span>
+                        <img src={home.image.url} height="300" width="150" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-const mapStateToProps = (state: IStore) => state.home;
+Home.getInitialProps = async (
+    ctx: NextPageContext
+): Promise<IHomePage.InitialProps> => {
+    return { namespacesRequired: ["common"] };
+};
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-	Map: bindActionCreators(HomeActions.Map, dispatch),
-});
+const Extended = withTranslation("common")(Home);
 
-const Extended = withI18next(['common'])(HomePage);
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps,
-)(Extended);
+export default Extended;
