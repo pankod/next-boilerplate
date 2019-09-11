@@ -1,5 +1,6 @@
 import next from "next";
 import express from "express";
+import path from "path";
 import nextI18NextMiddleware from "next-i18next/middleware";
 
 import nextI18next from "./i18n";
@@ -14,6 +15,8 @@ const handler = routes.getRequestHandler(app);
 app.prepare().then(() => {
     const server = express();
 
+    app.setAssetPrefix(process.env.STATIC_PATH);
+    server.use(express.static(path.join(__dirname, "../static")));
     server.use(nextI18NextMiddleware(nextI18next));
 
     if (process.env.PROXY_MODE === "local") {
