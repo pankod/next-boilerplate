@@ -1,14 +1,7 @@
 import { WithTranslation } from "react-i18next";
 
-declare namespace IHomePage {
-    export interface IProps extends WithTranslation {
-        home: {
-            version: number;
-        };
-        image: {
-            url: string;
-        };
-    }
+declare namespace IHomeClassPage {
+    export interface IProps extends WithTranslation {}
 
     export interface InitialProps {
         namespacesRequired: string[];
