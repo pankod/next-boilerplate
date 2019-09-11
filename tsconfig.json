@@ -1,21 +1,45 @@
 {
-  "extends": "./base",
-  "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "preserveConstEnums": true,
-    "removeComments": false,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "target": "esnext",
-    "types": [
-      "jest"
-    ]
-  }
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "baseUrl": ".",
+        "paths": {
+            "@Actions": ["src/Actions"],
+            "@Components/*": ["src/Components/*"],
+            "@Components": ["src/Components"],
+            "@Definitions": ["src/Definitions"],
+            "@Interfaces": ["src/Interfaces"],
+            "@Interfaces/*": ["src/Interfaces/*"],
+            "@Pages/*": ["pages/*"],
+            "@Reducers": ["src/Redux/Reducers"],
+            "@Reducers/*": ["src/Redux/Reducers/*"],
+            "@Redux": ["src/Redux"],
+            "@Redux/*": ["src/Redux/*"],
+            "@Services": ["src/Services"],
+            "@Services/*": ["src/Services/*"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        ".next",
+        "out",
+        "next.config.js",
+        ".babelrc",
+        "bundles",
+        "coverage",
+        "test/*"
+    ],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

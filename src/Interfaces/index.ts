@@ -1,16 +1,12 @@
-// PAGE INTERFACES
-export { IApp } from '@Interfaces/Pages/App.d.ts';
-export { IHomePage } from '@Interfaces/Pages/Home.d.ts';
+// Page Interfaces
+export * from "@Pages/home/Home";
 
-// COMPONENT INTERFACES
-export { IHeading } from '@Interfaces/Components/Heading.d.ts';
+// Redux Interfaces
+export * from "@Redux/Action";
+export * from "@Redux/Store";
 
-// REDUX INTERFACES
-export { IStore } from '@Interfaces/Redux/Store.d.ts';
-export { IAction } from '@Interfaces/Redux/Action.d.ts';
-
-//SERVICES INTERFACES
-export { HttpModel } from '@Interfaces/Services/API/Http.d.ts';
-export { PlanetaryModel } from '@Interfaces/Services/API/Planetary/Planetary';
-export { ApodPayload } from '@Interfaces/Services/API/Planetary/ApodPayload';
-export { ApodResponse } from '@Interfaces/Services/API/Planetary/ApodResponse';
+// Services Interfaces
+export * from "@Services/API/Http/Http";
+export * from "@Services/API/Planetary/ApodPayload";
+export * from "@Services/API/Planetary/ApodResponse";
+export * from "@Services/API/Planetary/Planetary";
