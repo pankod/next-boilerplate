@@ -17,11 +17,6 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     const home = useSelector((state: IStore) => state.home);
     const dispatch = useDispatch();
 
-    React.useEffect(() => {
-        dispatch(HomeActions.GetApod);
-        console.log(home);
-    });
-
     const renderLocaleButtons = (activeLanguage: string) =>
         ["en", "es", "tr"].map(lang => (
             <div
