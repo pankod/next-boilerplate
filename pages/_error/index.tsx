@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { withTranslation } from "../../server/i18n";
+import { withTranslation } from "@Server/i18n";
 import { IErrorPage } from "./Error";
 import { NextPage } from "next";
 
