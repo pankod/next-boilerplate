@@ -3,8 +3,10 @@ import * as React from "react";
 import App from "next/app";
 import { Provider } from "react-redux";
 
-import { store } from "@Redux";
+import { store, makeStore } from "@Redux";
 import { appWithTranslation } from "@Server/i18n";
+
+import withRedux from "next-redux-wrapper";
 
 import "@Static/css/reset.scss";
 
@@ -20,4 +22,4 @@ class WebApp extends App {
     }
 }
 
-export default appWithTranslation(WebApp);
+export default withRedux(makeStore)(appWithTranslation(WebApp));

@@ -13,3 +13,11 @@ export const store = createStore(
     {},
     composeWithDevTools(applyMiddleware(thunkMiddleware))
 );
+
+export const makeStore = (initialState: {}, options: {}) => {
+    return createStore(
+        Reducers,
+        initialState,
+        composeWithDevTools(applyMiddleware(thunkMiddleware))
+    );
+};
