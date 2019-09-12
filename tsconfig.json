@@ -30,7 +30,8 @@
             "@Server/*": ["server/*"],
             "@Services": ["src/Services"],
             "@Services/*": ["src/Services/*"],
-            "@Static/*": ["static/*"]
+            "@Static/*": ["static/*"],
+            "@Styled/*": ["src/Styled/*"]
         }
     },
     "exclude": [
