@@ -2,6 +2,7 @@
   "name": "@pankod/next-boilerplate",
   "description": "A well-structured production ready Next.js boilerplate with Typescript, Redux, Jest, Enzyme, Express.js, Sass, Css, EnvConfig, Fetch, Reverse Proxy, Bundle Analyzer and Built-in Project CLI. https://pankod.github.io/next-boilerplate/",
   "version": "2.0.0",
+  "repository": "https://github.com/pankod/next-boilerplate",
   "author": "Pankod <info@pankod.com>",
   "contributors": [
     "Batuhan Wilhelm <me@batuhan.dev>"
@@ -13,6 +14,7 @@
     "test": "jest --coverage",
     "format": "eslint {src,pages,server} -c .eslintrc.json --ext ts,tsx --fix",
     "analyze": "cross-env BUNDLE_ANALYZE=both npm run build",
+    "export": "cross-env NODE_ENV=production next export",
     "cli": "pankod-cli add"
   },
   "dependencies": {
@@ -85,5 +87,6 @@
   },
   "pankod": {
     "projectType": "nextjs"
-  }
+  },
+  "license": "ISC"
 }

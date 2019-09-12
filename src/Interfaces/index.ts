@@ -1,6 +1,7 @@
 // Page Interfaces
-export * from "@Pages/home/Home";
-export * from "@Interfaces/app";
+export * from "@Interfaces/Pages/Home";
+export * from "@Interfaces/Pages/App";
+export * from "@Interfaces/Pages/Error";
 
 // Redux Interfaces
 export * from "@Redux/IAction";

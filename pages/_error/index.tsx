@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { withTranslation } from "@Server/i18n";
-import { IErrorPage } from "./Error";
+import { IErrorPage } from "@Interfaces";
 import { NextPage } from "next";
 
 const Error: NextPage<IErrorPage.IProps, IErrorPage.InitialProps> = ({
