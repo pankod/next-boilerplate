@@ -21,6 +21,7 @@ import {
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 import { ReduxNextPageContext } from "@Interfaces";
+import { Heading } from "@Components";
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,
