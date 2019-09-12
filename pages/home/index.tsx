@@ -21,6 +21,7 @@ import {
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 import { ReduxNextPageContext } from "@Interfaces";
+import { Heading } from "@Components";
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,
@@ -55,7 +56,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                 </ContainerMiddleLeft>
                 <ContainerMiddleRight>
                     <ContainerTopText>{t("common:Hello")}</ContainerTopText>
-                    {/* <Heading text={t("common:World")} /> */}
+                    <Heading text={t("common:World")} />
                     <ContainerMiddleRightApod>
                         <ContainerMiddleRightApodButton
                             onClick={() => {
