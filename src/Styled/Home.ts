@@ -10,11 +10,11 @@ export const Container = styled.div`
     min-height: 100vh;
 `;
 
-export const ContainerTop = styled.div`
+export const Top = styled.div`
     margin: 100px;
 `;
 
-export const ContainerMiddle = styled.div`
+export const Middle = styled.div`
     text-align: center;
     display: flex;
     flex: 1 1 100%;
@@ -22,12 +22,12 @@ export const ContainerMiddle = styled.div`
     justify-content: flex-start;
 `;
 
-export const ContainerMiddleLeft = styled.div`
+export const MiddleLeft = styled.div`
     display: flex;
     flex: 1 1 1%;
 `;
 
-export const ContainerMiddleLeftButtons = styled.div`
+export const MiddleLeftButtons = styled.div`
     background: #f9da2e;
     border-radius: 8px;
     font-family: Arial;
@@ -53,13 +53,13 @@ export const ContainerMiddleLeftButtons = styled.div`
     }
 `;
 
-export const ContainerMiddleRight = styled.div`
+export const MiddleRight = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1 1 100%;
 `;
 
-export const ContainerMiddleRightApod = styled.div`
+export const Apod = styled.div`
     display: flex;
     flex: 1 1 100%;
     flex-direction: column;
@@ -67,7 +67,7 @@ export const ContainerMiddleRightApod = styled.div`
     align-items: center;
 `;
 
-export const ContainerMiddleRightApodButton = styled.div`
+export const ApodButton = styled.div`
     background: #f9da2e;
     border-radius: 5px;
     padding: 5px 10px;
@@ -78,7 +78,7 @@ export const ContainerMiddleRightApodButton = styled.div`
     letter-spacing: 0;
 `;
 
-export const ContainerTopText = styled.div`
+export const TopText = styled.div`
     font-size: 110px;
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;

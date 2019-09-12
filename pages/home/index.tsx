@@ -8,14 +8,14 @@ import { IHomePage } from "@Interfaces";
 
 import {
     Container,
-    ContainerMiddle,
-    ContainerMiddleLeft,
-    ContainerMiddleLeftButtons,
-    ContainerMiddleRight,
-    ContainerMiddleRightApod,
-    ContainerMiddleRightApodButton,
-    ContainerTop,
-    ContainerTopText,
+    Top,
+    TopText,
+    Middle,
+    MiddleLeft,
+    MiddleLeftButtons,
+    MiddleRight,
+    Apod,
+    ApodButton,
 } from "@Styled/Home";
 
 import { IStore } from "@Redux/IStore";
@@ -45,20 +45,20 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
 
     return (
         <Container>
-            <ContainerTop>
+            <Top>
                 <img src="/static/images/pankod-logo.png" alt="Pankod Logo" />
-            </ContainerTop>
-            <ContainerMiddle>
-                <ContainerMiddleLeft>
-                    <ContainerMiddleLeftButtons>
+            </Top>
+            <Middle>
+                <MiddleLeft>
+                    <MiddleLeftButtons>
                         {renderLocaleButtons(i18n.language)}
-                    </ContainerMiddleLeftButtons>
-                </ContainerMiddleLeft>
-                <ContainerMiddleRight>
-                    <ContainerTopText>{t("common:Hello")}</ContainerTopText>
+                    </MiddleLeftButtons>
+                </MiddleLeft>
+                <MiddleRight>
+                    <TopText>{t("common:Hello")}</TopText>
                     <Heading text={t("common:World")} />
-                    <ContainerMiddleRightApod>
-                        <ContainerMiddleRightApodButton
+                    <Apod>
+                        <ApodButton
                             onClick={() => {
                                 dispatch(
                                     HomeActions.GetApod({
@@ -68,16 +68,16 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                             }}
                         >
                             Get A Photo
-                        </ContainerMiddleRightApodButton>
+                        </ApodButton>
                         <img
                             src={home.image.url}
                             height="300"
                             width="150"
                             alt="APOD"
                         />
-                    </ContainerMiddleRightApod>
-                </ContainerMiddleRight>
-            </ContainerMiddle>
+                    </Apod>
+                </MiddleRight>
+            </Middle>
         </Container>
     );
 };
