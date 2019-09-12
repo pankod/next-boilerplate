@@ -33,6 +33,8 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     const home = useSelector((state: IStore) => state.home);
     const dispatch = useDispatch();
 
+    console.log(i18n)
+
     const renderLocaleButtons = (activeLanguage: string) =>
         ["en", "es", "tr"].map(lang => (
             <LocaleButton
@@ -67,13 +69,13 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                                 );
                             }}
                         >
-                            Get A Photo
+                            Discover Space
                         </ApodButton>
                         <img
                             src={home.image.url}
                             height="300"
                             width="150"
-                            alt="APOD"
+                            alt="Discover Space"
                         />
                     </Apod>
                 </MiddleRight>
