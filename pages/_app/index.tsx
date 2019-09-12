@@ -1,15 +1,19 @@
+// #region Global Imports
 import * as React from "react";
-
 import App from "next/app";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
+import withRedux from "next-redux-wrapper";
+// #endregion Global Imports
 
+// #region Local Imports
+import { AppWithStore } from "./app";
 import { makeStore } from "@Redux";
 import { appWithTranslation } from "@Server/i18n";
 
-import withRedux from "next-redux-wrapper";
-
 import "@Static/css/reset.scss";
-import { AppWithStore } from "./app";
+import { theme } from "./theme";
+// #endregion Local Imports
 
 class WebApp extends App<AppWithStore> {
     render() {
@@ -17,7 +21,9 @@ class WebApp extends App<AppWithStore> {
 
         return (
             <Provider store={store}>
-                <Component {...pageProps} />
+                <ThemeProvider theme={theme}>
+                    <Component {...pageProps} />
+                </ThemeProvider>
             </Provider>
         );
     }
