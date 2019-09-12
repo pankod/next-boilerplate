@@ -1,10 +1,13 @@
 {
-  "name": "next-starter",
-  "description": "",
-  "version": "1.0.0",
-  "author": "Batuhan Wilhelm <me@batuhan.dev>",
+  "name": "@pankod/next-boilerplate",
+  "description": "A well-structured production ready Next.js boilerplate with Typescript, Redux, Jest, Enzyme, Express.js, Sass, Css, EnvConfig, Fetch, Reverse Proxy, Bundle Analyzer and Built-in Project CLI. https://pankod.github.io/next-boilerplate/",
+  "version": "2.0.0",
+  "author": "Pankod <info@pankod.com>",
+  "contributors": [
+      "Batuhan Wilhelm <me@batuhan.dev>"
+  ],
   "scripts": {
-    "dev": "nodemon",
+    "start:dev": "nodemon",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "test": "jest --coverage",
