@@ -26,8 +26,6 @@
         [
             "babel-plugin-styled-components",
             {
-                // ssr = server side rendering
-                // prevents React from complaining about HTML attribute mismatches 
                 "ssr": true
             }
         ]
