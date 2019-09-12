@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "author": "Pankod <info@pankod.com>",
   "contributors": [
-      "Batuhan Wilhelm <me@batuhan.dev>"
+    "Batuhan Wilhelm <me@batuhan.dev>"
   ],
   "scripts": {
     "start:dev": "nodemon",
@@ -12,7 +12,8 @@
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "test": "jest --coverage",
     "format": "eslint {src,pages,server} -c .eslintrc.json --ext ts,tsx --fix",
-    "analyze": "cross-env BUNDLE_ANALYZE=both npm run build"
+    "analyze": "cross-env BUNDLE_ANALYZE=both npm run build",
+    "cli": "pankod-cli add"
   },
   "dependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.5",
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
+    "@pankod/pankod-cli": "^0.3.3",
     "@types/dotenv": "^6.1.1",
     "@types/enzyme": "^3.10.3",
     "@types/express": "^4.17.1",
@@ -80,5 +82,8 @@
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
     "typescript": "^3.6.2"
+  },
+  "pankod": {
+    "projectType": "nextjs"
   }
 }
