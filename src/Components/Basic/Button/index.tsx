@@ -3,12 +3,8 @@ import styled from "styled-components";
 
 import { IButton } from "./Button";
 
-const StyledDiv = styled.div`
+const Container = styled.div`
     cursor: pointer;
-
-    .active {
-        color: #2c3e50;
-    }
 `;
 
 export const Button: React.FunctionComponent<IButton.IProps> = ({
@@ -17,8 +13,8 @@ export const Button: React.FunctionComponent<IButton.IProps> = ({
     className,
 }) => {
     return (
-        <StyledDiv className={className} onClick={onClick}>
+        <Container className={className} onClick={onClick}>
             {children}
-        </StyledDiv>
+        </Container>
     );
 };
