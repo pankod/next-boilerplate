@@ -1,11 +1,11 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { Button } from './index';
+import React from "react";
+import { shallow } from "enzyme";
+import { Button } from "./index";
 
 describe("Basic Components", () => {
     describe("Button", () => {
         it("should have the passed class", () => {
-            const wrapper = shallow(<Button className='active' />);
+            const wrapper = shallow(<Button className="active" />);
 
             expect(wrapper.hasClass("active")).toBe(true);
         });
@@ -16,12 +16,11 @@ describe("Basic Components", () => {
             expect(wrapper.props().children).toBe("hey");
         });
 
-
         it("should increment number on click", () => {
             let number = 1;
             const wrapper = shallow(<Button onClick={() => number++}></Button>);
 
-            wrapper.simulate('click');
+            wrapper.simulate("click");
             expect(number).toBe(2);
         });
     });
