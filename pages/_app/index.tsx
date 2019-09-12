@@ -7,12 +7,12 @@ import withRedux from "next-redux-wrapper";
 // #endregion Global Imports
 
 // #region Local Imports
-import { AppWithStore } from "./app";
+import { AppWithStore } from "@Interfaces";
 import { makeStore } from "@Redux";
 import { appWithTranslation } from "@Server/i18n";
 
 import "@Static/css/reset.scss";
-import { theme } from "./theme";
+import { theme } from "@Definitions/Styled";
 // #endregion Local Imports
 
 class WebApp extends App<AppWithStore> {

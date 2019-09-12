@@ -18,6 +18,7 @@
             "@Actions": ["src/Actions"],
             "@Components/*": ["src/Components/*"],
             "@Components": ["src/Components"],
+            "@Definitions/*": ["src/Definitions/*"],
             "@Definitions": ["src/Definitions"],
             "@Interfaces": ["src/Interfaces"],
             "@Interfaces/*": ["src/Interfaces/*"],
