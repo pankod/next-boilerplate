@@ -1,4 +1,6 @@
+// #region Global Imports
 import { WithTranslation } from "react-i18next";
+// #endregion Global Imports
 
 declare namespace IHomePage {
     export interface IProps extends WithTranslation {}

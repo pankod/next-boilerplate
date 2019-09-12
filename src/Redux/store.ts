@@ -4,9 +4,9 @@ import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 // #endregion Global Imports
 
-// #region Interface Imports
+// #region Local Imports
 import Reducers from "./Reducers";
-// #endregion Interface Imports
+// #endregion Local Imports
 
 export const makeStore = (initialState: {}, options: {}) => {
     return createStore(

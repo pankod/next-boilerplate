@@ -1,4 +1,6 @@
+// #region Global Imports
 import styled from "styled-components";
+// #endregion Global Imports
 
 export const Container = styled.div`
     background-color: ${({ theme }) => theme.colors.primary};

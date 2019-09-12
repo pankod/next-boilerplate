@@ -1,7 +1,8 @@
+// #region Local Imports
 import { IAction, IHomePage } from "@Interfaces";
 import { ActionConsts } from "@Definitions";
-
 import { HomeReducer } from "./";
+// #endregion Local Imports
 
 describe("home reducer", () => {
     it("should return the initial state", () => {

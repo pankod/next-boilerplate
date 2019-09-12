@@ -1,6 +1,11 @@
+// #region Global Imports
 import React from "react";
 import { shallow } from "enzyme";
+// #endregion Global Imports
+
+// #region Local Imports
 import { Button } from "./index";
+// #endregion Local Imports
 
 describe("Basic Components", () => {
     describe("Button", () => {
