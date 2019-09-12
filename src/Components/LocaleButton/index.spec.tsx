@@ -3,14 +3,7 @@ import { mount } from "enzyme";
 import { LocaleButton } from "./index";
 
 describe("Components", () => {
-    describe("LocaleButton", () => {
-        it("should render without throwing error", () => {
-            const wrapper = mount(
-                <LocaleButton lang="tr" isActive={false} onClick={() => true} />
-            );
-            expect(wrapper.find("div").length).toBe(1);
-        });
-
+    describe("LocaleButton with isActive=true", () => {
         let number = 1;
         const wrapper = mount(
             <LocaleButton lang="tr" isActive={true} onClick={() => number++} />
@@ -27,6 +20,15 @@ describe("Components", () => {
 
         it("should render Button with lang", () => {
             expect(wrapper.childAt(0).props().children).toBe("tr");
+        });
+    });
+
+    describe("LocaleButton with isActive=false", () => {
+        it("should render without throwing error", () => {
+            const wrapper = mount(
+                <LocaleButton lang="tr" isActive={false} onClick={() => true} />
+            );
+            expect(wrapper.find("div").length).toBe(1);
         });
     });
 });
