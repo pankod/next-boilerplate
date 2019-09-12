@@ -1,12 +1,12 @@
-//#region Global Imports
+// #region Global Imports
 import "isomorphic-unfetch";
 import getConfig from "next/config";
 import { stringify } from "query-string";
-//#endregion Global Imports
+// #endregion Global Imports
 
-//#region Interface Imports
+// #region Interface Imports
 import { HttpModel } from "@Interfaces";
-//#endregion Interface Imports
+// #endregion Interface Imports
 
 const {
     publicRuntimeConfig: { API_KEY, API_URL },

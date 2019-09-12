@@ -1,11 +1,15 @@
+// #region Global Imports
 import next from "next";
 import express from "express";
 import path from "path";
 import nextI18NextMiddleware from "next-i18next/middleware";
+// #endregion Global Imports
 
+// #region Local Imports
 import nextI18next from "./i18n";
 import routes from "./routes";
 import devProxy from "./proxy";
+// #endregion Local Imports
 
 const port = parseInt(process.env.PORT || "3000", 10);
 const dev = process.env.NODE_ENV !== "production";

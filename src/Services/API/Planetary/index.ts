@@ -1,7 +1,10 @@
 //#region Local Imports
 import { Http } from "@Services";
-import { PlanetaryModel } from "@Interfaces";
 //#endregion Local Imports
+
+// #region Interface Imports
+import { PlanetaryModel } from "@Interfaces";
+// #endregion Interface Imports
 
 export const PlanetaryService = {
     GetPlanetImage: async (

@@ -1,17 +1,11 @@
-//#region Global Imports
-//#endregion Global Imports
-
-//#region Local Imports
+// #region Local Imports
 import { ActionConsts } from "@Definitions";
-//#endregion Local Imports
+// #endregion Local Imports
 
-//#region Interface Imports
+// #region Interface Imports
 import { IAction, IHomePage } from "@Interfaces";
-//#endregion Interface Imports
+// #endregion Interface Imports
 
-/**
- * INITIAL_STATE
- */
 const INITIAL_STATE: IHomePage.IStateProps = {
     home: {
         version: 1,
@@ -23,9 +17,6 @@ const INITIAL_STATE: IHomePage.IStateProps = {
 
 type IMapPayload = IHomePage.Actions.IMapPayload;
 
-/**
- * REDUCER
- */
 export const HomeReducer = (
     state = INITIAL_STATE,
     action: IAction<IMapPayload>

@@ -1,11 +1,13 @@
+// #region Global Imports
 import * as React from "react";
 import { NextPage } from "next";
 import { useSelector, useDispatch } from "react-redux";
+// #endregion Global Imports
 
+// #region Local Imports
 import { withTranslation } from "@Server/i18n";
-
-import { IHomePage } from "@Interfaces";
-
+import { HomeActions } from "@Actions";
+import { Heading, LocaleButton } from "@Components";
 import {
     Container,
     Top,
@@ -17,11 +19,13 @@ import {
     Apod,
     ApodButton,
 } from "@Styled/Home";
+// #endregion Local Imports
 
+// #region Interface Imports
+import { IHomePage } from "@Interfaces";
 import { IStore } from "@Redux/IStore";
-import { HomeActions } from "@Actions";
 import { ReduxNextPageContext } from "@Interfaces";
-import { Heading, LocaleButton } from "@Components";
+// #endregion Interface Imports
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,

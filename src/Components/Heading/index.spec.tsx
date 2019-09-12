@@ -1,6 +1,11 @@
+// #region Global Imports
 import * as React from "react";
 import { shallow } from "enzyme";
+// #endregion Global Imports
+
+// #region Local Imports
 import { Heading } from "@Components";
+// #endregion Local Imports
 
 describe("Components", () => {
     describe("Heading", () => {
