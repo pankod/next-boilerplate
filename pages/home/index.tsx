@@ -6,7 +6,18 @@ import { withTranslation } from "@Server/i18n";
 
 import { IHomePage } from "./Home";
 
-import "./index.scss";
+import {
+    Container,
+    ContainerMiddle,
+    ContainerMiddleLeft,
+    ContainerMiddleLeftButtons,
+    ContainerMiddleRight,
+    ContainerMiddleRightApod,
+    ContainerMiddleRightApodButton,
+    ContainerTop,
+    ContainerTopText,
+} from "./styled";
+
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 import { ReduxNextPageContext } from "@Interfaces";
@@ -33,24 +44,21 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
         ));
 
     return (
-        <div className="container">
-            <div className="container__top">
+        <Container>
+            <ContainerTop>
                 <img src="/static/images/pankod-logo.png" alt="Pankod Logo" />
-            </div>
-            <div className="container__middle">
-                <div className="container__middle__left">
-                    <div className="container__middle__left__buttons">
+            </ContainerTop>
+            <ContainerMiddle>
+                <ContainerMiddleLeft>
+                    <ContainerMiddleLeftButtons>
                         {renderLocaleButtons(i18n.language)}
-                    </div>
-                </div>
-                <div className="container__middle__right">
-                    <span className="container__top_text">
-                        {t("common:Hello")}
-                    </span>
+                    </ContainerMiddleLeftButtons>
+                </ContainerMiddleLeft>
+                <ContainerMiddleRight>
+                    <ContainerTopText>{t("common:Hello")}</ContainerTopText>
                     <Heading text={t("common:World")} />
-                    <span className="container__middle__right__apod">
-                        <span
-                            className="container__middle__right__apod__button"
+                    <ContainerMiddleRightApod>
+                        <ContainerMiddleRightApodButton
                             onClick={() => {
                                 dispatch(
                                     HomeActions.GetApod({
@@ -60,17 +68,17 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                             }}
                         >
                             Get A Photo
-                        </span>
+                        </ContainerMiddleRightApodButton>
                         <img
                             src={home.image.url}
                             height="300"
                             width="150"
                             alt="APOD"
                         />
-                    </span>
-                </div>
-            </div>
-        </div>
+                    </ContainerMiddleRightApod>
+                </ContainerMiddleRight>
+            </ContainerMiddle>
+        </Container>
     );
 };
 
