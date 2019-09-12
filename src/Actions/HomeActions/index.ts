@@ -24,13 +24,6 @@ export const HomeActions = {
     GetApod: (payload: IHomePage.Actions.IGetApodPayload) => async (
         dispatch: Dispatch
     ) => {
-        dispatch({
-            payload: {
-                image: {},
-            },
-            type: ActionConsts.Home.SetReducer,
-        });
-
         const result = await PlanetaryService.GetPlanetImage({
             params: payload.params,
         });
