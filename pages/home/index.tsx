@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NextPage, NextPageContext } from "next";
+import { NextPage } from "next";
 import { useSelector, useDispatch } from "react-redux";
 
 import { withTranslation } from "@Server/i18n";
@@ -9,6 +9,7 @@ import { IHomePage } from "./Home";
 import "./index.scss";
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
+import { ReduxNextPageContext } from "@Interfaces";
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,
@@ -52,7 +53,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                             onClick={() => {
                                 dispatch(
                                     HomeActions.GetApod({
-                                        params: { hd: true },
+                                        params: { hd: false },
                                     })
                                 );
                             }}
@@ -73,8 +74,13 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
 };
 
 Home.getInitialProps = async (
-    ctx: NextPageContext
+    ctx: ReduxNextPageContext
 ): Promise<IHomePage.InitialProps> => {
+    await ctx.store.dispatch(
+        HomeActions.GetApod({
+            params: { hd: true },
+        })
+    );
     return { namespacesRequired: ["common"] };
 };
 

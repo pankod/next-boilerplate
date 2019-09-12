@@ -8,12 +8,6 @@ import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import Reducers from "./Reducers";
 // #endregion Interface Imports
 
-export const store = createStore(
-    Reducers,
-    {},
-    composeWithDevTools(applyMiddleware(thunkMiddleware))
-);
-
 export const makeStore = (initialState: {}, options: {}) => {
     return createStore(
         Reducers,
