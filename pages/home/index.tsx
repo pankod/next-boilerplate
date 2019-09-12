@@ -16,7 +16,7 @@ import {
     ContainerMiddleRightApodButton,
     ContainerTop,
     ContainerTopText,
-} from "./styled";
+} from "@Styled/Home";
 
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
