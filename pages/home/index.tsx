@@ -21,7 +21,7 @@ import {
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 import { ReduxNextPageContext } from "@Interfaces";
-import { Heading } from "@Components";
+import { Heading, LocaleButton } from "@Components";
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,
@@ -32,15 +32,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
 
     const renderLocaleButtons = (activeLanguage: string) =>
         ["en", "es", "tr"].map(lang => (
-            <div
-                key={lang}
-                className={`button ${lang} ${
-                    activeLanguage === lang ? "active" : ""
-                }`}
-                onClick={() => i18n.changeLanguage(lang)}
-            >
-                {lang}
-            </div>
+            <LocaleButton key={lang} lang={lang} isActive={activeLanguage === lang} onClick={() => i18n.changeLanguage(lang)} />
         ));
 
     return (
