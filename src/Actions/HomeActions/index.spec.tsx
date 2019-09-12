@@ -3,7 +3,6 @@ import { ActionConsts } from "@Definitions";
 
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import console = require("console");
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -70,11 +69,10 @@ describe("Home action tests", () => {
         ];
 
         // eslint-disable-next-line
-        console.log(
-            await store.dispatch<any>(
-                HomeActions.GetApod({ params: { hd: true } })
-            )
+        await store.dispatch<any>(
+            HomeActions.GetApod({ params: { hd: true } })
         );
+
         expect(store.getActions()).toEqual(expectedActions);
     });
 });
