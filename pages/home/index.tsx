@@ -10,6 +10,7 @@ import "./index.scss";
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 import { ReduxNextPageContext } from "@Interfaces";
+import { Heading } from "@Components";
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,
@@ -46,7 +47,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                     <span className="container__top_text">
                         {t("common:Hello")}
                     </span>
-                    {/* <Heading text={t("common:World")} /> */}
+                    <Heading text={t("common:World")} />
                     <span className="container__middle__right__apod">
                         <span
                             className="container__middle__right__apod__button"
