@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { withTranslation } from "@Server/i18n";
 
-import { IHomePage } from "./Home";
+import { IHomePage } from "@Interfaces";
 
 import {
     Container,
