@@ -7,15 +7,20 @@ import { withTranslation } from "@Server/i18n";
 import { IHomePage } from "./Home";
 
 import {
-    Container, ContainerMiddle, ContainerMiddleLeft, ContainerMiddleLeftButtons,
-    ContainerMiddleRight, ContainerMiddleRightApod, ContainerMiddleRightApodButton,
-    ContainerTop, ContainerTopText
+    Container,
+    ContainerMiddle,
+    ContainerMiddleLeft,
+    ContainerMiddleLeftButtons,
+    ContainerMiddleRight,
+    ContainerMiddleRightApod,
+    ContainerMiddleRightApodButton,
+    ContainerTop,
+    ContainerTopText,
 } from "./styled";
 
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 import { ReduxNextPageContext } from "@Interfaces";
-
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,
@@ -30,7 +35,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                 key={lang}
                 className={`button ${lang} ${
                     activeLanguage === lang ? "active" : ""
-                    }`}
+                }`}
                 onClick={() => i18n.changeLanguage(lang)}
             >
                 {lang}
@@ -49,9 +54,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                     </ContainerMiddleLeftButtons>
                 </ContainerMiddleLeft>
                 <ContainerMiddleRight>
-                    <ContainerTopText>
-                        {t("common:Hello")}
-                    </ContainerTopText>
+                    <ContainerTopText>{t("common:Hello")}</ContainerTopText>
                     {/* <Heading text={t("common:World")} /> */}
                     <ContainerMiddleRightApod>
                         <ContainerMiddleRightApodButton
