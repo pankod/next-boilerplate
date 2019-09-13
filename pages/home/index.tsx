@@ -34,8 +34,6 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     const home = useSelector((state: IStore) => state.home);
     const dispatch = useDispatch();
 
-    console.log(i18n)
-
     const renderLocaleButtons = (activeLanguage: string) =>
         ["en", "es", "tr"].map(lang => (
             <LocaleButton
