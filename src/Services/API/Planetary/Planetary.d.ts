@@ -9,3 +9,5 @@ declare namespace PlanetaryModel {
 
     export interface GetApodResponse extends ApodResponse {}
 }
+
+export { PlanetaryModel };

@@ -6,8 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 // #region Local Imports
 import { withTranslation } from "@Server/i18n";
-import { HomeActions } from "@Actions";
-import { Heading, LocaleButton } from "@Components";
 import {
     Container,
     Top,
@@ -19,12 +17,13 @@ import {
     Apod,
     ApodButton,
 } from "@Styled/Home";
+import { IStore } from "@Redux/IStore";
+import { HomeActions } from "@Actions";
+import { Heading, LocaleButton } from "@Components";
 // #endregion Local Imports
 
 // #region Interface Imports
-import { IHomePage } from "@Interfaces";
-import { IStore } from "@Redux/IStore";
-import { ReduxNextPageContext } from "@Interfaces";
+import { IHomePage, ReduxNextPageContext } from "@Interfaces";
 // #endregion Interface Imports
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({

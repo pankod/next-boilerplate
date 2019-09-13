@@ -23,7 +23,13 @@ describe("Basic Components", () => {
 
         it("should increment number on click", () => {
             let number = 1;
-            const wrapper = shallow(<Button onClick={() => number++}></Button>);
+            const wrapper = shallow(
+                <Button
+                    onClick={() => {
+                        number += 1;
+                    }}
+                />
+            );
 
             wrapper.simulate("click");
             expect(number).toBe(2);

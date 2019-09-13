@@ -18,7 +18,6 @@
     "cli": "pankod-cli add"
   },
   "dependencies": {
-    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
@@ -41,14 +40,14 @@
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.3.2",
-    "ts-config": "^20.10.0"
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@pankod/pankod-cli": "^0.3.3",
     "@types/dotenv": "^6.1.1",
     "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/express": "^4.17.1",
     "@types/jest": "^24.0.18",
     "@types/next-redux-wrapper": "^2.0.2",
@@ -67,10 +66,12 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "6.x",
+    "eslint-config-airbnb-typescript": "^4.0.1",
     "eslint-config-prettier": "^6.1.0",
     "eslint-config-react-app": "^5.0.1",
+    "eslint-import-resolver-typescript": "^1.1.1",
     "eslint-plugin-flowtype": "3.x",
-    "eslint-plugin-import": "2.x",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.x",
@@ -86,7 +87,7 @@
     "typescript": "^3.6.2"
   },
   "pankod": {
-    "projectType": "nextjs"
+    "projectType": "nextjs2"
   },
   "license": "ISC"
 }

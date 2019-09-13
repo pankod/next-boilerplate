@@ -11,3 +11,5 @@ declare namespace IErrorPage {
         namespacesRequired: string[];
     }
 }
+
+export { IErrorPage };

@@ -1,7 +1,7 @@
 // #region Local Imports
 import { IAction, IHomePage } from "@Interfaces";
 import { ActionConsts } from "@Definitions";
-import { HomeReducer } from "./";
+import { HomeReducer } from ".";
 // #endregion Local Imports
 
 describe("home reducer", () => {

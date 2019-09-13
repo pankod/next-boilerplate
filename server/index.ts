@@ -24,8 +24,9 @@ app.prepare().then(() => {
     server.use(nextI18NextMiddleware(nextI18next));
 
     if (process.env.PROXY_MODE === "local") {
+        // eslint-disable-next-line global-require
         const proxyMiddleware = require("http-proxy-middleware");
-        Object.keys(devProxy).forEach(function(context) {
+        Object.keys(devProxy).forEach(context => {
             server.use(proxyMiddleware(context, devProxy[context]));
         });
     }
@@ -34,6 +35,7 @@ app.prepare().then(() => {
 
     server.listen(port);
 
+    // eslint-disable-next-line no-console
     console.log(
         `> Server listening at http://localhost:${port} as ${
             dev ? "development" : process.env.NODE_ENV

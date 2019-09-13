@@ -1,5 +1,5 @@
 // #region Global Imports
-import { WithTranslation } from "react-i18next";
+import { WithTranslation } from "next-i18next";
 // #endregion Global Imports
 
 declare namespace IHomePage {
@@ -31,3 +31,5 @@ declare namespace IHomePage {
             extends PlanetaryModel.GetApodResponse {}
     }
 }
+
+export { IHomePage };
