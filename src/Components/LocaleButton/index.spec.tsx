@@ -6,7 +6,13 @@ describe("Components", () => {
     describe("LocaleButton with isActive=true", () => {
         let number = 1;
         const wrapper = mount(
-            <LocaleButton lang="tr" isActive={true} onClick={() => number++} />
+            <LocaleButton
+                lang="tr"
+                isActive
+                onClick={() => {
+                    number += 1;
+                }}
+            />
         );
 
         it("should render without throwing error", () => {

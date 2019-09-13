@@ -14,7 +14,7 @@ const Heading: React.FunctionComponent<IHeading.IProps> = props => {
     const { text } = props;
 
     return (
-        <div className={"title"}>
+        <div className="title">
             <span className="title__back">{text}</span>
             <span className="title__front">{text}</span>
         </div>

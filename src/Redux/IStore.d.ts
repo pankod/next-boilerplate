@@ -1,6 +1,6 @@
-//#region Interface Imports
+// #region Interface Imports
 import { IHomePage } from "@Interfaces";
-//#endregion Interface Imports
+// #endregion Interface Imports
 
 export interface IStore {
     home: IHomePage.IStateProps;

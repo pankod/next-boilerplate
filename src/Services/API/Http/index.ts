@@ -37,9 +37,8 @@ export const Http = {
                 .then(async response => {
                     if (response.status === 200) {
                         return response.json().then(resolve);
-                    } else {
-                        return reject(response);
                     }
+                    return reject(response);
                 })
                 .catch(e => {
                     reject(e);

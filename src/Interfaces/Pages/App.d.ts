@@ -5,11 +5,11 @@ import { NextPageContext } from "next";
 import { ThunkDispatch } from "redux-thunk";
 // #endregion Global Imports
 
-interface AppWithStore extends AppInitialProps {
+export interface AppWithStore extends AppInitialProps {
     store: Store;
 }
 
-interface ReduxNextPageContext extends NextPageContext {
+export interface ReduxNextPageContext extends NextPageContext {
     store: {
         dispatch: ThunkDispatch;
     };

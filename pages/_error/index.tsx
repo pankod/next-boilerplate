@@ -17,7 +17,8 @@ const Error: NextPage<IErrorPage.IProps, IErrorPage.InitialProps> = ({
 }) => {
     return (
         <div>
-            {t("common:Error")} {statusCode}
+            {t("common:Error")}
+            {statusCode}
         </div>
     );
 };
