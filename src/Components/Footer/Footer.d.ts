@@ -1,7 +1,5 @@
 declare namespace IFooter {
-    export interface IProps {
-        text: string;
-    }
+    export interface IProps {}
 }
 
 export { IFooter };
