@@ -67,13 +67,13 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                                 );
                             }}
                         >
-                            Get A Photo
+                            Discover Space
                         </ApodButton>
                         <img
                             src={home.image.url}
                             height="300"
                             width="150"
-                            alt="APOD"
+                            alt="Discover Space"
                         />
                     </Apod>
                 </MiddleRight>
