@@ -7,7 +7,7 @@ import { HomeReducer } from ".";
 describe("home reducer", () => {
     it("should return the initial state", () => {
         expect(
-            HomeReducer(undefined, {} as IAction<IHomePage.IDispatchProps>)
+            HomeReducer(undefined, {} as IAction<IHomePage.IStateProps>)
         ).toEqual({
             home: {
                 version: 1,
@@ -20,7 +20,7 @@ describe("home reducer", () => {
 
     it("should handle SetReducer", () => {
         expect(
-            HomeReducer([], {
+            HomeReducer(undefined, {
                 type: ActionConsts.Home.SetReducer,
                 payload: {
                     version: 2,
@@ -33,7 +33,7 @@ describe("home reducer", () => {
 
     it("should handle ResetReducer", () => {
         expect(
-            HomeReducer([], {
+            HomeReducer(undefined, {
                 type: ActionConsts.Home.ResetReducer,
             })
         ).toEqual({
