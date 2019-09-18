@@ -7,7 +7,7 @@ import { HomeReducer } from ".";
 describe("home reducer", () => {
     it("should return the initial state", () => {
         expect(
-            HomeReducer(undefined, {} as IAction<IHomePage.IStateProps>)
+            HomeReducer(undefined, {} as IAction<IHomePage.Actions.IMapPayload>)
         ).toEqual({
             home: {
                 version: 1,
@@ -20,7 +20,7 @@ describe("home reducer", () => {
 
     it("should handle SetReducer", () => {
         expect(
-            HomeReducer(undefined, {
+            HomeReducer([], {
                 type: ActionConsts.Home.SetReducer,
                 payload: {
                     version: 2,
