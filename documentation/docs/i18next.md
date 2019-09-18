@@ -4,12 +4,12 @@ title: Internationalization Framework
 sidebar_label: Internationalization Framework
 ---
 
-i18next is a very popular internationalization framework for browser or any other javascript environment. You can translate your app to any predefined language.
+i18next is a very popular internationalization framework for browser or any other javascript environments. You can translate your app to any predefined language.
 
 
-The translations of custom text messsages will be stored for each language in a separate directory.
+The translations of custom text messsages will be stored in each language's own separate folder.
 
-Organize your translations as such:
+Organize your translations such as:
 ```sh
 .
 └── static
@@ -28,13 +28,13 @@ We already added a common.json file for boilerplate translation example.
 
 ### Add new translation language
 
-If you want to add a new language files you should:
+If you want to add a new language file you should:
  - Add filename to namespaces array in `src/Services/withI18next.ts`.
 
 ``` 
 export const withI18next = (namespaces = ['common']) => () => {}
 ```
-- Add folder and filename to server objects ns and whitelist config in `app/i18n/i18next.config.js`
+- Add folder and filename to server object's ns and whitelist config in `app/i18n/i18next.config.js`
  ```js
 	server: 
 		ns: ['common'],
@@ -45,9 +45,9 @@ export const withI18next = (namespaces = ['common']) => () => {}
 
 ### Use i18next functions in components
 
-In the next step we have to wrap the components with `withI18next` function, which automatically adds the `t()` and `changeLanguage` function to the properties of a component. 
+In the next step we have to wrap the components with `withI18next` function, which automatically passes the `t()` and `changeLanguage()` functions to the properties of the components.
 
-You have to specify the namespace(translation file name) to `withI18next` function.
+You have to specify the namespace(*translation file name*) to `withI18next` function.
 
 Example usage in `pages/home` directory.
 
@@ -65,7 +65,7 @@ export default connect(
 
 ### Changing current language
 
-Use `changeLanguage` method of i18n to set current language and trigger the language change manually. i18n methods passed to pages as a props.
+Use `changeLanguage()` method of i18n to set current language and trigger the language change manually. i18n methods passed into pages as props.
 
 ```
 this.props.i18n.changeLanguage('es');
