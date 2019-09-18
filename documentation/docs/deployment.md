@@ -21,7 +21,7 @@ npm run start
 
 ## Docker
 
-Dockerfile already included in project.
+Dockerfile is already included in project.
 
 ```
 FROM node:alpine
