@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
     "isomorphic-unfetch": "^3.0.0",
+    "jest-styled-components": "^6.3.3",
     "next": "^9.0.5",
     "next-compose-plugins": "^2.2.0",
     "next-i18next": "^1.2.0",
