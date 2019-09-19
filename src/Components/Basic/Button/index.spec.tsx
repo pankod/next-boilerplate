@@ -1,11 +1,13 @@
 // #region Global Imports
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import "jest-styled-components";
 // #endregion Global Imports
 
 // #region Local Imports
 import { Button } from "./index";
+import { mountWithTheme } from "@Test/Helpers/styled";
+import { theme } from "@Definitions/Styled/theme";
 // #endregion Local Imports
 
 describe("Basic Components", () => {
@@ -37,18 +39,27 @@ describe("Basic Components", () => {
         });
 
         it("should match snapshot", () => {
-            const wrapper = mount(<Button>Test</Button>);
+            const wrapper = mountWithTheme(<Button>Test</Button>);
             expect(wrapper).toMatchSnapshot();
         });
 
         it("should be disabled", () => {
-            const wrapper = mount(<Button disabled={true}>Test</Button>);
+            const wrapper = mountWithTheme(
+                <Button disabled={true}>Test</Button>
+            );
             expect(wrapper).toHaveStyleRule("cursor", "not-allowed");
         });
 
         it("should be enabled", () => {
-            const wrapper = mount(<Button disabled={false}>Test</Button>);
+            const wrapper = mountWithTheme(
+                <Button disabled={false}>Test</Button>
+            );
             expect(wrapper).toHaveStyleRule("cursor", "pointer");
+        });
+
+        it("should have primary color", () => {
+            const wrapper = mountWithTheme(<Button>Test</Button>);
+            expect(wrapper).toHaveStyleRule("color", theme.colors.primary);
         });
     });
 });
