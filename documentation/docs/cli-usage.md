@@ -24,7 +24,7 @@ For example, let's go through the steps of the creation of a new page component.
 
 If you choose yes, the following store connection methods and imports will be generated:
 
-- mapStateToProps & mapDispatchToProps methods and appropriate imports in page component file,
+- Implement `getInitialProps` and appropriate imports in page component file,
 - An action file in the Actions/{YourAwesomePage} folder,
 - Prepend export line into Actions/index.ts,
 - An action constants object in Definitions/ActionConsts/ActionConsts.ts,
