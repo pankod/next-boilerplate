@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components Heading should match snapshot 1`] = `
+<Heading
+  text="Test"
+>
+  <div
+    className="title"
+  >
+    <span
+      className="title__back"
+    >
+      Test
+    </span>
+    <span
+      className="title__front"
+    >
+      Test
+    </span>
+  </div>
+</Heading>
+`;
