@@ -5,7 +5,6 @@ import { shallow, mount } from "enzyme";
 
 // #region Local Imports
 import { Footer } from "@Components";
-import { execOnce } from "next-server/dist/lib/utils";
 // #endregion Local Imports
 
 describe("Footer", () => {
