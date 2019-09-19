@@ -1,6 +1,7 @@
 // #region Global Imports
 import React from "react";
 import { shallow, mount } from "enzyme";
+import "jest-styled-components";
 // #endregion Global Imports
 
 // #region Local Imports
@@ -38,6 +39,16 @@ describe("Basic Components", () => {
         it("should match snapshot", () => {
             const wrapper = mount(<Button>Test</Button>);
             expect(wrapper).toMatchSnapshot();
+        });
+
+        it("should be disabled", () => {
+            const wrapper = mount(<Button disabled={true}>Test</Button>);
+            expect(wrapper).toHaveStyleRule("cursor", "not-allowed");
+        });
+
+        it("should be enabled", () => {
+            const wrapper = mount(<Button disabled={false}>Test</Button>);
+            expect(wrapper).toHaveStyleRule("cursor", "pointer");
         });
     });
 });
