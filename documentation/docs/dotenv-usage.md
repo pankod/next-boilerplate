@@ -24,7 +24,7 @@ Add environment-specific variables on new lines in the form of `NAME=VALUE` in .
 ```
 API_KEY=test1234
 ```
- If you use unit testing, you should add same variable into `.env.test` file.
+ If you use environment variables also in Unit Testing, you should add same variables into `.env.test` file as well.
 
  After defining keys in the .env file, you need to define the same keys into `withConfig` in the `next.config.js` file.
 <br>
