@@ -12,7 +12,8 @@
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "test": "jest --coverage",
-    "format": "eslint {src,pages,server} -c .eslintrc.json --ext ts,tsx --fix",
+    "lint": "eslint {src,pages,server} -c .eslintrc.json --ext ts,tsx",
+    "format": "npm run lint -- --fix",
     "analyze": "cross-env BUNDLE_ANALYZE=both npm run build",
     "export": "cross-env NODE_ENV=production next export",
     "cli": "pankod-cli add"
