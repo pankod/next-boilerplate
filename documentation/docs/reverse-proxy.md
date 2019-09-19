@@ -15,4 +15,5 @@ In the `app/proxy` directory you can define the paths you want to implement reve
 
 <br>
 > **Production Usage**
+>
 > We don't recommend using this for performance in production, but you can do it with nginx reverse proxy instead.

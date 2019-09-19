@@ -11,5 +11,3 @@ Next.js is a minimalistic React framework that runs on the browser and the serve
 The advantage of this approach is to be able to create rich user experiences in a uniform way, without compromising SEO (Search Engine Optimisation) factors that are key to good ranking on Google and other search engines.
 
 This boilerplate makes it easier to get up and running with a well-structured Next.js and TypeScript application.
-
-

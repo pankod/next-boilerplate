@@ -33,7 +33,7 @@ If you want to add a new language file you should:
 - Create a new translation file in `static/locales/{newlang}/common.json`. *You can duplicate existing one and rename after making appropriate changes.*
 - Add a key for the language into `otherLanguages` array in `server/i18n.ts`.
 
-> Make sure both folder and key names are the same.
+> Make sure both folder and key names are **same**.
 
 ``` js
 const NextI18NextInstance = new NextI18Next({

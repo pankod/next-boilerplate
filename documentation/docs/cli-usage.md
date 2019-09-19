@@ -25,10 +25,10 @@ For example, let's go through the steps of the creation of a new page component.
 If you choose yes, the following store connection methods and imports will be generated:
 
 - Implement `getInitialProps` and appropriate imports in page component file,
-- An action file in the Actions/{YourAwesomePage} folder,
-- Prepend export line into Actions/index.ts,
-- An action constants object in Definitions/ActionConsts/ActionConsts.ts,
-- Append component interface in IStore interface file.
+- An action file in the *Actions/{YourAwesomePage}* folder,
+- Prepend export line into *Actions/index.ts*,
+- An action constants object in *Definitions/ActionConsts/ActionConsts.ts*,
+- Append component interface in *IStore* interface file.
 
 >Do you want to create a new reducer or use your own?
 
