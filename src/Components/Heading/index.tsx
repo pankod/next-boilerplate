@@ -10,7 +10,9 @@ import "./style.scss";
 import { IHeading } from "./Heading";
 // #endregion Interface Imports
 
-const Heading: React.FunctionComponent<IHeading.IProps> = props => {
+const Heading: React.FunctionComponent<IHeading.IProps> = (
+    props
+): JSX.Element => {
     const { text } = props;
 
     return (

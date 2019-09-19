@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import { NavbarProps } from "./Navbar";
+import { INavbar } from "./Navbar";
 
-const Navbar: React.FunctionComponent<NavbarProps> = (): JSX.Element => {
+const Navbar: React.FunctionComponent<INavbar.IProps> = (): JSX.Element => {
     return <div className="navbar">Navbar</div>;
 };
 

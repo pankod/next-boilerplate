@@ -1,13 +1,12 @@
 // #region Global Imports
 import React from "react";
 import { shallow } from "enzyme";
-import "jest-styled-components";
 // #endregion Global Imports
 
 // #region Local Imports
-import { Button } from "./index";
 import { mountWithTheme } from "@Test/Helpers/styled";
 import { theme } from "@Definitions/Styled/theme";
+import { Button } from "./index";
 // #endregion Local Imports
 
 describe("Basic Components", () => {
@@ -44,9 +43,7 @@ describe("Basic Components", () => {
         });
 
         it("should be disabled", () => {
-            const wrapper = mountWithTheme(
-                <Button disabled={true}>Test</Button>
-            );
+            const wrapper = mountWithTheme(<Button disabled>Test</Button>);
             expect(wrapper).toHaveStyleRule("cursor", "not-allowed");
         });
 
