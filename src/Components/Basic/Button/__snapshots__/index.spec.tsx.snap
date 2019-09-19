@@ -14,11 +14,13 @@ exports[`Basic Components Button should match snapshot 1`] = `
           "attrs": Array [],
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
-            "isStatic": true,
+            "isStatic": false,
             "lastClassName": "c0",
             "rules": Array [
               "
-    cursor: pointer;
+    cursor: ",
+              [Function],
+              ";
 ",
             ],
           },
