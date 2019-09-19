@@ -5,21 +5,20 @@ sidebar_label: Routing
 ---
 
 
-Routing is automatically handled by the Next.js. By default, Next.js will serve each file in `/pages` with a pathname matching the filename. Subfolders with index files under `/pages` directory are also supported and it's the preferred method in the boilerplate.
+Routing is automatically handled by the Next.js. By default, Next.js will serve each file in `/pages` with a pathname matching the filename. Subfolders with index files under `/pages` directory are also supported and it's the preferred way in the boilerplate.
 <br>
 
-```
-pages/index.ts
+```sh
 pages/home/index.tsx
-pages/about/index.tsx
+pages/{yourAwesomePage}/index.tsx
 ```
 
 *According to the above directory structure, file and folder names are defined as routes.*
+*Note that `home` is entry point and can be routed with both `/` and `/home`.*
 
 ```sh
-pages/index -> /
-pages/about -> /about
-pages/home  -> /home
+pages/home -> / && /home
+pages/{yourAwesomePage} -> /{yourAwesomePage}
 ```
 
-You may add custom routings to your app by using the `app/routes.js`
+You may add custom routings to your app by using the `server/routes.js`
