@@ -4,7 +4,7 @@ title: Internationalization Framework
 sidebar_label: Internationalization Framework
 ---
 
-i18next is a very popular qweasd internationalization framework for browser or any other javascript environments. You can translate your app to any predefined language.
+i18next is a very popular internationalization framework for browser or any other javascript environments. You can translate your app to any predefined language.
 
 The translations of custom text messsages will be stored in each language's own separate folder.
 
