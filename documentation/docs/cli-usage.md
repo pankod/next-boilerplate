@@ -17,7 +17,7 @@ For example, let's go through the steps of the creation of a new page component.
 
 >Do you want to add custom route or use default route name?,
 
-- You can define custom route for page which is specified in `server/routes.js`
+- You can define custom route for page which is specified in `server/routes.ts`
 - It will set filename as a route if you don't want to add custom route.
 
 >Do you want to have a connection to store?

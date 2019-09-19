@@ -14,11 +14,11 @@ pages/{yourAwesomePage}/index.tsx
 ```
 
 *According to the above directory structure, file and folder names are defined as routes.*
-*Note that `home` is entry point and can be routed with both `/` and `/home`.*
+*Note that `/home` routes to `/` as default and can be changed in `server/routes.ts`*
 
 ```sh
-pages/home -> / && /home
+pages/home -> / or /home
 pages/{yourAwesomePage} -> /{yourAwesomePage}
 ```
 
-You may add custom routings to your app by using the `server/routes.js`
+You may add custom routings to your app by using the `server/routes.ts`
