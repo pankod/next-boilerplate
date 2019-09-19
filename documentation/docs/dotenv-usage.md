@@ -29,7 +29,7 @@ API_KEY=test1234
  After defining keys in the .env file, you need to define the same keys into `withConfig` in the `next.config.js` file.
 <br>
 
-```
+```js
 const withConfig = nextRuntimeDotenv({
 	public: [
 		'API_URL',
@@ -40,10 +40,23 @@ const withConfig = nextRuntimeDotenv({
 	]
 })
 ```
+
 <br>
+
+Also `publicRuntimeConfig` property of `nextConfig` object should be populated as:
+
+```js
+with
+publicRuntimeConfig: {
+	API_URL: process.env.API_URL,
+	API_KEY: process.env.API_KEY
+},
+```
+<br>
+
 If you use unit testing you should add keys to ```setConfig``` in ```jest.setup.js``` file.
 
-```
+```js
 setConfig({
 	publicRuntimeConfig:
 	{
@@ -55,10 +68,12 @@ setConfig({
 	}
 })
 ```
+
 <br>
+
 To use within code:
 
-```
+```js
 import getConfig from 'next/config';
 
 const { publicRuntimeConfig: { API_KEY, API_URL },  serverRuntimeConfig: { ANY_SECRET_TOKEN } } = getConfig();
