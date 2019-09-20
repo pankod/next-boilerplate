@@ -1,6 +1,6 @@
 // #region Global Imports
 import * as React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 // #endregion Global Imports
 
 // #region Local Imports
@@ -13,6 +13,11 @@ describe("Components", () => {
             const wrap = shallow(<Heading text="World" />);
 
             expect(wrap.find("div.title").exists()).toBe(true);
+        });
+
+        it("should match snapshot", () => {
+            const wrapper = mount(<Heading text="Test" />);
+            expect(wrapper).toMatchSnapshot();
         });
     });
 });
