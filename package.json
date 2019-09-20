@@ -69,12 +69,8 @@
     "babel-plugin-styled-components": "^1.10.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-<<<<<<< HEAD
-    "eslint": "^6.4.0",
-=======
     "enzyme-to-json": "^3.4.0",
-    "eslint": "6.x",
->>>>>>> 59edfb67337d9626f2b30908f4d8dfb4e41b6b6c
+    "eslint": "^6.4.0",
     "eslint-config-airbnb-typescript": "^4.0.1",
     "eslint-config-prettier": "^6.3.0",
     "eslint-config-react-app": "^5.0.2",
@@ -86,12 +82,8 @@
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "1.x",
     "jest": "^24.9.0",
-<<<<<<< HEAD
-    "nock": "^11.3.5",
-=======
     "jest-styled-components": "^6.3.3",
-    "nock": "^11.3.3",
->>>>>>> 59edfb67337d9626f2b30908f4d8dfb4e41b6b6c
+    "nock": "^11.3.5",
     "nodemon": "^1.19.2",
     "prettier": "1.18.2",
     "redux-devtools-extension": "^2.13.8",
