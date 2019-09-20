@@ -14,7 +14,7 @@ next-boilerplate project provides a lot of features out of the box. Here's an ov
 * **Sass/Scss** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
 * **Docker** - A tool designed to make it easier to create, deploy, and run applications by using containers.
 * **Babel** -  The compiler for next generation JavaScript.
-* **TSLint** - Contains TypeScript-specific linting options for the project.
+* **ESLint** - The pluggable linting utility.
 * **Reverse Proxy** - Lightweight server for proxying API requests.
 * **Bundler Analyzer** - Visualize the size of webpack output files with an interactive zoomable treemap.
 * **next-runtime-dotenv** - Expose environment variables to the runtime config of Next.js
