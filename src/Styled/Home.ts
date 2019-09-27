@@ -76,7 +76,7 @@ export const ApodButton = styled.div`
     font-family: Arial;
     font-weight: 700;
     font-size: 25px;
-    color: #2c3e50;
+    color: ${({ theme }) => theme.colors.primary};
     letter-spacing: 0;
 `;
 

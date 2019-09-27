@@ -7,18 +7,11 @@ import styled from "styled-components";
 import { IButton } from "./Button";
 // #endregion Local Imports
 
-const Container = styled.div`
-    cursor: pointer;
+const Container = styled.div<IButton.IProps>`
+    cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+    color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const Button: React.FunctionComponent<IButton.IProps> = ({
-    children,
-    onClick,
-    className,
-}) => {
-    return (
-        <Container className={className} onClick={onClick}>
-            {children}
-        </Container>
-    );
+export const Button: React.FunctionComponent<IButton.IProps> = props => {
+    return <Container {...props} />;
 };

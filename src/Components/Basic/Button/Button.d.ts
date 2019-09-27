@@ -3,6 +3,7 @@ declare namespace IButton {
         children?: React.ReactNode;
         className?: string;
         onClick?: (event: MouseEvent<HTMLDivElement, MouseEvent>) => void;
+        disabled?: boolean;
     }
 }
 

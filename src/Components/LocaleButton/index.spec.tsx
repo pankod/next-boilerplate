@@ -1,11 +1,11 @@
 import React from "react";
-import { mount } from "enzyme";
+import { mountWithTheme } from "@Test/Helpers/styled";
 import { LocaleButton } from "./index";
 
 describe("Components", () => {
     describe("LocaleButton with isActive=true", () => {
         let number = 1;
-        const wrapper = mount(
+        const wrapper = mountWithTheme(
             <LocaleButton
                 lang="tr"
                 isActive
@@ -31,7 +31,7 @@ describe("Components", () => {
 
     describe("LocaleButton with isActive=false", () => {
         it("should render without throwing error", () => {
-            const wrapper = mount(
+            const wrapper = mountWithTheme(
                 <LocaleButton lang="tr" isActive={false} onClick={() => true} />
             );
             expect(wrapper.find("div").length).toBe(1);
