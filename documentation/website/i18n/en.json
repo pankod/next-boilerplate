@@ -22,8 +22,8 @@
         "sidebar_label": "Deployment"
       },
       "dotenv-usage": {
-        "title": "Enviroment Variables(.env)",
-        "sidebar_label": "Enviroment Variables"
+        "title": "Environment Variables(.env)",
+        "sidebar_label": "Environment Variables"
       },
       "dotenv": {
         "title": "Environment Variables",

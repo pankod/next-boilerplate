@@ -5,10 +5,9 @@ sidebar_label: Styling
 ---
 
 
-Sass/Scss is used to style components. It's recommended to keep style files in the same directory with component's files and import it right from there when necessary.
+Scss/Sass and styled-component are being used to style components. It's recommended to keep style files in the same directory with component's files and import it right from there when necessary.
 
 Example:
-
 
  ```sh
 ├── src
@@ -16,12 +15,13 @@ Example:
 │   │   ├── Heading
 │   │   │   ├── index.spec.tsx
 │   │   │   ├── index.tsx
-│   │   │   └── style.scss
+│   │   │   ├── styled.ts   (styled-component)
+│   │   │   └── style.scss  (scss/sass)
 │   │   └── index.ts
 ```
 
+You need to import style.scss or styled.ts depending your selection into Heading/index.tsx
 
-You need to import style.scss in to Heading/index.tsx
 ```js
 import './style.scss';
 ```
