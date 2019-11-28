@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
-    "@pankod/pankod-cli": "^0.3.3",
+    "@pankod/pankod-cli": "^1.0.0",
     "@types/dotenv": "^6.1.1",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
