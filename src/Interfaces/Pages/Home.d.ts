@@ -1,36 +1,35 @@
-//#region Global Imports
-import { Props } from 'prop-types';
-import i18n from 'i18next';
-//#endregion Global Imports
-
-//#region Interfaces Imports
-import { PlanetaryModel } from '@Interfaces';
-//#endregion Interfaces Imports
+// #region Global Imports
+import { WithTranslation } from "next-i18next";
+// #endregion Global Imports
 
 declare namespace IHomePage {
-	export type IProps = IOwnProps & IStateProps & IDispatchProps;
+    export interface IProps extends WithTranslation {}
 
-	export interface IOwnProps extends Props<{}> {
-		t: i18n.TranslationFunction;
-		i18n: i18n.i18n;
-	}
+    export interface InitialProps {
+        namespacesRequired: string[];
+    }
 
-	export interface IState {}
+    export interface IStateProps {
+        home: {
+            version: number;
+        };
+        image: {
+            url: string;
+        };
+    }
 
-	export interface IStateProps {}
+    namespace Actions {
+        export interface IMapPayload {}
 
-	export interface IDispatchProps {
-		Map(payload: Actions.IMapPayload): Actions.IMapResponse;
-		GetApod(payload: Actions.IGetApodPayload): Actions.IGetApodResponse;
-	}
+        export interface IMapResponse {}
 
-	namespace Actions {
-		export interface IMapPayload {}
+        export interface IGetApodPayload extends PlanetaryModel.GetApodPayload {
+            params: {};
+        }
 
-		export interface IMapResponse {}
-
-		export interface IGetApodPayload extends PlanetaryModel.GetApodPayload {}
-
-		export interface IGetApodResponse extends PlanetaryModel.GetApodResponse {}
-	}
+        export interface IGetApodResponse
+            extends PlanetaryModel.GetApodResponse {}
+    }
 }
+
+export { IHomePage };

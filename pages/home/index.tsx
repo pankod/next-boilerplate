@@ -1,73 +1,98 @@
-//#region Global Imports
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-//#endregion Global Imports
+// #region Global Imports
+import * as React from "react";
+import { NextPage } from "next";
+import { useSelector, useDispatch } from "react-redux";
+// #endregion Global Imports
 
-//#region Local Imports
-import { Heading } from '@Components';
-import { HomeActions } from '@Actions';
-import { withI18next } from '../../src/withI18next';
-import './index.scss';
-//#region Local Imports
+// #region Local Imports
+import { withTranslation } from "@Server/i18n";
+import {
+    Container,
+    Top,
+    TopText,
+    Middle,
+    MiddleLeft,
+    MiddleLeftButtons,
+    MiddleRight,
+    Apod,
+    ApodButton,
+} from "@Styled/Home";
+import { IStore } from "@Redux/IStore";
+import { HomeActions } from "@Actions";
+import { Heading, LocaleButton } from "@Components";
+// #endregion Local Imports
 
-//#region Interface Imports
-import { IHomePage, IStore } from '@Interfaces';
-//#endregion Interface Imports
+// #region Interface Imports
+import { IHomePage, ReduxNextPageContext } from "@Interfaces";
+// #endregion Interface Imports
 
-export class HomePage extends React.Component<IHomePage.IProps, IHomePage.IState> {
-	constructor(props: IHomePage.IProps) {
-		super(props);
-	}
+const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
+    t,
+    i18n,
+}) => {
+    const home = useSelector((state: IStore) => state.home);
+    const dispatch = useDispatch();
 
-	renderLocaleButtons = (activeLanguage: string) =>
-		['en', 'es', 'tr'].map(lang => (
-			<div
-				key={lang}
-				className={`button ${lang} ${activeLanguage === lang ? 'active' : ''}`}
-				onClick={() => this.changeLanguage(lang)}
-			>
-				{lang}
-			</div>
-		));
+    const renderLocaleButtons = (activeLanguage: string) =>
+        ["en", "es", "tr"].map(lang => (
+            <LocaleButton
+                key={lang}
+                lang={lang}
+                isActive={activeLanguage === lang}
+                onClick={() => i18n.changeLanguage(lang)}
+            />
+        ));
 
-	public render(): JSX.Element {
-		const { t, i18n } = this.props;
+    return (
+        <Container>
+            <Top>
+                <img src="/static/images/pankod-logo.png" alt="Pankod Logo" />
+            </Top>
+            <Middle>
+                <MiddleLeft>
+                    <MiddleLeftButtons>
+                        {renderLocaleButtons(i18n.language)}
+                    </MiddleLeftButtons>
+                </MiddleLeft>
+                <MiddleRight>
+                    <TopText>{t("common:Hello")}</TopText>
+                    <Heading text={t("common:World")} />
+                    <Apod>
+                        <ApodButton
+                            onClick={() => {
+                                dispatch(
+                                    HomeActions.GetApod({
+                                        params: { hd: false },
+                                    })
+                                );
+                            }}
+                        >
+                            Discover Space
+                        </ApodButton>
+                        <img
+                            src={home.image.url}
+                            height="300"
+                            width="150"
+                            alt="Discover Space"
+                        />
+                    </Apod>
+                </MiddleRight>
+            </Middle>
+        </Container>
+    );
+};
 
-		return (
-			<div className="container">
-				<div className="container__top">
-					<img src="/static/images/pankod-logo.png" />
-				</div>
-				<div className="container__middle">
-					<div className="container__middle__left">
-						<div className="container__middle__left__buttons">
-							{this.renderLocaleButtons(i18n.language)}
-						</div>
-					</div>
-					<div className="container__middle__right">
-						<span className="container__top_text">{t('common:Hello')}</span>
-						<Heading text={t('common:World')} />
-					</div>
-				</div>
-			</div>
-		);
-	}
+Home.getInitialProps = async (
+    ctx: ReduxNextPageContext
+): Promise<IHomePage.InitialProps> => {
+    await ctx.store.dispatch(
+        HomeActions.GetApod({
+            params: { hd: true },
+        })
+    );
+    return { namespacesRequired: ["common"] };
+};
 
-	private changeLanguage(lang: string): void {
-		this.props.i18n.changeLanguage(lang);
-	}
-}
+const Extended = withTranslation("common")(Home);
 
-const mapStateToProps = (state: IStore) => state.home;
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-	Map: bindActionCreators(HomeActions.Map, dispatch),
-});
-
-const Extended = withI18next(['common'])(HomePage);
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps,
-)(Extended);
+export default Extended;

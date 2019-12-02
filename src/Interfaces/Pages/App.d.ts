@@ -1,15 +1,22 @@
-//#region Global Imports
-import { Props } from 'prop-types';
-//#endregion Global Imports
+// #region Global Imports
+import { Store } from "redux";
+import { AppInitialProps, AppContext } from "next/app";
+import { NextPageContext } from "next";
+import { ThunkDispatch } from "redux-thunk";
+// #endregion Global Imports
 
-//#region Interface Imports
-import { IStore } from '@Interfaces/Redux/Store';
-//#region Interface Imports
+interface AppStore extends Store {
+    dispatch: ThunkDispatch;
+}
 
-declare namespace IApp {
-	export interface IProps extends Props<{}> {
-		store: IStore;
-	}
+export interface AppWithStore extends AppInitialProps {
+    store: AppStore;
+}
 
-	export interface IState {}
+export interface ReduxNextPageContext extends NextPageContext {
+    store?: AppStore;
+}
+
+export interface AppContextWithStore extends AppContext {
+    ctx: ReduxNextPageContext;
 }

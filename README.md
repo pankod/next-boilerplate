@@ -37,36 +37,34 @@
 ## About
 
 
-Next.js is a minimalistic React framework that runs in the browser and the server. It offers developers an easy way to get started, and as it uses React.js for templating it is also a straightforward way for developers with React experience to get productive fast.
+Next.js is a minimalistic React framework that runs on the browser and the server. It offers developers an easy way to get started, and as it uses React.js for templating, it's also a straightforward way for developers with React experience to get productive quickly.
 
-The advantages of this approach is to be able to create Rich User experiences in a uniform way, without compromising Search Engine Optimisation (SEO) factors that are key to good ranking on Google and other search engines. 
+The advantage of this approach is to be able to create rich user experiences in a uniform way, without compromising SEO (Search Engine Optimisation) factors that are key to good ranking on Google and other search engines.
 
-This boilerplate make it easier to get started with a well-structured Next.js and TypeScript application.
-
-By the end of setup, you'll have a Next.js project and features which is specified at the below.
+This boilerplate makes it easier to get up and running with a well-structured Next.js and TypeScript application.
 
 <br/>
 
 ## Features
 
 
-This boilerplate includes the latest powerfull tools.
+next-boilerplate project provides a lot of features out of the box. Here's an overview of the included components and tools.
 
 * **Next.js** - Minimalistic framework for server-rendered React applications.
 * **Typescript** - Superset of JavaScript which primarily provides optional static typing, classes and interfaces.
-* **Redux** - State management
-* **Express.js**- Handles server-side rendering and integrated with Express.js
+* **Redux** - A predictable state container for JavaScript apps.
+* **Express.js**- A minimal and flexible Node.js web application framework that handles server-side rendering and integrates with Next.js.
 * **Built-in Project CLI**- Create pages, components, actions, reducers with one command by using built-in cli.
 * **Sass/Scss** - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
 * **Docker** - A tool designed to make it easier to create, deploy, and run applications by using containers.
 * **Babel** -  The compiler for next generation JavaScript.
-* **Eslint** - The pluggable linting utility.
-* **Reverse Proxy** - A reverse proxy server is a type of proxy server that typically sits behind the firewall in a private network and directs client requests to the appropriate backend server
-* **Bundler Analyzer** - Visualize size of webpack output files with an interactive zoomable treemap.
-* **dotenv .config** - Expose environment variables to the runtime config of Next.js
-* **Jest** - Javascript testing framework , created by developers who created react
-* **Enzyme** - JavaScript testing utility for React that makes it easier to test your React Components output.
-* **i18next** - An internationalization-framework which provides a function that takes a key, some options, and returns the value for the current language. Helps you to add language translation support to your app.
+* **ESLint** - The pluggable linting utility.
+* **Reverse Proxy** - Lightweight server for proxying API requests.
+* **Bundler Analyzer** - Visualize the size of webpack output files with an interactive zoomable treemap.
+* **Jest** - Javascript testing framework , created by developers who created React.
+* **Enzyme** - JavaScript testing utility for React that makes it easier to test functionality and rendering of your React Components.
+* **next-runtime-dotenv** - Expose environment variables to the runtime config of Next.js
+* **next-i18next** - An internationalization-framework which provides a function that takes a key, some options, and returns the value for the current language. Helps you to add language translation support to your app.
 
 <br/>
 
@@ -92,16 +90,20 @@ For more detailed documentation, check out https://pankod.github.io/next-boilerp
 Pankod boilerplate is shipped with a CLI tool to streamline the creation of new components. By using the CLI tool, you may easily add pages, class components or functional components to your project and have all the required actions, reducers and imports are automatically created for you.
 <br />
 
-To start the CLI, you may run the following npm command:
+To start the CLI, you may have to install it beforehand if you haven't yet.
 
 ```
-npm run cli
+~ $ npm i -g @pankod/pankod-cli
 ```
 
-After starting, an interactive menu will let you configure the component the be created. Firstly, you'll be asked for the type of the component whether it's a page, functional component or class component. Then you'll be prompted with the other options relevant to your selection of the component type.
+Then you can use it in your projects:
+```
+~ $ npm run cli
+```
 
+After starting, an interactive menu will let you configure the component to be created. Firstly, you'll be asked for the type of the component whether it's a page or a functional component. Then you'll be prompted with the other options relevant to your selection.
 
-After answering questions it generates files in miliseconds.
+Eventually, you'll end up with a page or component with style and test files in no time.
 
 <br/>
 
