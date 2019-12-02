@@ -6,3 +6,15 @@ declare namespace NodeJS {
         API_KEY: string;
     }
 }
+
+declare namespace jest {
+    interface Options {
+        media?: string;
+        modifier?: string;
+        supports?: string;
+    }
+
+    interface Matchers<R> {
+        toHaveStyleRule(property: string, value?: Value, options?: Options): R;
+    }
+}
