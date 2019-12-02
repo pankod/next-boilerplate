@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 // #endregion Global Imports
 
 // #region Local Imports
-import { mountWithTheme } from "@Test/Helpers/styled";
+import { mountWithTheme, shallowWithTheme } from "@Test/Helpers/styled";
 import { theme } from "@Definitions/Styled/theme";
 import { Button } from "./index";
 // #endregion Local Imports
@@ -12,7 +12,7 @@ import { Button } from "./index";
 describe("Basic Components", () => {
     describe("Button", () => {
         it("should have the passed class", () => {
-            const wrapper = shallow(<Button className="active" />);
+            const wrapper = shallowWithTheme(<Button className="active" />);
 
             expect(wrapper.hasClass("active")).toBe(true);
         });
@@ -25,7 +25,7 @@ describe("Basic Components", () => {
 
         it("should increment number on click", () => {
             let number = 1;
-            const wrapper = shallow(
+            const wrapper = shallowWithTheme(
                 <Button
                     onClick={() => {
                         number += 1;

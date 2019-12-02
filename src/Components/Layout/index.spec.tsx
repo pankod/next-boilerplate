@@ -1,11 +1,11 @@
 import * as React from "react";
-import { shallow } from "enzyme";
 
+import { shallowWithTheme } from "@Test/Helpers/styled";
 import { Layout } from "@Components";
 
 describe("Layout", () => {
     it("should render without fail", () => {
-        const wrapper = shallow(
+        const wrapper = shallowWithTheme(
             <Layout>
                 <div>Content</div>
             </Layout>

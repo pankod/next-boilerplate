@@ -1,17 +1,17 @@
 import * as React from "react";
-import { shallow, mount } from "enzyme";
 
+import { mountWithTheme, shallowWithTheme } from "@Test/Helpers/styled";
 import { Navbar } from "@Components";
 
 describe("Navbar", () => {
     it("should render without fail", () => {
-        const wrapper = shallow(<Navbar />);
+        const wrapper = shallowWithTheme(<Navbar />);
 
         expect(wrapper.find("div.navbar").exists()).toBe(true);
     });
 
     it("should match snapshot", () => {
-        const wrapper = mount(<Navbar />);
+        const wrapper = mountWithTheme(<Navbar />);
         expect(wrapper).toMatchSnapshot();
     });
 });
