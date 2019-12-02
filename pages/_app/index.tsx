@@ -9,13 +9,21 @@ import withRedux from "next-redux-wrapper";
 // #region Local Imports
 import { theme } from "@Definitions/Styled";
 import { appWithTranslation } from "@Server/i18n";
-import { AppWithStore } from "@Interfaces";
+import { AppWithStore, AppContextWithStore } from "@Interfaces";
 import { makeStore } from "@Redux";
 
 import "@Static/css/reset.scss";
 // #endregion Local Imports
 
 class WebApp extends App<AppWithStore> {
+    static async getInitialProps({ Component, ctx }: AppContextWithStore) {
+        const pageProps = Component.getInitialProps
+            ? await Component.getInitialProps(ctx)
+            : {};
+
+        return { pageProps };
+    }
+
     render() {
         const { Component, pageProps, store } = this.props;
 
