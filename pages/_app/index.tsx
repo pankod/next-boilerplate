@@ -1,6 +1,6 @@
 // #region Global Imports
 import * as React from "react";
-import App from "next/app";
+import App, { AppInitialProps, AppContext } from "next/app";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import withRedux from "next-redux-wrapper";
@@ -9,14 +9,17 @@ import withRedux from "next-redux-wrapper";
 // #region Local Imports
 import { theme } from "@Definitions/Styled";
 import { appWithTranslation } from "@Server/i18n";
-import { AppWithStore, AppContextWithStore } from "@Interfaces";
+import { AppWithStore } from "@Interfaces";
 import { makeStore } from "@Redux";
 
 import "@Static/css/reset.scss";
 // #endregion Local Imports
 
 class WebApp extends App<AppWithStore> {
-    static async getInitialProps({ Component, ctx }: AppContextWithStore) {
+    static async getInitialProps({
+        Component,
+        ctx,
+    }: AppContext): Promise<AppInitialProps> {
         const pageProps = Component.getInitialProps
             ? await Component.getInitialProps(ctx)
             : {};

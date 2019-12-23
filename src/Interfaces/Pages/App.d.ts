@@ -14,9 +14,5 @@ export interface AppWithStore extends AppInitialProps {
 }
 
 export interface ReduxNextPageContext extends NextPageContext {
-    store?: AppStore;
-}
-
-export interface AppContextWithStore extends AppContext {
-    ctx: ReduxNextPageContext;
+    store: AppStore;
 }
