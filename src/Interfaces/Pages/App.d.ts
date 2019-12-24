@@ -1,6 +1,6 @@
 // #region Global Imports
 import { Store } from "redux";
-import { AppInitialProps, AppContext } from "next/app";
+import { AppInitialProps } from "next/app";
 import { NextPageContext } from "next";
 import { ThunkDispatch } from "redux-thunk";
 // #endregion Global Imports
@@ -14,9 +14,5 @@ export interface AppWithStore extends AppInitialProps {
 }
 
 export interface ReduxNextPageContext extends NextPageContext {
-    store?: AppStore;
-}
-
-export interface AppContextWithStore extends AppContext {
-    ctx: ReduxNextPageContext;
+    store: AppStore;
 }
