@@ -32,7 +32,7 @@
     "http-proxy-middleware": "^0.20.0",
     "isomorphic-unfetch": "^3.0.0",
     "jest-styled-components": "^6.3.3",
-    "next": "^9.0.6",
+    "next": "^9.3.2",
     "next-compose-plugins": "^2.2.0",
     "next-i18next": "^1.2.1",
     "next-redux-wrapper": "^3.0.0",
