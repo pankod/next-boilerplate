@@ -20,7 +20,7 @@ app.prepare().then(() => {
     const server = express();
 
     app.setAssetPrefix(process.env.STATIC_PATH);
-    server.use(express.static(path.join(__dirname, "../static")));
+    server.use(express.static(path.join(__dirname, "../public/static")));
     server.use(nextI18NextMiddleware(nextI18next));
 
     if (process.env.PROXY_MODE === "local") {
