@@ -34,7 +34,7 @@
     "jest-styled-components": "^6.3.3",
     "next": "^9.3.4",
     "next-compose-plugins": "^2.2.0",
-    "next-i18next": "^1.2.1",
+    "next-i18next": "^4.2.1",
     "next-redux-wrapper": "^3.0.0",
     "next-routes": "^1.4.2",
     "next-runtime-dotenv": "^1.2.0",
