@@ -15,7 +15,7 @@
                     "@Redux": "./src/Redux",
                     "@Services": "./src/Services",
                     "@Server": "./server",
-                    "@Static": "./static",
+                    "@Static": "./public/static",
                     "@Styled": "./src/Styled"
                 }
             }
