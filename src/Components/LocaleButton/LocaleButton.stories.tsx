@@ -1,12 +1,14 @@
 // #region Global Imports
 import React from "react";
-import { action } from '@storybook/addon-actions';
+/* eslint-disable import/no-extraneous-dependencies */
+import { action } from "@storybook/addon-actions";
 import { boolean, select } from "@storybook/addon-knobs";
+/* eslint-enable import/no-extraneous-dependencies */
 // #endregion Global Imports
 
 // #region Local Imports
+import { Apod, ApodButton } from "@Styled/Home";
 import { LocaleButton } from "./index";
-import { Apod, ApodButton } from "@Styled/Home"
 // #endregion Local Imports
 
 export default {
@@ -20,7 +22,8 @@ export const Default = () => (
             <LocaleButton
                 lang={select("Language", ["tr", "en", "es"], "tr")}
                 isActive={boolean("Active", true)}
-                onClick={action("button-click")} />
+                onClick={action("button-click")}
+            />
         </ApodButton>
     </Apod>
-)
+);
