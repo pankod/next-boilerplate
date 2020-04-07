@@ -6,6 +6,7 @@ import { boolean, select } from "@storybook/addon-knobs";
 
 // #region Local Imports
 import { LocaleButton } from "./index";
+import { Apod, ApodButton } from "@Styled/Home"
 // #endregion Local Imports
 
 export default {
@@ -14,8 +15,12 @@ export default {
 };
 
 export const Default = () => (
-    <LocaleButton
-        lang={select("Language", ["tr", "en", "es"], "tr")}
-        isActive={boolean("Active", true)}
-        onClick={action("button-click")} />
+    <Apod>
+        <ApodButton>
+            <LocaleButton
+                lang={select("Language", ["tr", "en", "es"], "tr")}
+                isActive={boolean("Active", true)}
+                onClick={action("button-click")} />
+        </ApodButton>
+    </Apod>
 )
