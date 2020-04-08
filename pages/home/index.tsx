@@ -46,7 +46,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     return (
         <Container>
             <Top>
-                <img src="/static/images/pankod-logo.png" alt="Pankod Logo" />
+                <img src="/images/pankod-logo.png" alt="Pankod Logo" />
             </Top>
             <Middle>
                 <MiddleLeft>
