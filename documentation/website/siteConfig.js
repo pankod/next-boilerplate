@@ -32,6 +32,10 @@ const url = [
 ]
 
 const siteConfig = {
+    algolia: {
+    	apiKey: '84a612c2b93d457087aff69f653514e1',
+    	indexName: 'microkubes',
+    },
 	title: 'Pankod', // Title for your website.
 	headerTitle:'next-boilerplate',
 	tagline: 'Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js, Sass and Project CLI.',
