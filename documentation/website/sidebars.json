@@ -13,7 +13,8 @@
 			"unit-test",
 			"reverse-proxy",
 			"dotenv-usage",
-			"i18next"
+			"i18next",
+			"storybook"
 		],
 		"Project CLI": [
 			"cli-overview",
