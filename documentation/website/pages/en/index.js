@@ -64,7 +64,7 @@ class HomeSplash extends React.Component {
 						<img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/maintainability" />
 					</a>
 
-  					<a href="https://codeclimate.com/github/pankod/next-boilerplate/test_coverage">
+					<a href="https://codeclimate.com/github/pankod/next-boilerplate/test_coverage">
 						<img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/test_coverage" />
 					</a>
 					<a href="https://travis-ci.org/pankod/next-boilerplate">
@@ -167,34 +167,50 @@ class Index extends React.Component {
 		);
 
 		const Features = () => (
-			<Block layout="fourColumn" align='center'>
-				{[
-					{
-						content: 'Minimalistic framework for server-rendered React applications.',
-						image: `${baseUrl}img/next-logo.svg`,
-						imageAlign: 'top',
-						title: 'Next.js',
-					},
-					{
-						content: 'Superset of JavaScript which primarily provides optional static typing, classes and interfaces.',
-						image: `${baseUrl}img/typescript-logo.png`,
-						imageAlign: 'top',
-						title: 'TypeScript',
-					},
-					{
-						content: 'Javascript testing framework , created by developers who created react.',
-						image: `${baseUrl}img/jest-logo.png`,
-						imageAlign: 'top',
-						title: 'Jest & Enzyme',
-					},
-					{
-						content: 'Create pages, components, actions, reducers with one command by using built-in cli.',
-						image: `${baseUrl}img/cli-logo.png`,
-						imageAlign: 'top',
-						title: 'Project CLI',
-					},
-				]}
-			</Block>
+			<React.Fragment>
+				<Block layout="threeColumn" align='center'>
+					{[
+						{
+							content: 'Minimalistic framework for server-rendered React applications.',
+							image: `${baseUrl}img/next-logo.svg`,
+							imageAlign: 'top',
+							title: 'Next.js',
+						},
+						{
+							content: 'Superset of JavaScript which primarily provides optional static typing, classes and interfaces.',
+							image: `${baseUrl}img/typescript-logo.png`,
+							imageAlign: 'top',
+							title: 'TypeScript',
+						},
+						{
+							content: 'Javascript testing framework , created by developers who created react.',
+							image: `${baseUrl}img/jest-logo.png`,
+							imageAlign: 'top',
+							title: 'Jest & Enzyme',
+						},
+
+
+					]}
+				</Block>
+				<Block layout="threeColumn" align='center'>
+					{[
+						{
+							content: 'Create pages, components, actions, reducers with one command by using built-in cli.',
+							image: `${baseUrl}img/cli-logo.png`,
+							imageAlign: 'top',
+							title: 'Project CLI',
+						},
+						{
+							content: 'An open source tool for developing UI components in isolation for React.',
+							image: `${baseUrl}img/storybook.png`,
+							imageAlign: 'top',
+							title: 'Storybook',
+						},
+
+
+					]}
+				</Block>
+			</React.Fragment>
 		);
 
 		const Showcase = () => {

@@ -66,7 +66,7 @@ next-boilerplate project provides a lot of features out of the box. Here's an ov
 * **next-runtime-dotenv** - Expose environment variables to the runtime config of Next.js
 * **next-i18next** - An internationalization-framework which provides a function that takes a key, some options, and returns the value for the current language. Helps you to add language translation support to your app.
 * **Storybook** - An open source tool for developing UI components in isolation for React.
-
+* **Bootstrap** - The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first websites.
 <br/>
 
 

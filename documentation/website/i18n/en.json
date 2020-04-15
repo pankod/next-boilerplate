@@ -51,6 +51,10 @@
       "setup": {
         "title": "Setup"
       },
+      "storybook": {
+        "title": "Storybook",
+        "sidebar_label": "Storybook"
+      },
       "structure": {
         "title": "Structure",
         "sidebar_label": "Structure"
