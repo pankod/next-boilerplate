@@ -26,6 +26,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.6.1",
+    "bootstrap": "^4.4.1",
     "cross-env": "^5.2.1",
     "dotenv": "^8.1.0",
     "eslint-config-airbnb": "^18.0.1",
