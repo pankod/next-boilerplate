@@ -16,6 +16,7 @@ module.exports = {
             "<rootDir>/test/mocks.ts",
         "\\.(css|less|scss|html)$": "<rootDir>/test/mocks.ts",
         "^@(Test)(.*)$": "<rootDir>/test/$2",
+        "^@(Server)(.*)$": "<rootDir>/server/$2",
         "^@([A-Z].*)$": "<rootDir>/src/$1",
     },
     preset: "ts-jest",
