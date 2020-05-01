@@ -20,5 +20,6 @@
         "import/resolver": {
             "typescript": {}
         }
-    }
+    },
+    "plugins": ["jest-dom"]
 }
