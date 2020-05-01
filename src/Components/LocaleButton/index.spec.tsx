@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@Test/utils";
+import { render } from "@Test/utils";
 import { LocaleButton } from "./index";
 
 describe("Components", () => {

@@ -21,5 +21,5 @@
             "typescript": {}
         }
     },
-    "plugins": ["jest-dom"]
+    "plugins": ["import", "jest-dom"]
 }
