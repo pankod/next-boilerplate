@@ -21,7 +21,7 @@
     <img src="https://david-dm.org/pankod/next-boilerplate.svg" alt="Dependency Status" />
   </a>
   <!-- devDependency Status -->
-  <a href="https://david-dm.org/pankod/next-boilerplate#info=devDependencies"> 
+  <a href="https://david-dm.org/pankod/next-boilerplate#info=devDependencies">
     <img src="https://david-dm.org/pankod/next-boilerplate/dev-status.svg" alt="devDependency Status" />
   </a>
 </div>
@@ -62,7 +62,7 @@ next-boilerplate project provides a lot of features out of the box. Here's an ov
 * **Reverse Proxy** - Lightweight server for proxying API requests.
 * **Bundler Analyzer** - Visualize the size of webpack output files with an interactive zoomable treemap.
 * **Jest** - Javascript testing framework , created by developers who created React.
-* **Enzyme** - JavaScript testing utility for React that makes it easier to test functionality and rendering of your React Components.
+* **React Testing Library** - Simple and complete React DOM testing utilities that encourage good testing practices.
 * **next-runtime-dotenv** - Expose environment variables to the runtime config of Next.js
 * **next-i18next** - An internationalization-framework which provides a function that takes a key, some options, and returns the value for the current language. Helps you to add language translation support to your app.
 * **Storybook** - An open source tool for developing UI components in isolation for React.
@@ -72,7 +72,7 @@ next-boilerplate project provides a lot of features out of the box. Here's an ov
 
 ## Setup & Documentation
 
-Please refer to our [setup guide](https://pankod.github.io/next-boilerplate/docs/setup) to create a new app. 
+Please refer to our [setup guide](https://pankod.github.io/next-boilerplate/docs/setup) to create a new app.
 
 
 For more detailed documentation, check out https://pankod.github.io/next-boilerplate/
