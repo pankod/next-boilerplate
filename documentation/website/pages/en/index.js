@@ -116,10 +116,10 @@ class Index extends React.Component {
 				{[
 					{
 						content:
-							'Jest is a testing tool from Facebook that makes it easy to perform unit testing in JavaScript. Enzyme on the other hand, is React specific. It provides a bunch of helpful methods that enhance how we test React components.',
+							'Jest is a testing tool from Facebook that makes it easy to perform unit testing in JavaScript. React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components.',
 						image: `${baseUrl}img/testing.png`,
 						imageAlign: 'left',
-						title: 'Jest & Enzyme Testing',
+						title: 'Jest & React Testing Library Testing',
 					},
 				]}
 			</Block>
@@ -186,7 +186,7 @@ class Index extends React.Component {
 							content: 'Javascript testing framework , created by developers who created react.',
 							image: `${baseUrl}img/jest-logo.png`,
 							imageAlign: 'top',
-							title: 'Jest & Enzyme',
+							title: 'Jest & React Testing Library',
 						},
 
 

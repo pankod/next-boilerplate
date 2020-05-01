@@ -3,21 +3,22 @@ import * as React from "react";
 // #endregion Global Imports
 
 // #region Local Imports
-import { shallowWithTheme, mountWithTheme } from "@Test/Helpers/styled";
+import { render } from "@Test/utils";
 import { Heading } from "@Components";
 // #endregion Local Imports
 
 describe("Components", () => {
     describe("Heading", () => {
-        it("should render without throwing an error", () => {
-            const wrap = shallowWithTheme(<Heading text="World" />);
+        it("should render given text", () => {
+            const { getAllByText } = render(<Heading text="Render Me!" />);
 
-            expect(wrap.find("div.title").exists()).toBe(true);
+            expect(getAllByText("Render Me!").length).toEqual(2);
         });
 
         it("should match snapshot", () => {
-            const wrapper = mountWithTheme(<Heading text="Test" />);
-            expect(wrapper).toMatchSnapshot();
+            const { container } = render(<Heading text="Test" />);
+
+            expect(container).toMatchSnapshot();
         });
     });
 });

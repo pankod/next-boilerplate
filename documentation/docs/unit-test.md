@@ -4,7 +4,7 @@ title: Unit Testing
 sidebar_label: Unit Testing
 ---
 
-This boilerplate uses [Jest](https://jestjs.io/docs/en/getting-started) and [Enzyme](https://github.com/airbnb/enzyme) for unit testing.
+This boilerplate uses [Jest](https://jestjs.io/docs/en/getting-started) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for unit testing.
 
 Example testing functions from next-boilerplate.
 
@@ -13,9 +13,9 @@ Example testing functions from next-boilerplate.
 describe('Components', () => {
     describe('Heading', () => {
         it("should render without throwing an error", () => {
-            let wrap = shallow(<Heading text={'World'} />);
+            const { container } = render(<Heading text={'World'} />);
 
-            expect(wrap.find('div.title').exists()).toBe(true);
+            expect(container).toMatchSnapshot();
         });
     });
 });
