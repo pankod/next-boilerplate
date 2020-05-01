@@ -20,5 +20,4 @@ module.exports = {
         "^@([A-Z].*)$": "<rootDir>/src/$1",
     },
     preset: "ts-jest",
-    snapshotSerializers: ["enzyme-to-json/serializer"],
 };
