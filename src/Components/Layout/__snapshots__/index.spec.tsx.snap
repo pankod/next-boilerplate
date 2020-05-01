@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should render without fail 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <div>
+      Content
+    </div>
+  </div>
+</div>
+`;
