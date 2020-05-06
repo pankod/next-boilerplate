@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components LocaleButton with isActive=false should match snapshot 1`] = `<div />`;
+
+exports[`Components LocaleButton with isActive=true should match snapshot 1`] = `
+.c1 {
+  cursor: pointer;
+  color: #2c3e50;
+}
+
+.c0 {
+  color: #2c3e50;
+}
+
+<div>
+  <div
+    class="c0 c1"
+  >
+    tr
+  </div>
+</div>
+`;

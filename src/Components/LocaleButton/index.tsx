@@ -5,10 +5,8 @@ import { ILocaleButton } from "./LocaleButton";
 
 import { Button } from "../Basic";
 
-const Container = styled(Button)`
-    .active {
-        color: #2c3e50;
-    }
+const Container = styled(Button)<{ isActive: boolean }>`
+    color: ${({ isActive }) => (isActive ? "#2c3e50" : "inherit")};
 `;
 
 export const LocaleButton: React.FunctionComponent<ILocaleButton.IProps> = ({
@@ -17,7 +15,7 @@ export const LocaleButton: React.FunctionComponent<ILocaleButton.IProps> = ({
     onClick,
 }) => {
     return (
-        <Container className={isActive ? "active" : ""} onClick={onClick}>
+        <Container isActive={isActive} onClick={onClick}>
             {lang}
         </Container>
     );
