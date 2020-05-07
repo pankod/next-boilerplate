@@ -6,13 +6,7 @@ import * as React from "react";
 import "./style.scss";
 // #endregion Local Imports
 
-// #region Interface Imports
-import { IHeading } from "./Heading";
-// #endregion Interface Imports
-
-const Heading: React.FunctionComponent<IHeading.IProps> = (
-    props
-): JSX.Element => {
+export const Heading: React.FC<IHeading.IProps> = (props): JSX.Element => {
     const { text } = props;
 
     return (
@@ -22,5 +16,3 @@ const Heading: React.FunctionComponent<IHeading.IProps> = (
         </div>
     );
 };
-
-export { Heading };

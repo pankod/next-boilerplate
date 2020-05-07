@@ -1,9 +1,7 @@
 declare namespace ILocaleButton {
-    export interface IProps {
+    interface IProps {
         lang: string;
         onClick: (param: any) => void;
         isActive: boolean;
     }
 }
-
-export { ILocaleButton };

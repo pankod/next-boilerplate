@@ -2,14 +2,14 @@
 import { WithTranslation } from "next-i18next";
 // #endregion Global Imports
 
-declare namespace IHomePage {
-    export interface IProps extends WithTranslation {}
+export namespace IHomePage {
+    interface IProps extends WithTranslation {}
 
-    export interface InitialProps {
+    interface InitialProps {
         namespacesRequired: string[];
     }
 
-    export interface IStateProps {
+    interface IStateProps {
         home: {
             version: number;
         };
@@ -19,17 +19,14 @@ declare namespace IHomePage {
     }
 
     namespace Actions {
-        export interface IMapPayload {}
+        interface IMapPayload {}
 
-        export interface IMapResponse {}
+        interface IMapResponse {}
 
-        export interface IGetApodPayload extends PlanetaryModel.GetApodPayload {
+        interface IGetApodPayload extends Planetary.GetApodPayload {
             params: {};
         }
 
-        export interface IGetApodResponse
-            extends PlanetaryModel.GetApodResponse {}
+        interface IGetApodResponse extends Planetary.GetApodResponse {}
     }
 }
-
-export { IHomePage };

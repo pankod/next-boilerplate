@@ -1,5 +1,3 @@
 declare namespace IFooter {
-    export interface IProps {}
+    interface IProps {}
 }
-
-export { IFooter };

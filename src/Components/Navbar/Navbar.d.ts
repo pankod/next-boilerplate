@@ -1,5 +1,3 @@
 declare namespace INavbar {
-    export interface IProps {}
+    interface IProps {}
 }
-
-export { INavbar };

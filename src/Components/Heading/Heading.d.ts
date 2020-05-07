@@ -1,7 +1,5 @@
 declare namespace IHeading {
-    export interface IProps {
+    interface IProps {
         text: string;
     }
 }
-
-export { IHeading };

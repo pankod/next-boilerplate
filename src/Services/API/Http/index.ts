@@ -4,10 +4,6 @@ import getConfig from "next/config";
 import { stringify } from "query-string";
 // #endregion Global Imports
 
-// #region Interface Imports
-import { HttpModel } from "@Interfaces";
-// #endregion Interface Imports
-
 const {
     publicRuntimeConfig: { API_KEY, API_URL },
 } = getConfig();

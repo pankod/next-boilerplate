@@ -1,7 +1,5 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
-
-import { ILocaleButton } from "./LocaleButton";
 
 import { Button } from "../Basic";
 
@@ -9,7 +7,7 @@ const Container = styled(Button)<{ isActive: boolean }>`
     color: ${({ isActive }) => (isActive ? "#2c3e50" : "inherit")};
 `;
 
-export const LocaleButton: React.FunctionComponent<ILocaleButton.IProps> = ({
+export const LocaleButton: React.FC<ILocaleButton.IProps> = ({
     lang,
     isActive,
     onClick,
