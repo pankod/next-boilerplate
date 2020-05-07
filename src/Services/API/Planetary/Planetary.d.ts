@@ -1,13 +1,22 @@
-// #region Interface Imports
-import { ApodPayload, ApodResponse } from "@Interfaces";
-// #endregion Interface Imports
+declare namespace Planetary {
+    interface ApodPayload {
+        hd?: boolean;
+        [key: string]: any;
+    }
 
-declare namespace PlanetaryModel {
-    export interface GetApodPayload {
+    interface ApodResponse {
+        copyright: string;
+        date: string;
+        explanation: string;
+        hdurl: string;
+        service_version: string;
+        title: string;
+        url: string;
+    }
+
+    interface GetApodPayload {
         params: ApodPayload;
     }
 
-    export interface GetApodResponse extends ApodResponse {}
+    interface GetApodResponse extends ApodResponse {}
 }
-
-export { PlanetaryModel };

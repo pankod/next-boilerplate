@@ -1,19 +1,15 @@
 // #region Local Imports
-import { Http } from "@Services";
+import { Http } from "@Services/API/Http";
 // #endregion Local Imports
-
-// #region Interface Imports
-import { PlanetaryModel } from "@Interfaces";
-// #endregion Interface Imports
 
 export const PlanetaryService = {
     GetPlanetImage: async (
-        payload: PlanetaryModel.GetApodPayload
-    ): Promise<PlanetaryModel.GetApodResponse> => {
-        let response: PlanetaryModel.GetApodResponse;
+        payload: Planetary.GetApodPayload
+    ): Promise<Planetary.GetApodResponse> => {
+        let response: Planetary.GetApodResponse;
 
         try {
-            response = await Http.Request<PlanetaryModel.GetApodResponse>(
+            response = await Http.Request<Planetary.GetApodResponse>(
                 "GET",
                 "/planetary/apod",
                 payload.params
