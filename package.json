@@ -13,7 +13,7 @@
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "test": "jest --coverage",
     "lint": "eslint './{src,pages,server}/**/*' --ext .tsx,.ts",
-    "pretty": "prettier --write --config .prettierrc.js {src,pages,server}/**/*.{ts,tsx}",
+    "pretty": "prettier --write --config .prettierrc.json {src,pages,server}/**/*.{ts,tsx}",
     "format": "npm run lint -- --fix",
     "analyze": "cross-env BUNDLE_ANALYZE=both npm run build",
     "export": "cross-env NODE_ENV=production next export",
@@ -81,7 +81,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "babel-preset-react-app": "^9.1.2",
     "css-loader": "^3.5.1",
-    "eslint": "^5.0.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-airbnb-typescript": "^4.0.1",
@@ -101,7 +101,7 @@
     "jest-styled-components": "^6.3.4",
     "nock": "^11.3.5",
     "nodemon": "^2.0.3",
-    "prettier": "1.18.2",
+    "prettier": "^1.19.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.3",
     "sass-loader": "^8.0.2",
@@ -110,7 +110,7 @@
     "ts-jest": "^25.4.0",
     "ts-loader": "^6.2.2",
     "ts-node": "^8.4.1",
-    "typescript": "^3.6.3"
+    "typescript": "^3.9.3"
   },
   "pankod": {
     "projectType": "nextjs2"

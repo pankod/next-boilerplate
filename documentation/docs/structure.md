@@ -118,7 +118,7 @@ After the setup is complete, your app should have the following directory struct
 ├── .env.example
 ├── .env.test
 ├── .eslintrc.json
-├── .prettierrc.js
+├── .prettierrc.json
 ├── .travis.yml
 ├── banner.jpg
 ├── boilerplate-cli.gif
