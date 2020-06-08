@@ -22,7 +22,7 @@
     "build-storybook": "build-storybook -s ./public/static  -c .storybook -o .storybookout"
   },
   "dependencies": {
-    "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@next/bundle-analyzer": "^9.4.4",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.6.1",
