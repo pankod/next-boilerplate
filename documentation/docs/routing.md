@@ -22,3 +22,7 @@ pages/{yourAwesomePage} -> /{yourAwesomePage}
 ```
 
 You may add custom routings to your app by using the `server/routes.ts`
+
+### API Routing
+
+API Routes can be implemented using [Next.js built-in API Routes](https://nextjs.org/docs/api-routes/introduction). An example is present in `/page/api/health-check.ts`.
