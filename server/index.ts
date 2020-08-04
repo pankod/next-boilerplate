@@ -31,7 +31,7 @@ app.prepare().then(() => {
         });
     }
 
-    server.get("*", (req, res) => handler(req, res));
+    server.all("*", (req, res) => handler(req, res));
 
     server.listen(port);
 
