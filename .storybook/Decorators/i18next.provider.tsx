@@ -1,6 +1,6 @@
 import { I18nextProvider } from "react-i18next";
 import i18n from "i18next";
-import Backend from "i18next-xhr-backend";
+import Backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 const path = require("path");
 
@@ -15,11 +15,14 @@ i18n.use(initReactI18next)
         },
         backend: {
             loadPath: path.join(__dirname, "../locales/{{lng}}/{{ns}}.json"),
-            addPath: path.join(__dirname, "../locales/{{lng}}/{{ns}}.missing.json"),
+            addPath: path.join(
+                __dirname,
+                "../locales/{{lng}}/{{ns}}.missing.json"
+            ),
         },
         react: {
             useSuspense: false,
-        }
+        },
     });
 
 export const withI18next = () => (story: any) => {
