@@ -1,5 +1,7 @@
 {
   "Hello": "Hello",
   "World": "World",
-  "Error": "Errr!"
+  "Error": "Errr!",
+  "NotFound": "Page not found!",
+  "BackHome": "Back to home"
 }

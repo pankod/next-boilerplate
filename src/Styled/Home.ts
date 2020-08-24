@@ -78,6 +78,7 @@ export const ApodButton = styled.div`
     font-size: 25px;
     color: ${({ theme }) => theme.colors.primary};
     letter-spacing: 0;
+    cursor: pointer;
 `;
 
 export const TopText = styled.div`
