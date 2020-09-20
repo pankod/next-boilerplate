@@ -1,19 +1,11 @@
 // #region Global Imports
 import dotenv from "dotenv";
 import nock from "nock";
-import { setConfig } from "next/config";
 import "jest-styled-components";
 import "@testing-library/jest-dom";
 // #endregion Global Imports
 
 dotenv.config({ path: ".env.test" });
-
-setConfig({
-    publicRuntimeConfig: {
-        API_URL: process.env.API_URL,
-        API_KEY: process.env.API_KEY,
-    },
-});
 
 nock("http://localhost:3000")
     .get("/api/planetary/apod")

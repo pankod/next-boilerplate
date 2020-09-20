@@ -1,6 +1,5 @@
 // #region Global Imports
 import "isomorphic-unfetch";
-import getConfig from "next/config";
 import { stringify } from "query-string";
 // #endregion Global Imports
 
@@ -8,12 +7,7 @@ import { stringify } from "query-string";
 import { HttpModel } from "@Interfaces";
 // #endregion Interface Imports
 
-const {
-    publicRuntimeConfig: { API_KEY, API_URL },
-} = getConfig();
-
-const BaseUrl = `${API_URL}/api`;
-
+const BaseUrl = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 export const Http = {
     Request: async <A>(
         methodType: string,
@@ -23,7 +17,10 @@ export const Http = {
     ): Promise<A> => {
         return new Promise((resolve, reject) => {
             const query = params
-                ? `?${stringify({ ...params, api_key: API_KEY })}`
+                ? `?${stringify({
+                      ...params,
+                      api_key: process.env.NEXT_PUBLIC_API_KEY,
+                  })}`
                 : "";
 
             fetch(`${BaseUrl}${url}${query}`, {

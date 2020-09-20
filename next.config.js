@@ -19,12 +19,6 @@ const nextConfig = {
             reportFilename: "../bundles/client.html",
         },
     },
-    publicRuntimeConfig: {
-        PROXY_MODE: process.env.PROXY_MODE,
-        API_URL: process.env.API_URL,
-        API_KEY: process.env.API_KEY,
-        STATIC_PATH: process.env.STATIC_PATH,
-    },
 };
 
 module.exports = withConfig(

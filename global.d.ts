@@ -1,9 +1,9 @@
-declare namespace NodeJS {
+declare namespace Process {
     interface ProcessEnv {
         PROXY_MODE: string;
-        STATIC_PATH: string;
-        API_URL: string;
-        API_KEY: string;
+        NEXT_PUBLIC_STATIC_PATH: string;
+        NEXT_PUBLIC_API_URL: string;
+        NEXT_PUBLIC_API_KEY: string;
     }
 }
 
