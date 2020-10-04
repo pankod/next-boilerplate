@@ -1,6 +1,4 @@
 const withPlugins = require("next-compose-plugins");
-const withCSS = require("@zeit/next-css");
-const withSass = require("@zeit/next-sass");
 const withBundleAnalyzer = require("@next/bundle-analyzer");
 
 const nextConfig = {
@@ -18,7 +16,4 @@ const nextConfig = {
     },
 };
 
-module.exports = withPlugins(
-    [[withCSS], [withSass], [withBundleAnalyzer]],
-    nextConfig
-);
+module.exports = withPlugins([[withBundleAnalyzer]], nextConfig);
