@@ -2,17 +2,11 @@
 
 exports[`Components Heading should match snapshot 1`] = `
 <div>
-  <div
-    class="title"
-  >
-    <span
-      class="title__back"
-    >
+  <div>
+    <span>
       Test
     </span>
-    <span
-      class="title__front"
-    >
+    <span>
       Test
     </span>
   </div>
