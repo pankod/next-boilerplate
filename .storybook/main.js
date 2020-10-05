@@ -1,13 +1,13 @@
-const path = require('path');
+const path = require("path");
 module.exports = {
-  stories: ['../src/**/*.stories.[tj]s[x]'],
+  stories: ["../src/**/*.stories.[tj]s[x]"],
   addons: [
-    '@storybook/addon-actions/register',
-    '@storybook/addon-links',
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-storysource/register',
-    'storybook-addon-styled-component-theme/dist/register',
-    '@storybook/addon-viewport/register',
+    "@storybook/addon-actions/register",
+    "@storybook/addon-links",
+    "@storybook/addon-knobs/register",
+    "@storybook/addon-storysource/register",
+    "storybook-addon-styled-component-theme/dist/register",
+    "@storybook/addon-viewport/register",
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -24,16 +24,31 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
-      include: path.resolve(__dirname, '../'),
+      use: ["style-loader", "css-loader", "sass-loader"],
+      include: path.resolve(__dirname, "../"),
+      exclude: /\.module\.scss$/,
     });
 
     config.resolve.extensions.push(".ts", ".tsx");
 
     config.module.rules.push({
       test: /\.stories\.tsx?$/,
-      loaders: [require.resolve('@storybook/source-loader')],
-      enforce: 'pre',
+      loaders: [require.resolve("@storybook/source-loader")],
+      enforce: "pre",
+    });
+
+    config.module.rules.push({
+      test: /\.module\.scss$/,
+      use: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: {
+            modules: true,
+          },
+        },
+        "sass-loader",
+      ],
     });
 
     return config;
