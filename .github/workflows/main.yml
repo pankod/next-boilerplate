@@ -17,12 +17,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: npm install & build
       run: |
         cp .env.example .env
         npm install
         npm run lint
-        npm test
       env:
         CI: true
         NODE_ENV: development
+    - name: Test & publish code coverage
+      uses: paambaati/codeclimate-action@v2.6.0
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.TEST_REPORTER_ID }}
+      with:
+        coverageCommand: npm run test
+        debug: true
