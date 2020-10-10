@@ -32,7 +32,6 @@
     "next-compose-plugins": "^2.2.0",
     "next-i18next": "^4.5.0",
     "next-redux-wrapper": "^3.0.0",
-    "next-routes": "^1.4.2",
     "query-string": "^6.8.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
