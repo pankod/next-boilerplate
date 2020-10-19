@@ -73,4 +73,5 @@ Translations can be accessed using `<filename>:<key>` like:
 ```
 
 <br>
->Refer to [offical documentation](https://www.i18next.com) for detailed usage.
+
+> Refer to [offical documentation](https://www.i18next.com) for detailed usage.
