@@ -7,8 +7,8 @@
 
 <div align="center">
    <!-- Meercode -->
-  <img src="https://api.meercode.io/badge/pankod/next-boilerplate?type=ci-score" />
-  <img src="https://api.meercode.io/badge/pankod/next-boilerplate?type=ci-success-rate" />
+  <img src="https://api.meercode.io/badge/pankod/next-boilerplate?type=ci-score&lastDay=60" />
+  <img src="https://api.meercode.io/badge/pankod/next-boilerplate?type=ci-success-rate&lastDay=60" />
   <!-- CodeClimate -->
   <a href="https://codeclimate.com/github/pankod/next-boilerplate/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/077c02d5cb9ec7d8a654/maintainability" />
