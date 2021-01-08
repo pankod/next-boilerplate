@@ -8,10 +8,10 @@
 <div align="center">
   <!-- Meercode -->
   <a href="https://meercode.io/">
-    <img src="https://api.meercode.io/badge/pankod/next-boilerplate?type=ci-score&lastDay=60" />
+    <img src="https://meercode.io/badge/pankod/next-boilerplate?type=ci-score&lastDay=60" />
   </a>
   <a href="https://meercode.io/">
-    <img src="https://api.meercode.io/badge/pankod/next-boilerplate?type=ci-success-rate&lastDay=60" />
+    <img src="https://meercode.io/badge/pankod/next-boilerplate?type=ci-success-rate&lastDay=60" />
   </a>
   <!-- CodeClimate -->
   <a href="https://codeclimate.com/github/pankod/next-boilerplate/maintainability">
