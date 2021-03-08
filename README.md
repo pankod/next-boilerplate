@@ -9,10 +9,13 @@ For now, [superplate](https://github.com/pankod/superplate) only creates project
 
 
 <br/>
-  <img width="600" align="center" src="./superplate.gif" >
-<br/>
+  <a href="https://github.com/pankod/superplate">
+    <img src="./superplate.gif" />
+  </a>
 <br/>
 
+
+## next-boilerplate
 
 <img src="banner.jpg" alt="Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js and Sass." align="center" />
 
