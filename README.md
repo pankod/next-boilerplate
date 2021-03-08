@@ -1,4 +1,4 @@
-## Bye bye next boilerplate, welcome to superplate!
+## Bye bye next boilerplate, welcome to [superplate](https://github.com/pankod/superplate)!
 After many years of developing the next-boilerplate, we had difficulties maintaining it. We were unable to combine the packages and flexibility that the Community wanted.
 
 We have now developed the [superplate](https://github.com/pankod/superplate) and it is now available.
