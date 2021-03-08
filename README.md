@@ -9,7 +9,7 @@ In time, we took valuable lessons from our experience and the community feedback
 
 To tackle the complexity problem we started a new project from scratch. We call it "[superplate](https://github.com/pankod/superplate)" - the frontend boilerplate with superpowers.
 
-It's built on top of a plugin architecture and allows you integrate your own tools and best pactices with ease. It also includes more than 30 built-in plugins of your favorite tools.
+It's built on top of a plugin architecture and allows you integrate your own tools and best practices with ease. It also includes more than 30 built-in plugins of your favorite tools.
 
 superplate's default framework is Next.js, so you start using it immediately instead of next-boilerplate. More framework targets are coming soon.
 
