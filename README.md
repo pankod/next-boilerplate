@@ -1,12 +1,19 @@
 ## Bye bye next boilerplate, welcome to [superplate](https://github.com/pankod/superplate)!
-After many years of developing the next-boilerplate, we had difficulties maintaining it. We were unable to combine the packages and flexibility that the Community wanted.
 
-We have now developed the [superplate](https://github.com/pankod/superplate) and it is now available.
+It has been a long time since we started next-boilerplate project. We are proud that it helped many frontend developers around the globe to speed up their frontend development cycles. 
 
-Thanks to its plugin-based structure, you can easily [add your own best-practices](https://pankod.github.io/superplate/docs/development/creating-a-plugin).
+In time, we took valuable lessons from our experience and the community feedback:
 
-For now, [superplate](https://github.com/pankod/superplate) only creates project for Next.js apps as a default Framework option. Other frameworks will be added soon.
+* There are infinite number of frontend technologies and it's impossible to combine everything in a single boilerplate product.
+* The project is hard to maintain with tons of external dependencies.
 
+To tackle the complexity problem we started a new project from scratch. We call it "[superplate](https://github.com/pankod/superplate)" - the frontend boilerplate with superpowers.
+
+It's built on top of a plugin architecture and allows you integrate your own tools and best pactices with ease. It also includes more than 30 built-in plugins of your favorite tools.
+
+superplate's default framework is Next.js, so you start using it immediately instead of next-boilerplate. More framework targets are coming soon.
+
+You may checkout the project from the [repo page](https://github.com/pankod/superplate) or [documentation](https://pankod.github.io/superplate/).
 
 <br/>
   <a href="https://github.com/pankod/superplate">
