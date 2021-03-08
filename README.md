@@ -5,6 +5,12 @@ Now we have developed the [superplate](https://github.com/pankod/superplate) and
 
 Thanks to its plugin-based structure, you can easily [add your own best-practices](https://pankod.github.io/superplate/docs/development/creating-a-plugin).
 
+
+<div>
+  <img width="600" align="center" src="./superplate.gif" >
+</div>
+
+
 <img src="banner.jpg" alt="Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js and Sass." align="center" />
 
 <br/>
