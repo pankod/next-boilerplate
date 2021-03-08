@@ -1,3 +1,21 @@
+## Bye bye next boilerplate, welcome to [superplate](https://github.com/pankod/superplate)!
+After many years of developing the next-boilerplate, we had difficulties maintaining it. We were unable to combine the packages and flexibility that the Community wanted.
+
+We have now developed the [superplate](https://github.com/pankod/superplate) and it is now available.
+
+Thanks to its plugin-based structure, you can easily [add your own best-practices](https://pankod.github.io/superplate/docs/development/creating-a-plugin).
+
+For now, [superplate](https://github.com/pankod/superplate) only creates project starter boilerplates for Next.js apps as a default UI Framework option. Other frameworks will be added soon.
+
+
+<br/>
+  <a href="https://github.com/pankod/superplate">
+    <img src="./superplate.gif" />
+  </a>
+<br/>
+
+
+## next-boilerplate
 
 <img src="banner.jpg" alt="Performance oriented Next.js application boilerplate with Redux, Typescript, Express.js and Sass." align="center" />
 
