@@ -11,7 +11,7 @@ To tackle the complexity problem we started a new project from scratch. We call 
 
 It's built on top of a plugin architecture and allows you integrate your own tools and best practices with ease. It also includes more than 30 built-in plugins of your favorite tools.
 
-superplate's default framework is Next.js, so you start using it immediately instead of next-boilerplate. More framework targets are coming soon.
+superplate's default framework is Next.js, so you can start using it immediately instead of next-boilerplate. More framework targets are coming soon.
 
 You may checkout the project from the [repo page](https://github.com/pankod/superplate) or [documentation](https://pankod.github.io/superplate/).
 
