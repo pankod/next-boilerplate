@@ -5,7 +5,7 @@ We have now developed the [superplate](https://github.com/pankod/superplate) and
 
 Thanks to its plugin-based structure, you can easily [add your own best-practices](https://pankod.github.io/superplate/docs/development/creating-a-plugin).
 
-For now, [superplate](https://github.com/pankod/superplate) only creates project starter boilerplates for Next.js apps as a default UI Framework option. Other frameworks integration will be added soon.
+For now, [superplate](https://github.com/pankod/superplate) only creates project starter boilerplates for Next.js apps as a default UI Framework option. Other frameworks will be added soon.
 
 
 <br/>
