@@ -104,7 +104,7 @@
     "ts-jest": "^25.4.0",
     "ts-loader": "^6.2.2",
     "ts-node": "^8.4.1",
-    "typescript": "^3.9.3"
+    "typescript": "^4.4.3"
   },
   "pankod": {
     "projectType": "nextjs2"
