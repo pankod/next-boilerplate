@@ -24,7 +24,7 @@
     "bootstrap": "^4.5.2",
     "cross-env": "^5.2.1",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-proxy-middleware": "^0.20.0",
     "i18next-xhr-backend": "^3.2.2",
     "isomorphic-unfetch": "^3.0.0",
