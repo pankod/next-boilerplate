@@ -32,6 +32,12 @@ module.exports = plop => {
           "src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss",
         templateFile: "plop-templates/Component/Component.module.scss.hbs",
       },
+      {
+        type: "add",
+        path:
+          "src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
+        templateFile: "plop-templates/Component/Component.stories.tsx.hbs",
+      },
     ],
   });
 };

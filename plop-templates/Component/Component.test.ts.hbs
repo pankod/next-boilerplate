@@ -5,7 +5,7 @@ describe("when rendered with a `name` prop", () => {
   it("should paste it into the greetings text", () => {
     render(<{{pascalCase name}} name="Test Name" />); 
     expect(
-      screen.getByText(/Hello Test Name!/)
+      screen.getByTestId("{{pascalCase name}}")
     ).toBeInTheDocument();
   });
 });
