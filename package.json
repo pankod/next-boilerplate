@@ -15,6 +15,7 @@
     "analyze": "cross-env BUNDLE_ANALYZE=both npm run build",
     "export": "cross-env NODE_ENV=production next export",
     "cli": "pankod-cli add",
+    "new": "plop",
     "storybook": "start-storybook -s ./public/static -p 6006",
     "build-storybook": "build-storybook -s ./public/static  -c .storybook -o .storybookout"
   },
@@ -96,6 +97,7 @@
     "jest-styled-components": "^6.3.4",
     "nock": "^11.3.5",
     "nodemon": "^2.0.3",
+    "plop": "^3.1.1",
     "prettier": "^1.19.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.3",
