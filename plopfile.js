@@ -31,7 +31,7 @@ module.exports = plop => {
         path:
           "src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss",
         templateFile: "plop-templates/Component/Component.module.scss.hbs",
-      }
+      },
     ],
   });
 };
