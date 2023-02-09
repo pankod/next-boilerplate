@@ -17,7 +17,7 @@ module.exports = plop => {
         // Add a new file
         type: "add",
         // Path for the new file
-        path: "src/Components/{{pascalCase name}}/{{pascalCase name}}.tsx",
+        path: "src/Components/{{pascalCase name}}/index.tsx",
         // Handlebars template used to generate content of new file
         templateFile: "plop-templates/Component/Component.ts.hbs",
       },
@@ -31,7 +31,7 @@ module.exports = plop => {
         path:
           "src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss",
         templateFile: "plop-templates/Component/Component.module.scss.hbs",
-      }
+      },
     ],
   });
 };

@@ -1,0 +1,11 @@
+import { render, screen } from "@testing-library/react";
+import { {{pascalCase name}} } from "./Greetings";
+
+describe("when rendered with a `name` prop", () => {
+  it("should paste it into the greetings text", () => {
+    render(<{{pascalCase name}} name="Test Name" />); 
+    expect(
+      screen.getByText(/Hello Test Name!/)
+    ).toBeInTheDocument();
+  });
+});
