@@ -68,4 +68,21 @@ module.exports = plop => {
       },
     ],
   });
+  plop.setGenerator("hook", {
+    description: "Create a custom react hook",
+    prompts: [
+      {
+        type: "input",
+        name: "name",
+        message: "What is your hook name?",
+      },
+    ],
+    actions: [
+      {
+        type: "add",
+        path: "src/Hooks/use{{pascalCase name}}.ts",
+        templateFile: "plop-templates/hook/hook.ts.hbs",
+      },
+    ],
+  });
 };
