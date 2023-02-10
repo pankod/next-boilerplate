@@ -1,0 +1,49 @@
+import * as React from "react";
+import { NextPage } from "next";
+import { useSelector, useDispatch } from "react-redux";
+
+import { withTranslation } from "@Server/i18n";
+import { IStore } from "@Redux/IStore";
+import { {{pascalCase name}}Actions } from "@Actions";
+import { Heading, LocaleButton } from "@Components";
+
+import { I{{pascalCase name}}, ReduxNextPageContext } from "@Interfaces";
+
+const {{pascalCase name}}: NextPage<I{{pascalCase name}}.IProps, I{{pascalCase name}}.InitialProps> = ({
+    t,
+    i18n,
+}) => {
+    const {{name}} = useSelector((state: IStore) => state.{{name}});
+    const dispatch = useDispatch();
+
+    const renderLocaleButtons = (activeLanguage: string) =>
+        ["en", "es", "tr"].map(lang => (
+            <LocaleButton
+                key={lang}
+                lang={lang}
+                isActive={activeLanguage === lang}
+                onClick={() => i18n.changeLanguage(lang)}
+            />
+        ));
+
+    return (
+        <div>
+            {renderLocaleButtons(i18n.language)}
+        </div>
+    );
+};
+
+{{pascalCase name}}.getInitialProps = async (
+    ctx: ReduxNextPageContext
+): Promise<I{{pascalCase name}}.InitialProps> => {
+    await ctx.store.dispatch(
+        {{pascalCase name}}Actions.GetApod({
+            params: { hd: true },
+        })
+    );
+    return { namespacesRequired: ["common"] };
+};
+
+const Extended = withTranslation("common")({{pascalCase name}});
+
+export default Extended;
