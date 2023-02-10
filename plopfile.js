@@ -40,4 +40,32 @@ module.exports = plop => {
       },
     ],
   });
+  plop.setGenerator("page", {
+    description: "Create a page",
+    prompts: [
+      {
+        type: "input",
+        name: "name",
+        message: "What is your page name?",
+      },
+    ],
+    actions: [
+      {
+        type: "add",
+        path: "pages/{{pascalCase name}}/index.tsx",
+        templateFile: "plop-templates/Page/Page.tsx.hbs",
+      },
+      {
+        type: "add",
+        path: "src/Interfaces/Pages/{{pascalCase name}}.d.ts",
+        templateFile: "plop-templates/Page/IPage.ts.hbs",
+      },
+      {
+        type: "append",
+        path: "src/Redux/IStore.d.ts",
+        pattern: `/* Add_Page_IStore_Here */`,
+        template: "plop-templates/Page/IStore.ts.hbs",
+      },
+    ],
+  });
 };
