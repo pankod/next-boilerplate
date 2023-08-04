@@ -17,7 +17,7 @@ const Custom404: NextPage<IErrorPage.IProps> = ({ t }) => {
     return (
         <Container>
             <TopText>{t("common:NotFound")}</TopText>
-            <Link href="/">
+            <Link href="/" legacyBehavior>
                 <ApodButton>{t("common:BackHome")}</ApodButton>
             </Link>
         </Container>

@@ -1,5 +1,6 @@
-const path = require("path");
-module.exports = {
+import path from "path";
+
+export default {
   stories: ["../src/**/*.stories.[tj]s[x]"],
   addons: [
     "@storybook/addon-actions/register",
