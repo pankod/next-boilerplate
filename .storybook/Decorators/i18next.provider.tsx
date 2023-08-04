@@ -2,7 +2,7 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "i18next";
 import Backend from "i18next-xhr-backend";
 import { initReactI18next } from "react-i18next";
-const path = require("path");
+import path from "path";
 
 i18n.use(initReactI18next)
     .use(Backend)
@@ -22,6 +22,6 @@ i18n.use(initReactI18next)
         }
     });
 
-export const withI18next = () => (story: any) => {
+export const withI18next = () => (story) => {
     return <I18nextProvider i18n={i18n}>{story()}</I18nextProvider>;
 };

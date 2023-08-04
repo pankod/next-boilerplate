@@ -1,8 +1,6 @@
-// #region Global Imports
-const nextRoutes = require("next-routes");
-// #endregion Global Imports
+import nextRoutes from "next-routes";
 
-const routes = (module.exports = nextRoutes());
+const routes = nextRoutes();
 
 routes.add("home", "/");
 

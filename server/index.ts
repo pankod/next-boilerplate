@@ -1,7 +1,7 @@
 // #region Global Imports
 import next from "next";
 import express from "express";
-import path from "path";
+import { join } from "path";
 import nextI18NextMiddleware from "next-i18next/middleware";
 // #endregion Global Imports
 
@@ -20,14 +20,14 @@ app.prepare().then(() => {
     const server = express();
 
     app.setAssetPrefix(process.env.STATIC_PATH);
-    server.use(express.static(path.join(__dirname, "../public/static")));
+    server.use(express.static(join(__dirname, "../public/static")));
     server.use(nextI18NextMiddleware(nextI18next));
 
     if (process.env.PROXY_MODE === "local") {
-        // eslint-disable-next-line global-require
-        const proxyMiddleware = require("http-proxy-middleware");
-        Object.keys(devProxy).forEach(context => {
-            server.use(proxyMiddleware(context, devProxy[context]));
+        import("http-proxy-middleware").then(proxyMiddleware => {
+            Object.keys(devProxy).forEach(context => {
+                server.use(proxyMiddleware.default(context, devProxy[context]));
+            });
         });
     }
 
@@ -35,7 +35,6 @@ app.prepare().then(() => {
 
     server.listen(port);
 
-    // eslint-disable-next-line no-console
     console.log(
         `> Server listening at http://localhost:${port} as ${
             dev ? "development" : process.env.NODE_ENV

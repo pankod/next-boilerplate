@@ -4,7 +4,7 @@ import { Http } from ".";
 
 describe("Http request tests", () => {
     test("200 test", async () => {
-        const result = await Http.Request<{ success: boolean }>("GET", "/200");
+        const result = (await Http.Request)<{ success: boolean }>("GET", "/200");
         expect(result.success).toEqual(true);
     });
 
